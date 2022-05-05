@@ -2,22 +2,50 @@ project:
   type: book
 
 book:
-  title: "_Psychopharmacology_"
-  author: "Jane Doe"
+  title: "조현병의 약물치료 Vol.3"
+  author: "Anselm Jeong"
+  lang: ko
   date: "2022. 4. 25."
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - part: "항정신병 약물의 종류"
+      chapters:
+        - 08-01.qmd
+        - 08-02.qmd
+        - 08-03.qmd
+    - part: "약물 치료의 일반 원칙"
+      chapters:
+        - 08-04.qmd
+        - 08-05.qmd
+        - 08-06.qmd
+        - 08-07.qmd
+        
+    - part: "약물 치료의 실제"
+      chapters:
+        - 10-01.qmd
+        - 10-02.qmd
+        - 10-03.qmd
+    
+      
+csl: plos.csl
 
-bibliography: references.bib
+
 
 format:
   html:
-    theme: cosmo
+    theme: yeti
+    mainfont: "Noto Serif KR"
+    css: styles.css
+    footnotes-hover: false
+    anchor-sections: true
+    toc: true
+    number-depth: 4
+    reference-location: margin
+    
+    
   pdf:
     documentclass: scrreprt
+    
 
 editor: visual
 

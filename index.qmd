@@ -1,9 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+이 책은 김용식 교수님과 제자들에 의해 쓰여졌습니다.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+[Quarto 출판 플랫폼](https://quarto.org/docs/books)을 통해 웹 문서로 엮어졌으며, 기술적인 부분은 해당 홈페이지를 참조하시기 바랍니다.

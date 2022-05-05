@@ -2,10 +2,10 @@ project:
   type: book
 
 book:
-  title: "조현병의 약물치료 Vol.3"
+  title: "조현병의 약물치료 Vol.2"
   author: "Anselm Jeong"
   lang: ko
-  date: "2022. 4. 25."
+  date: "2022. 5. 5."
   chapters:
     - index.qmd
     - part: "항정신병 약물의 종류"

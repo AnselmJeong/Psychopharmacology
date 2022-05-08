@@ -8,6 +8,10 @@ book:
   date: "2022. 5. 5."
   chapters:
     - index.qmd
+    - part: "항정신병 약물의 작용기전"
+      chapters:
+        - 06-01.qmd
+        - 06-02.qmd
     - part: "항정신병 약물의 종류"
       chapters:
         - 08-01.qmd

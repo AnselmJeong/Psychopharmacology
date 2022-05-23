@@ -16,6 +16,7 @@ book:
       chapters:
         - 06-01.qmd
         - 06-02.qmd
+        - 06-03.qmd
     - part: "항정신병 약물의 종류"
       chapters:
         - 08-01.qmd

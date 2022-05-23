@@ -5,6 +5,10 @@ book:
   title: "조현병의 약물치료 Vol.2"
   author: "Anselm Jeong"
   lang: ko
+  repo-url: https://github.com/AnselmJeong/Psychopharmacology
+  repo-actions: [edit]
+  sharing: [twitter]
+  cover-image: images/cover.jpg
   date: "2022. 5. 5."
   chapters:
     - index.qmd
@@ -37,7 +41,9 @@ csl: plos.csl
 
 format:
   html:
-    theme: yeti
+    theme: 
+      light: yeti
+      dark: darkly
     mainfont: "Noto Serif KR"
     css: styles.css
     footnotes-hover: false
@@ -45,7 +51,7 @@ format:
     toc: true
     number-depth: 4
     reference-location: margin
-    
+    number-sections: false
     
   pdf:
     documentclass: scrreprt

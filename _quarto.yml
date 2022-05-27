@@ -17,6 +17,7 @@ book:
         - 06-01.qmd
         - 06-02.qmd
         - 06-03.qmd
+        - 06-04.qmd
     - part: "항정신병 약물의 종류"
       chapters:
         - 08-01.qmd
@@ -50,12 +51,15 @@ format:
     footnotes-hover: false
     anchor-sections: true
     toc: true
+    toc-depth: 3
     number-depth: 4
     reference-location: margin
-    number-sections: false
+    number-sections: true
     
   pdf:
     documentclass: scrreprt
+    latex_engine: xelatex
+    mainfont: NanumGothic
     
 
 editor: visual

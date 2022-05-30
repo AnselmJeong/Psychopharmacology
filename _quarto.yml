@@ -58,9 +58,13 @@ format:
     
   pdf:
     documentclass: scrreprt
-    latex_engine: xelatex
-    mainfont: NanumGothic
-    
+    #mainfont: "Noto Serif KR"
+    fontfamily: "Noto Serif KR"
+    colorlinks: true
+    cite-method: biblatex
+    include-in-header: 
+      text:
+        \usepackage{kotex}
 
 editor: visual
 

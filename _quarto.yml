@@ -8,7 +8,7 @@ book:
   repo-url: https://github.com/AnselmJeong/Psychopharmacology
   repo-actions: [edit]
   sharing: [twitter]
-  cover-image: images/cover.jpg
+  cover-image: /images/cover.jpg
   date: "2022. 5. 5."
   chapters:
     - index.qmd
@@ -19,6 +19,9 @@ book:
         - 06-03.qmd
         - 06-04.qmd
         - 06-05.qmd
+        - 06-06.qmd
+        - 06-07.qmd
+        - 06-08.qmd
     - part: "항정신병 약물의 종류"
       chapters:
         - 08-01.qmd

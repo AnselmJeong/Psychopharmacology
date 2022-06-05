@@ -9,7 +9,7 @@ body {
 }
 
 s {
-  color: cadetblue;
+  color: coral;
   /* text-emphasis-style: filled; */
   text-decoration-line: none;
   font-weight: bold;
@@ -23,4 +23,12 @@ h2, h2 .header-section-number {
 
 h3, .h3, h4, .h4 {
     margin-bottom: 1rem;
+}
+
+.footnote-ref {
+  color: coral;
+}
+
+.sidebar-item-text.sidebar-link.text-start {
+  font-weight: bold;
 }

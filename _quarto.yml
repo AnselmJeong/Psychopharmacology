@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "조현병의 약물치료 Vol.2"
+  title: "SPR"
   author: "Anselm Jeong"
   lang: ko
   repo-url: https://github.com/AnselmJeong/Psychopharmacology
@@ -12,7 +12,12 @@ book:
   date: "2022. 5. 5."
   chapters:
     - index.qmd
-    - part: "항정신병 약물의 작용기전"
+    - part: "전임상 모델"
+      chapters:
+        - 05-01.qmd
+        - 05-02.qmd
+        - 05-03.qmd
+    - part: "항정신병 약물의 작용 기전"
       chapters:
         - 06-01.qmd
         - 06-02.qmd
@@ -22,19 +27,30 @@ book:
         - 06-06.qmd
         - 06-07.qmd
         - 06-08.qmd
-    - part: "항정신병 약물의 종류"
+        - 06-09.qmd
+        - 06-10.qmd
+        - 06-11.qmd
+        - 06-12.qmd
+    - part: "다양한 항정신병 약물"
       chapters:
         - 08-01.qmd
         - 08-02.qmd
         - 08-03.qmd
-    - part: "약물 치료의 일반 원칙"
+    - part: "조현병 약물 치료의 일반적 원칙"
       chapters:
         - 08-04.qmd
         - 08-05.qmd
         - 08-06.qmd
         - 08-07.qmd
-        
-    - part: "약물 치료의 실제"
+    - part: "부작용과 그 대처법"
+      chapters:
+        - 09-01.qmd
+        - 09-02.qmd
+        - 09-03.qmd
+        - 09-04.qmd
+        - 09-05.qmd
+        - 09-06.qmd
+    - part: "실제 임상에서 부딪히는 문제들"
       chapters:
         - 10-01.qmd
         - 10-02.qmd
@@ -60,15 +76,11 @@ format:
     reference-location: margin
     number-sections: true
     
-  pdf:
-    documentclass: scrreprt
-    #mainfont: "Noto Serif KR"
-    fontfamily: "Noto Serif KR"
-    colorlinks: true
-    cite-method: biblatex
-    include-in-header: 
-      text:
-        \usepackage{kotex}
+  docx:
+    theme: yeti
+    toc: false
+    number-sections: true
+    
 
 editor: visual
 

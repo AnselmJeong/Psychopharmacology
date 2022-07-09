@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.3">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="정성훈">
+
+<title>SPR - 2&nbsp; 새롭게 제시된 동물모델</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05-03.html" rel="next">
+<link href="./05-01.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">새롭게 제시된 동물모델</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">SPR</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/AnselmJeong/Psychopharmacology" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">전임상 모델</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">고전적 동물 모델</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">새롭게 제시된 동물모델</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">세포주 모델과 전산화 모델</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">항정신병 약물의 작용 기전</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">향정신성 의약품 개발과 우연의 역할</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">고전적 약물 작용 이론</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">도파민과 그 밖의 신경전달물질 수용체</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">세포 내 신호전달계</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">조기 유전자와 타겟 유전자</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">후성유전학</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">시냅스의 미세구조</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">신경망의 구조적 변화</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">자가포식</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">신경염증</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">뇌 내의 에너지 대사</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">신경가소성</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">다양한 항정신병 약물</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">정형 항정신병 약물</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">비정형 항정신병 약물</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">신세대 비정형 약물</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">조현병 약물 치료의 일반적 원칙</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">약물 처방의 철학</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">항정신병 약물의 선택</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">용량 결정을 비롯한 제반 문제들</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">교체, 중단, 다약제 병용</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">부작용과 그 대처법</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">부작용</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">추체외로 증후군</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">지연성 운동장애</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">신경이완제 악성증후군</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">대사증후군</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">프로락틴과 비뇨기계 장애</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+    <div class="sidebar-item-container"> 
+        <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">실제 임상에서 부딪히는 문제들</a>
+      <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+        <i class="bi bi-chevron-right ms-2"></i>
+      </a>
+    </div>
+    <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">약물 치료의 준비</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">약물 치료 실제 과정</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">치료 중 부딪히게되는 문제들</span></a>
+  </div>
+</li>
+    </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#신경발달학적-모델" id="toc-신경발달학적-모델" class="nav-link active" data-scroll-target="#신경발달학적-모델"> <span class="header-section-number">2.1</span> 신경발달학적 모델</a>
+  <ul class="collapse">
+  <li><a href="#신경발달학적-모델의-탄생" id="toc-신경발달학적-모델의-탄생" class="nav-link" data-scroll-target="#신경발달학적-모델의-탄생"> <span class="header-section-number">2.1.1</span> 신경발달학적 모델의 탄생</a></li>
+  <li><a href="#다양한-신경발달학적-모델" id="toc-다양한-신경발달학적-모델" class="nav-link" data-scroll-target="#다양한-신경발달학적-모델"> <span class="header-section-number">2.1.2</span> 다양한 신경발달학적 모델</a></li>
+  </ul></li>
+  <li><a href="#유전적-조작-모델" id="toc-유전적-조작-모델" class="nav-link" data-scroll-target="#유전적-조작-모델"> <span class="header-section-number">2.2</span> 유전적 조작 모델</a>
+  <ul class="collapse">
+  <li><a href="#유전적-조작-모델을-만드는-기법" id="toc-유전적-조작-모델을-만드는-기법" class="nav-link" data-scroll-target="#유전적-조작-모델을-만드는-기법"> <span class="header-section-number">2.2.1</span> 유전적 조작 모델을 만드는 기법</a></li>
+  <li><a href="#다양한-유전적-조작-모델" id="toc-다양한-유전적-조작-모델" class="nav-link" data-scroll-target="#다양한-유전적-조작-모델"> <span class="header-section-number">2.2.2</span> 다양한 유전적 조작 모델</a></li>
+  </ul></li>
+  <li><a href="#부작용에-대한-동물-모델" id="toc-부작용에-대한-동물-모델" class="nav-link" data-scroll-target="#부작용에-대한-동물-모델"> <span class="header-section-number">2.3</span> 부작용에 대한 동물 모델</a>
+  <ul class="collapse">
+  <li><a href="#강직증-검사" id="toc-강직증-검사" class="nav-link" data-scroll-target="#강직증-검사"> <span class="header-section-number">2.3.1</span> 강직증 검사</a></li>
+  <li><a href="#vacuous-chewing-movements-test" id="toc-vacuous-chewing-movements-test" class="nav-link" data-scroll-target="#vacuous-chewing-movements-test"> <span class="header-section-number">2.3.2</span> Vacuous chewing movements test</a></li>
+  </ul></li>
+  <li><a href="#동물-모델의-유용성" id="toc-동물-모델의-유용성" class="nav-link" data-scroll-target="#동물-모델의-유용성"> <span class="header-section-number">2.4</span> 동물 모델의 유용성</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/AnselmJeong/Psychopharmacology/edit/main/05-02.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">새롭게 제시된 동물모델</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>정성훈 </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="신경발달학적-모델" class="level2 page-columns page-full" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="신경발달학적-모델"><span class="header-section-number">2.1</span> 신경발달학적 모델</h2>
+<section id="신경발달학적-모델의-탄생" class="level3 page-columns page-full" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="신경발달학적-모델의-탄생"><span class="header-section-number">2.1.1</span> 신경발달학적 모델의 탄생</h3>
+<div class="page-columns page-full"><p>1987년 신경발달학적 가설을 제안하여 조현병에 대한 이해의 틀을 바꾼 미국의 의학자 <s>Weinberger</s><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>는 자신의 가설을 뒷받침할만한 동물 모델을 찾고 있었다.<span class="citation" data-cites="weinberger1987">[<a href="#ref-weinberger1987" role="doc-biblioref">1</a>]</span> 그는 동료 연구원인 <s>Lipska</s><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>와 함께 갓 태어난 쥐의 배측 해마에 ibotenic 산을 주입하여 파괴한 후, 이 쥐들이 청소년기가 되었을 때의 행동 변화를 관찰해보았다. 손상을 입은 쥐들은 초기 발달기에는 이상을 보이지 않았으나, 청소년 기를 넘어가면서 상동행동이나 과다행동이 늘어나는 등 이상 반응을 나타내기 시작하였다.<span class="citation" data-cites="lipska1993">[<a href="#ref-lipska1993" role="doc-biblioref">2</a>]</span> 이는 태생기나 발달 초기에 가해진 생물학적 손상이, 청소년기 이후에 특징적인 증상 복합체로서 모습을 드러내는 것으로 해석되었으며, 신경발달학적 가설을 뒷받침하는 유력한 모델로 받아들여졌다.</p><div class="no-row-height column-margin column-container"><li id="fn1" role="doc-endnote"><p><sup>1</sup>&nbsp;<strong>Daniel Weinberger (1947~)</strong>: 미국의 정신과 의사로 존스홉킨스 의과대학의 교수이며, Lieber Institute for Brain Development의 소장이다. 조현병의 신경발달학적 가설을 내놓았을 뿐 아니라, COMT 및 NRG1 유전자의 변이가 조현병 위험을 높인다는 사실을 밝혀냈다. 특히 COMT 변이에 대한 발견은 조현병의 유전적 위험인자에 대한 최초의 발견이기도 하였다.</p></li><li id="fn2" role="doc-endnote"><p><sup>2</sup>&nbsp;<strong>Barbara K Lipska</strong>: 폴란드에서 태어났으며, 미국으로 이민온 후 국립정신보건연구원(NIMH)에서 경력을 시작하였다. 주로 조현병의 동물 모델을 연구하는데 공헌했으며, 환자들의 사후뇌조직 연구에도 역량을 발휘하였다. 2015년에 흑색종이 뇌로 전이되었다는 진단을 받았으며, 약 두달에 결쳐 정신증 및 치매 증상을 몸소 경험하였다. 그녀는 회복후 자신의 생생한 경험을 <em>“The Neuroscientist Who Lost Her Mind”</em>라는 저서로 출판하였다.</p></li></div></div>
+<p>이 모델이 등장한 이후, 갓 태어난 쥐나 아직 태어나기 전의 쥐에게 조작을 가한 후, 청소년 혹은 성인기에 이르렀을 때 행동을 측정하는 모델이 다양하게 만들어졌다. 연구자들은 행동을 측정할 뿐 아니라 신경세포의 미세한 형태학적 변화까지 들여다보면서, 조현병과 관련된 단서를 찾아내고자 애썼다. 이 모델의 장점은 가해진 조작이 조현병을 일으킬 수 있느냐 없느냐 뿐만 아니라, 어떤 식의 발달과정을 거쳐서 조현병에 이르게 하는지 그 중간과정도 살필 수 있다는 점이다. 게다가 증상이 발현되기 전의 쥐에게 다양한 치료 수단을 강구한 후 청소년기가 되었을 때 증상 심각도를 측정함으로써, 조현병 발병을 미리 예방하는 방안을 모색할 수 있다는 가치가 있다.<span class="citation" data-cites="piontkewitz2012">[<a href="#ref-piontkewitz2012" role="doc-biblioref">3</a>]</span></p>
+</section>
+<section id="다양한-신경발달학적-모델" class="level3 page-columns page-full" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="다양한-신경발달학적-모델"><span class="header-section-number">2.1.2</span> 다양한 신경발달학적 모델</h3>
+<section id="mam-모델" class="level4" data-number="2.1.2.1">
+<h4 data-number="2.1.2.1" class="anchored" data-anchor-id="mam-모델"><span class="header-section-number">2.1.2.1</span> MAM 모델</h4>
+<p>Weinberger와 Lipska가 제안한 원래 모델은 복잡한 수술적 처치를 필요로 하였기 때문에, 다른 실험실에서 사용하기 어려웠다. 좀더 용이한 모델을 탐색하던 연구자들은 임신 중인 산모 쥐에게 nitric oxide synthase 억제제인 L-nitroarginine이나 세포분열 억제제인 <strong>methylazoxy-methanol (MAM)</strong> 을 투여하면, 태어난 자식 쥐가 조현병과 유사한 행동 양상을 보인다는 것을 발견하였다.<span class="citation" data-cites="talamini1998">[<a href="#ref-talamini1998" role="doc-biblioref">4</a>]</span></p>
+<p>MAM은 DNA에 메칠 기를 붙여, DNA 복제를 방해한다. 이런 식으로 MAM은 신경아세포(neuroblast)의 분열을 방해하지만, 그렇다고 신경교세포(glial cell)를 비롯한 다른 세포에는 영향을 끼치지 않기 때문에 기형아 출산으로 이어지지는 않는다.<span class="citation" data-cites="cattabeni1997">[<a href="#ref-cattabeni1997" role="doc-biblioref">5</a>]</span> 연구가 거듭되면서 태생기 17일에 MAM을 투여한 모델이 가장 널리 사용되게 되었으며, 이를 <strong>MAM-E17</strong>이라고 부른다.<span class="citation" data-cites="moore2006">[<a href="#ref-moore2006" role="doc-biblioref">6</a>]</span> MAM-E17 쥐는 안쪽 전전두엽의 용적이 줄고 뇌실이 커지며, 변연계나 대뇌피질의 parvalbumin 사이뉴런이 줄어든다. 이 쥐들은 사회성이 떨어지며, 파동전 억제나 기억 과제에서의 성적 역시 저하된다. 암페타민이나 MK-801을 투여하면 매우 민감한 반응을 보이며, 이러한 손상은 항정신병 약물에 의해 일부 경감된다.<span class="citation" data-cites="moore2006">[<a href="#ref-moore2006" role="doc-biblioref">6</a>]</span></p>
+</section>
+<section id="격리-양육-모델" class="level4" data-number="2.1.2.2">
+<h4 data-number="2.1.2.2" class="anchored" data-anchor-id="격리-양육-모델"><span class="header-section-number">2.1.2.2</span> 격리 양육 모델</h4>
+<p>어린 시절의 양육환경이 조현병 발병에 유의한 영향을 미칠 것이라 믿던 학자들은, 자신들의 이론을 지지할 모델을 찾고자 하였다. 연구자들은 태어난 지 21일된 쥐를 이후 수 주 동안 사육용 우리에 혼자 지내게 하여, 인공적인 격리 양육 모델을 만들었다. 이 쥐들은 또래가 있는 사육용 우리에 돌려보내진 후에도 정상적인 사회적 상호작용을 할 수 없었다. 더우기 PPI의 손상 등 조현병과 유사한 인지 손상을 보였는데 이는 항정신병 약물에 의해 일부 호전될 수 있었다.<span class="citation" data-cites="geyer1993 bakshi1998">[<a href="#ref-geyer1993" role="doc-biblioref">7</a>,<a href="#ref-bakshi1998" role="doc-biblioref">8</a>]</span> 흥미로운 것은 성인이 된 쥐는 일정기간 격리생활을 한 후에도, 다시 또래 쥐들과 합류한 다음에는 금방 활발한 상호작용을 한다는 것이다.<span class="citation" data-cites="wilkinson1994">[<a href="#ref-wilkinson1994" role="doc-biblioref">9</a>]</span> 한편 이러한 사회적 상호작용의 손상 정도는 종(strain)에 따라 크게 차이가 났다.<span class="citation" data-cites="varty1998">[<a href="#ref-varty1998" role="doc-biblioref">10</a>]</span> 이는 어린 시절의 양육 경험이 사회성 발달에 큰 영향을 미친다는 것을 보여줄 뿐 아니라, 그 효과가 유전적 소인과 상호작용한다는 것을 알려준다.</p>
+<p>그러나 격리 양육 모델은 조현병 뿐 아니라, 우울, 불안, 중독, 충동성 등 다양한 정신 질환의 모델로 사용되어 왔으며, 조현병에 고유한 모델이라고 말하기는 어렵다.<span class="citation" data-cites="famitafreshi2018">[<a href="#ref-famitafreshi2018" role="doc-biblioref">11</a>]</span></p>
+</section>
+<section id="산모의-면역항진-모델" class="level4 page-columns page-full" data-number="2.1.2.3">
+<h4 data-number="2.1.2.3" class="anchored" data-anchor-id="산모의-면역항진-모델"><span class="header-section-number">2.1.2.3</span> 산모의 면역항진 모델</h4>
+<p>발달과정에 있는 태아나 산모에게 가해지면 조현병 위험을 높인다고 알려진 요인으로는, 보통 세균이나 바이러스 감염, 영양 부족, 외상, 주산기 합병증 등을 거론하는데, 그 중 뺴놓을 수 없는 것이 면역학적 스트레스이다.<span class="citation" data-cites="jenkins2013">[<a href="#ref-jenkins2013" role="doc-biblioref">12</a>]</span> 면역학적 스트레스는 산전 위험요인들의 공통 분모라고도 볼 수 있는데, 왜냐하면 앞서 언급한 기타 요인들이 모두 산모의 면역체계에 혼란을 가져오기 때문이다.</p>
+<div class="page-columns page-full"><p>이러한 과정을 재현하기 위해 소위 <strong>산모의 면역항진 모델(maternal immune activation model, MIA)</strong>이 만들어졌다. 예를 들어 <s>LPS</s><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>를 임신 중인 쥐에 투여하면, 사이토카인 분비가 증가하면서 열이 나는데, 이는 태생기 세균 감염을 재현한 모델이라 할 수 있다.<span class="citation" data-cites="boksa2010">[<a href="#ref-boksa2010" role="doc-biblioref">13</a>]</span> 이 산모에게 태어난 쥐는 PPI나 작업 기억의 손상을 보이며, 암페타민에 의한 과다행동 발현에 매우 민감해진다.<span class="citation" data-cites="fortier2004">[<a href="#ref-fortier2004" role="doc-biblioref">14</a>]</span> 또한 해마와 전전두엽의 수상돌기 간극(dendritic spine) 감소나 도파민 분비 세포의 비정상적 흥분이 관찰되기도 한다.<span class="citation" data-cites="cui2009">[<a href="#ref-cui2009" role="doc-biblioref">15</a>]</span> 한편 해당 산모가 철분 결핍까지 동반하면 태아 쥐의 행동 이상이 더 심하게 나타나는데, 이는 영양 상태 불량과 세균 감염이 겹치면 조현병 위험이 배가된다는 가능성을 시사한다.<span class="citation" data-cites="harvey2014">[<a href="#ref-harvey2014" role="doc-biblioref">16</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn3" role="doc-endnote"><p><sup>3</sup>&nbsp;<strong>Lipopolysaccharide (LPS)</strong>: 그람 음성 박테리아의 세포벽 성분 중 하나이다. 전임상 실험에서 인공적으로 면역 반응을 유발하기 위해 흔히 사용된다. 세균이 발생시키는 독소는 크게 외독소(exotoxin)과 내독소(endotoxin)로 나뉜다. 전자는 세균이 합성하여 분비하는 독소이며, 후자는 세균이 용해될 때 외부로 노출되는 독소이다. LPS는 대표적인 내독소로, 세균 감염시 발열반응이나 폐혈증을 일으킨다.</p></li></div></div>
+<div class="page-columns page-full"><p>LPS가 세균 감염을 재현한 것이라면, <s>poly I:C</s><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>는 바이러스 감염의 모델이다.<span class="citation" data-cites="meyer2005">[<a href="#ref-meyer2005" role="doc-biblioref">20</a>]</span> 임신 중에 poly I:C를 투여받아 태생기에 과도한 면역기능 활성화를 겪은 쥐들은, 다양한 시험 과제에서 조현병과 유사한 인지 손상을 보인다.<span class="citation" data-cites="meyer2010">[<a href="#ref-meyer2010" role="doc-biblioref">21</a>]</span> DISC1은 고전적인 조현병 취약 유전자 중 하나로, DISC1 단백질과 복합체를 형성하는 일련의 유전자 집단은 신경발달 과정에서 중심적인 위치에 놓여있다.<span class="citation" data-cites="mackie2007">[<a href="#ref-mackie2007" role="doc-biblioref">22</a>]</span> 2011년 Pletnikov가 이끄는 연구진은 돌연변이 DISC1 유전자(mutant human DISC1, mhDISC1)를 지니고 있는 쥐를 만들어내었다. 그들은 임신 중인 쥐에게 poly I:C를 투여한 후 mhDISC1의 발현을 인위적으로 변화시켜가면서<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, DISC1과 면역 항진 상태가 어떤 식으로 상호작용하는지 살펴보았다.[<span class="citation" data-cites="abazyan2010">[<a href="#ref-abazyan2010" role="doc-biblioref">23</a>]</span>]<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> 연구자들은 똑같이 poly I:C를 투여받았다 할 지라도, 발달과정 내내 DISC1 작용이 방해를 받았던 쥐들만이 조현병 유사 증상을 나타내었고, 중간에 DISC1 활성이 회복되었던 쥐에서는 해당 증상이 나타나지 않는다는 것을 관찰하였다. 이는 면역학적 유해요인이 특정 유전자 및 해당 단백질과 상호작용하여 발병에 이르게 한다는 소위 two-hit 가설<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>을 입증한 연구가 되었다.<span class="citation" data-cites="brandon2010">[<a href="#ref-brandon2010" role="doc-biblioref">25</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn4" role="doc-endnote"><p><sup>4</sup>&nbsp;<strong>Polyriboinosinic-polyribocytidilic acid (poly I:C)</strong>: 인공적으로 합성된 이중 나선 RNA (dsRNA)이다. 원래 1960년대에 항바이러스 제제로 만들어졌으며, 암세포의 증식을 막을 수 있으리라는 기대를 받았다.<span class="citation" data-cites="adamson1969 levy1969">[<a href="#ref-adamson1969" role="doc-biblioref">17</a>,<a href="#ref-levy1969" role="doc-biblioref">18</a>]</span> 이중 나선인 dsRNA가 세포 내로 들어가 두 나선의 결합이 풀리면, 그중 하나가 정상 mRNA와 결합하여 단백질 합성을 차단하기 때문이다. 그러나 면역 세포에 있는 toll-like receptor 3 (TLR3)에 결합하여 사이토카인 분비를 자극하는 효과가 바이러스 감염 때 나타나는 현상과 흡사하다는 점이 더 주목을 받았다.<span class="citation" data-cites="caskey2011">[<a href="#ref-caskey2011" role="doc-biblioref">19</a>]</span></p>
+<p>)</p></li><li id="fn5" role="doc-endnote"><p><sup>5</sup>&nbsp;<strong>Tet-Off® double transgenic system</strong>: mhDISC1을 갖게된 쥐들은 그 상부에 tetracycline-response element (TRE)를 동시에 지니고 있기 때문에 tetracycline-transactivator (tTA)가 TRE에 붙으면 mhDISC1의 전사가 시작된다. 사료에 doxycycline (DOX)이 들어있으면 DOX가 tTA를 방해하여 mhDISC1의 전사를 차단하기 때문에, 음식에 DOX를 넣었다 뺐다 하면서 mhDISC1 발현을 조절한다.</p></li><li id="fn6" role="doc-endnote"><p><sup>6</sup>&nbsp;mhDISC1을 발현시키면 정상 DISC1의 작용을 방해하기 때문에, 말하자면 DISC1의 기능을 인위적으로 켰다 껐다 한 셈이다.</p></li><li id="fn7" role="doc-endnote"><p><sup>7</sup>&nbsp;Two-hit 혹은 multiple-hit 가설이란 유전적 변이때문에 취약한 개인이, 발달과정에서 또 다른 유해 요인에 노출되면 발병으로 이어지게 된다는 가설이다.<span class="citation" data-cites="bayer1999">[<a href="#ref-bayer1999" role="doc-biblioref">24</a>]</span></p></li></div></div>
+</section>
+</section>
+</section>
+<section id="유전적-조작-모델" class="level2 page-columns page-full" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="유전적-조작-모델"><span class="header-section-number">2.2</span> 유전적 조작 모델</h2>
+<section id="유전적-조작-모델을-만드는-기법" class="level3 page-columns page-full" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="유전적-조작-모델을-만드는-기법"><span class="header-section-number">2.2.1</span> 유전적 조작 모델을 만드는 기법</h3>
+<div class="page-columns page-full"><p>1990년대부터 활발하게 진행된 유전적 연합 연구와, 뒤이은 광범위 유전체 연합 연구(Genome-Wide Association Study, GWAS)를 통해 상당수의 유전자들이 조현병 발병 가능성을 높이는 <s>취약 유전자</s><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>인 것으로 밝혀졌다. 발견된 유전자에 인공적으로 변이를 일으키거나 knock-out 기법을 사용하면, 해당 유전자 변이가 가져오는 행동 상의 변화를 직접 관찰할 수 있을 뿐 아니라, 신경생물학적으로 어떤 경로가 영향을 받는 지 규명할 수 있다. 더 나아가 유전적 변이와 환경과의 상호 작용, 그리고 이러한 상호작용이 발병에 기여하는 몫에 대해서도 연구할 수 있다.<span class="citation" data-cites="bowling2016">[<a href="#ref-bowling2016" role="doc-biblioref">26</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn8" role="doc-endnote"><p><sup>8</sup>&nbsp;<strong>취약 유전자(susceptibility gene)</strong>: 변이가 발생하면 특정 질환에 이환될 가능성을 높이는 유전자</p></li></div></div>
+<div class="page-columns page-full"><p>전통적으로 이용되어온 <s>knock-out 모델</s><a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>은 해당 유전자의 기능 상실이 어떤 효과를 가져오는지 알려준다. 그러나 knock-out 모델은 기능 상실의 효과만을 알려줄 뿐, 해당 유전자의 역할을 알려주지는 않는다.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> 게다가 체내 모든 세포에서 해당 유전자의 기능이 차단되기 때문에, 특정 조직에서의 역할만을 꼭 집어 알아내기 어렵다. 또한 태아의 생존에 꼭 필요한 유전자라면, knock-out 모델을 만들 수 없다.</p><div class="no-row-height column-margin column-container"><li id="fn9" role="doc-endnote"><p><sup>9</sup>&nbsp;<strong>유전자 제거 모델 (knock-out model)</strong>: 실험 동물(보통 마우스를 사용한다)의 모든 조직 세포에서 표적 유전자가 돌연변이 유전자로 치환되어 기능이 차단된 모델. 제작 과정은 다음과 같다. 우선 1) 유전자 조합을 통해 표적 유전자가 돌연변이된 DNA 벡터를 만든다. 이 벡터에는 항생제 내성 유전자(marker gene)를 삽입하여 선별이 용이하도록 한다. 2) 벡터를 배아줄기세포에 감염시킨다. 3) 항생제를 투여하여 벡터가 결합된(즉 항생제 내성 유전자를 지니고 있는) 줄기세포만을 골라낸다. 이 세포들은 정상 DNA와 knock-out DNA가 혼합되어 있는 이형 접합체(heterozygote)이다. 4) 줄기세포를 임신 중인 산모의 배아에 이식시킨다. 5) 태어난 쥐들을 동종 교배시킨다. 6) 2대째 태어난 쥐들 중에서 knock-out DNA 동형 접합체(homozygote)만을 골라낸다.</p></li><li id="fn10" role="doc-endnote"><p><sup>10</sup>&nbsp;대조적으로 <strong>형질전환 모델(transgenic model)</strong>에서는 기능을 알고자 하는 인공적 염기서열을 삽입하거나, 특정 유전자를 과발현시켜 형질의 변화를 관찰한다.</p></li></div></div>
+<p>유전자 기능을 특정 조직에서만 차단하기 위해서 Cre-loxP 시스템이 대안으로 떠올랐다. 이는 표적 유전자가 돌연변이된 벡터가, 특정 조직으로 분화될 운명을 지닌 소수의 줄기세포에만 삽입될 수 있도록 유도한다.<span class="citation" data-cites="kim2018">[<a href="#ref-kim2018" role="doc-biblioref">27</a>]</span> 한편 고전적 knock-out 모델은 두 세대를 거쳐야 하기 때문에 제작하는데 수개월 이상이 걸린다. 이러한 단점을 극복하기 위해 ​​short interfering RNA’s (siRNA’s) 기술이 개발되었다.<span class="citation" data-cites="elbashir2001">[<a href="#ref-elbashir2001" role="doc-biblioref">28</a>]</span> 인공적으로 만들어진 siRNA를 벡터를 통하여 다 자란 쥐에게 주입하면, 세포 내에서 정상 mRNA의 전사를 방해하기 때문에 특정 유전자 발현을 침묵시키는 효과가 있다. 이는 주로 치료적인 목적으로 연구되고 있지만 동물 모델에도 사용될 수 있다.<span class="citation" data-cites="chang2004">[<a href="#ref-chang2004" role="doc-biblioref">29</a>]</span></p>
+<div class="page-columns page-full"><p>상기 모델들은 각자의 장단점이 존재하며 쉽게 넘어서기 어려운 한계들이 있다. 이를 넘어서며 기술적 수준에서 가장 진보된 모델은 <s>CRISPR/ Cas9</s><a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>라고 불리는 시스템이다.[<span class="citation" data-cites="doudna2014">[<a href="#ref-doudna2014" role="doc-biblioref">30</a>]</span>; <span class="citation" data-cites="caligiuri2018">[<a href="#ref-caligiuri2018" role="doc-biblioref">31</a>]</span>]<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> CRISPR/ Cas9를 이용하면 DNA의 원하는 위치에 흠집을 낼 수 있고, 이 흠집이 메워질 때 원하는 DNA 서열을 넣을 수도, 제거할 수도 있다. 보통은 서열 변화를 통해 무의미 코돈(nonsense codon)이나 종결 코돈(stop codon)을 삽입시켜 유전자 기능을 꺼버리지만, 프로모터 부위의 서열조작을 통해 특정 유전자 발현을 유도할 수도 있다. 2020년 Fujihara 등<span class="citation" data-cites="fujihara2020">[<a href="#ref-fujihara2020" role="doc-biblioref">32</a>]</span>은 CRISPR/Cas9를 이용하여 GABA 생성 단백질 유전자인 GAD1<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> 기능을 제거한 조현병의 마우스 모델을 발표한 바 있다. 앞으로 이런 종류의 동물 모델들은 정신질환 뿐 아니라 다양한 복합성 질환(complex disease) 들을 연구하는데 큰 기여를 할 것으로 기대되고 있다.<span class="citation" data-cites="baker2020">[<a href="#ref-baker2020" role="doc-biblioref">33</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn11" role="doc-endnote"><p><sup>11</sup>&nbsp;Clustered regularly interspaced short palindromic repeats (CRISPR), CRISPR-associated proteins 9 (Cas9)</p></li><li id="fn12" role="doc-endnote"><p><sup>12</sup>&nbsp;CRISPR/Cas9 기법을 개발하는데 공헌한 Emmanuelle Charpentier와 Jennifer Doudna는 2020년 노벨 화학상을 수상하였다. 연구를 시작한지 불과 10년만에 노벨상을 탔다는 것은 전례가 없다.</p></li><li id="fn13" role="doc-endnote"><p><sup>13</sup>&nbsp;Glutamate Decarboxylase 1 (GAD1): GAD67이라고도 불린다.</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/05-01/img_1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Overview of <a href="https://www.cambridge.org/core/journals/mrs-bulletin/news/crispr-implications-for-materials-science">CRISPR/Cas9 system</a></figcaption><p></p>
+</figure>
+</div>
+<p>CRISPR-Cas9 is a method of genome editing that exploits a natural DNA-snipping enzyme in bacteria, called Cas9 (CRISPR-associated protein 9) to target and edit particular genes. CRISPR stands for Clustered regularly interspaced short palindromic repeats, which are segments of DNA of a particular structure found widely in bacteria and archaea (prokaryotes). In the wild, the CRISPR-Cas9 system is part of the prokaryotic immune system, which can snip out of the genome DNA acquired from foreign sources such as phages (bacterial viruses). The same molecular machinery is now being used to enable genetic material to be cut from and pasted into the genomes of other organisms, including eukaryotes such as humans.</p>
+</section>
+<section id="다양한-유전적-조작-모델" class="level3 page-columns page-full" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="다양한-유전적-조작-모델"><span class="header-section-number">2.2.2</span> 다양한 유전적 조작 모델</h3>
+<section id="neuregulin-1-모델" class="level4 page-columns page-full" data-number="2.2.2.1">
+<h4 data-number="2.2.2.1" class="anchored" data-anchor-id="neuregulin-1-모델"><span class="header-section-number">2.2.2.1</span> Neuregulin 1 모델</h4>
+<div class="page-columns page-full"><p>Neuregulin 1(NRG1)은 <s>상피세포 성장인자</s><a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>계열에 속하는 4개의 단백질들(neuregulins) 중 하나를 발현하는 유전자이다. 주로 <s>ErbB 수용체</s><a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>에 결합하여 효과를 나타내기 때문에 보통 NGR1/ErbB를 한데 묶어서 연구한다. NRG1이 ErbB 수용체에 결합하면 타이로신 인산화 효소인 ErbB가 세포내 신호전달계의 주요 단백질들을 인산화하며, 이를 통해 Raf–MEK–ERK 그리고 PI3K–Akt–S6K 경로를 활성화한다. NRG1은 발달과정에서 축삭돌기를 정해진 위치로 유도하는 역할을 하기 때문에, 정상적인 신경발달에 결정적이다. 또한 일종의 줄기세포인 신경능선세포(neural crest cells)을 희소돌기 아교세포(oligodendrocyte)로 분화시키며, 신경세포의 축삭을 따라 감싸도록 유도한다. 더불어 슈반 세포(Schwann cell)의 증식과 분화를 도와 신경 세포의 수초화를 담당한다.<span class="citation" data-cites="taveggia2008">[<a href="#ref-taveggia2008" role="doc-biblioref">34</a>]</span> 그 밖에도 신경-근 시냅스 및 중추신경계에서 신경 세포들 간의 시냅스 형성에 일부 영향을 미친다.<span class="citation" data-cites="mei2008">[<a href="#ref-mei2008" role="doc-biblioref">35</a>]</span> 이렇듯 태생기 발달과정에서 핵심 역할을 하는 단백질이지만, 발달이 멈춘 후에도 신경 세포의 생존이나 단기/장기 신경가소성에 관여하기 때문에 기억/학습을 비롯하여 스트레스에 대한 회복탄력성을 돕는다.<span class="citation" data-cites="mei2008">[<a href="#ref-mei2008" role="doc-biblioref">35</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn14" role="doc-endnote"><p><sup>14</sup>&nbsp;<strong>상피세포 성장인자 (epidermal growth factor, EGF)</strong>: 53개의 아미노산으로 이루어진 펩타이드로 세포막에 위치한 EGF 수용체에 결합하여 세포의 증식과 분화를 자극한다. 특징적인 서열 (EGD-like domain)을 갖는 성장인자들을 EGF-family라 하는데, neuregulin 1,2,3,4는 그중 대표적인 멤버들이다.</p></li><li id="fn15" role="doc-endnote"><p><sup>15</sup>&nbsp;EGF가 결합하는 수용체들로서, 가장 먼저 발견된 EGF 수용체(EGF receptor, ErbB1)를 비롯하여 ErbB 2,3,4가 있다.</p></li></div></div>
+<p>조현병과 NRG1 유전자 연합은 적지 않은 연구에서 재확인되었으며<span class="citation" data-cites="munafò2006">[<a href="#ref-munafò2006" role="doc-biblioref">36</a>]</span>, 광범위 유전체 연합 연구에서도 유사한 결과를 얻었다.<span class="citation" data-cites="agim2013">[<a href="#ref-agim2013" role="doc-biblioref">37</a>]</span> 인간의 8번 유전자 특히 8p 영역에는 뇌 발달과 관련된 유전자들이 집중되어 있는데, NRG1 역시 이 위치에 존재한다. NRG1 내에는 다수의 유전적 표지자가 있지만 특히 SNP8NRG243177(rs6994992)가 위험 변이로 지목되고 있다. 여기에 변이가 있으면 전두엽, 측두엽 활성에 문제가 생기며, 정신증상의 발생과 함께 낮은 지능과도 연관이 있다.<span class="citation" data-cites="hall2006">[<a href="#ref-hall2006" role="doc-biblioref">38</a>]</span></p>
+<div class="page-columns page-full"><p>NRG1 유전자가 완전히 제거되면 생존할 수 없기 때문에, 동물 모델은 한 쌍의 염색체 중 하나에만 NRG1 돌연변이가 발생한 이형 접합체(heterozygote)이다. 이 쥐들은 PPI, 잠재적 억제(latent inhibition) 등 신경생리학적 이상과 함께 비정상적인 사회적 행동을 보인다.<span class="citation" data-cites="karl2013">[<a href="#ref-karl2013" role="doc-biblioref">39</a>]</span> 반대로 조현병 환자에서 neuregulin 농도가 높다는 관찰에 기반하여, NRG1 유전자를 과다 발현시킨 동물 모델도 있다. 이 역시 진전이나 운동 기능 이상, PPI, 놀람 반응 등에 이상을 보이기 때문에, 단순한 기능 상실보다는 <s>유전자 용량</s><a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>이 조현병 발병 위험과 관계된 것으로 보인다.<span class="citation" data-cites="deakin2009">[<a href="#ref-deakin2009" role="doc-biblioref">40</a>]</span> 후천적으로 doxycycline을 투여하여 과다 발현을 정상화시키면 이러한 소견이 역전되는 것으로 보아<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>, 발달 과정에서의 이상이라도 치료를 통해 어느 정도 호전시킬 수 있을 것으로 보인다.<span class="citation" data-cites="yin2013">[<a href="#ref-yin2013" role="doc-biblioref">42</a>]</span> 실제로 동물 모델에 클로자핀을 비롯한 항정신병 약물을 동시에 투여하면, 행동 이상이 일부 상쇄된다.<span class="citation" data-cites="rimer2005">[<a href="#ref-rimer2005" role="doc-biblioref">43</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn16" role="doc-endnote"><p><sup>16</sup>&nbsp;<strong>유전자 용량 (gene dosage)</strong>: 유전체에서 특정한 유전자가 몇번이나 반복되어있느냐를 나타내는 수치. 이 수치가 높을수록 해당 유전자 발현 단백질 양이 많아진다.</p></li><li id="fn17" role="doc-endnote"><p><sup>17</sup>&nbsp;Doxycycline을 투여하면 NRG1 유전자 발현이 억제되면서 neuregulin 생성이 멈춘다.<span class="citation" data-cites="marín2013">[<a href="#ref-marín2013" role="doc-biblioref">41</a>]</span></p></li></div></div>
+</section>
+<section id="disrupted-in-schizophrenia-모델" class="level4 page-columns page-full" data-number="2.2.2.2">
+<h4 data-number="2.2.2.2" class="anchored" data-anchor-id="disrupted-in-schizophrenia-모델"><span class="header-section-number">2.2.2.2</span> Disrupted-in-Schizophrenia 모델</h4>
+<div class="page-columns page-full"><p>Disrupted-in-Schizophrenia (DISC)는 다수의 조현병 환자가 포함된 <s>거대 가계</s><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a>를 대상으로 한 유전적 연계연구(genetic linkage study)를 통해 발견되었다.<span class="citation" data-cites="millar2000">[<a href="#ref-millar2000" role="doc-biblioref">45</a>]</span> 염색체 1번에 위치하며 DISC1과 DISC2 두 개의 종류가 있다. DISC1에 의해 발현된 단백질은 그 자체가 효소 활성을 지니고 있지 않지만, 소위 <s>비계 단백질</s><a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>로서 다수의 단백질과 결합하며, 이들의 기능이 안정되게 발휘하도록 돕는다. DISC1과 결합하는 단백질은 100여개가 넘을 정도로 다양한데, 그 중에는 도파민 신호전달과 연관이 있는 여러 효소들이 포함된다. 특히 cAMP-dependent phosphodiesterase 4 (PDE4), glycogen synthase kinase 3β (GSK3β), Kalirin-7, 그리고 pericentriolar material 1 (PCM1)이 포함된 경로는 신경세포의 이동과 증식, 분화, 시냅스 기능 등과 깊은 연관이 있다.<span class="citation" data-cites="bradshaw2012">[<a href="#ref-bradshaw2012" role="doc-biblioref">46</a>]</span> 한편 DISC1은 직접 D<sub>2</sub> 수용체와 결합하여 복합체를 만들기도 하며, GSK3β를 통해 하부 경로에 신호를 전달한다.<span class="citation" data-cites="su2014">[<a href="#ref-su2014" role="doc-biblioref">47</a>]</span> 이와는 대조적으로 DISC2는 단백질로 번역되지 않는 비코딩 RNA (non-coding RNA)를 만들어낸다. DISC2 RNA의 기능은 베일에 싸여 있지만, 아마도 DISC1의 기능을 보조할 것으로 여겨진다.</p><div class="no-row-height column-margin column-container"><li id="fn18" role="doc-endnote"><p><sup>18</sup>&nbsp;1990년 영국의 연구진은 스코틀랜드 에딘버러에서 수집된 MRC Cytogenetics Registry 자료를 검토하던 중 77명의 가족 구성원중 23명이 정신질환을 앓고 있는 한 가계(pedigree)를 발견하였다.<span class="citation" data-cites="stclair1990">[<a href="#ref-stclair1990" role="doc-biblioref">44</a>]</span> 연구진들이 처음 발견한 것은 1번 유전자 1q42.2 부위의 균형 상호전위(balanced translocation)이었고, 후속 연구를 통해 이 위치에서 DISC1,2 유전자가 발견되었다. 이 가계는 속칭 <strong>“거대 스코틀랜드 가계 (a large Scottish pedigree)”</strong>라고 불리우며, 조현병 이외에도 다양한 정신질환에 이환된 구성원들이 있었기 때문에 각종 질환의 유전적 요인을 연구하는데 사용되었다.</p></li><li id="fn19" role="doc-endnote"><p><sup>19</sup>&nbsp;<strong>비계 단백질 (scaffold protein)</strong>: 각종 신호 단백질들을 한데 묶어서 덩어리를 만들어주는 단백질로서, 신호 전달 경로를 이루는 단백질이 밀집되면서 신호 전달이 효율적으로 이루어지도록 돕는다.</p></li></div></div>
+<div class="page-columns page-full"><p>2000년대 초에 처음 학계에 알려질 때만 해도 스코틀랜드 가계와 미국인 가계에서 독립적으로 조현병과 연계되어 있는 것이 확인되었기 때문에, DISC는 조현병의 대표적인 취약 유전자로 인정받았다. 하지만 주요 단일염기다형성(SNP)인 rs821597과 rs821616에 대해 집중적인 연합 연구가 행해졌음에도 불구하고, 기대했던 결과가 얻어지지 않아 과연 조현병의 취약 유전자가 맞는지 의문시되기도 하였다. 그래도 최근의 메타 분석 결과에서는 약하게나마 조현병의 발병 위험을 높이는 것으로 나타났다.<span class="citation" data-cites="sullivan2013 ma2018">[<a href="#ref-sullivan2013" role="doc-biblioref">48</a>,<a href="#ref-ma2018" role="doc-biblioref">49</a>]</span> 한편 광범위 유전체 연합 연구에서는 DISC1과 함께 <s>상호작용체</s><a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a>를 구성하는 유전자 세트 전체가 조현병과 깊은 관련이 있는 것으로 나타났다.<span class="citation" data-cites="facal2019">[<a href="#ref-facal2019" role="doc-biblioref">50</a>]</span> DISC1 자체의 변이가 아니더라도, DISC1이 참여하는 경로 어딘가에 문제가 생기면 조현병 발병 위험이 커지는 것 같다.</p><div class="no-row-height column-margin column-container"><li id="fn20" role="doc-endnote"><p><sup>20</sup>&nbsp;<strong>상호작용체 (interactome)</strong>: 세포 내에서 서로 긴밀하게 상호작용하는 물질들과 그들 사이의 관계를 가리킨다. 대표적인 예는 단백질 상호작용 네트워크(protein-protein interaction network, PPI network)이다.</p></li></div></div>
+<div class="page-columns page-full"><p>현재까지 DISC1과 관련하여 다양한 knock-out 혹은 형질전환(transgenic) 모델이 만들어졌다. 유전자 기능이 차단된 쥐들은 충동성과 함께 조현병에서 특징적인 인지기능 손상을 보인다. 그 중 작업 기억의 손상은 해마의 신경병변과 함께 나타나는데, 이 역시 비정상적 신경발달 때문으로 생각된다.<span class="citation" data-cites="koike2006">[<a href="#ref-koike2006" role="doc-biblioref">51</a>]</span> 특정 뇌 조직에서만 DISC1의 발현 정도를 변화시킨 모델도 있는데, 이 쥐들은 뇌실이 크고, 과다 행동과 함께 사회적 행동의 손상, 공간 기억력 손상을 보였다.<span class="citation" data-cites="pletnikov2008">[<a href="#ref-pletnikov2008" role="doc-biblioref">52</a>]</span> 정상 단백질의 활동을 방해하는 <s>변이(dominant-negative form)</s><a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a> DISC1을 생성도록 유도한 동물 모델 역시 뇌실 확장과 함께 유사한 행동 변화를 보였다.<span class="citation" data-cites="hikida2007">[<a href="#ref-hikida2007" role="doc-biblioref">53</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn21" role="doc-endnote"><p><sup>21</sup>&nbsp;<strong>Dominant negative form</strong>: 돌연변이를 일으킨 유전자에서 생성된 단백질이 정상 단백질의 기능을 억제하는 모델. 유도된 단백질은 생체 경로(biological pathway)에서 정상 단백질이 차지하고 있는 위치에 경쟁적으로 결합함으로써 길항작용을 일으킨다.</p></li></div></div>
+<p>연구자들은 제작된 동물 모델을 이용하여 신경발달 과정에서 DISC1의 역할을 꾸준히 연구해왔다. 태생기 혹은 출산 후 짧은 기간 동안 DISC1 발현을 변화시키면, 해마의 치아이랑(dentate gyrus)을 구성하는 신경세포의 형태가 달라진다. 이들 신경세포는 흥분성이나 이동 패턴도 정상에서 벗어난다.<span class="citation" data-cites="duan2007">[<a href="#ref-duan2007" role="doc-biblioref">54</a>]</span> 이러한 연구 성과를 바탕으로 새로운 치료 전략이 제시되기도 하였다.<span class="citation" data-cites="sawa2016">[<a href="#ref-sawa2016" role="doc-biblioref">55</a>]</span></p>
+</section>
+<section id="copy-number-variants-모델" class="level4 page-columns page-full" data-number="2.2.2.3">
+<h4 data-number="2.2.2.3" class="anchored" data-anchor-id="copy-number-variants-모델"><span class="header-section-number">2.2.2.3</span> Copy number variants 모델</h4>
+<div class="page-columns page-full"><p>인간 게놈의 상당 부분은 복제 현상을 통해, 동일한 염기 서열이 여러번 반복된다. 짧은 서열이 반복되기도 하지만, 유전자 하나가 통째로 포함될 정도의 긴 서열이 반복되기도 한다. 질병과 관련되어 중요한 반복은 유전자 내의 일부 서열이 반복되는 것이다. 이 복제수가 개인마다 다르면, 이를 <strong>유전자 복제수 변이(copy number variation, CNV)</strong>라고 한다. 복제수 변이가 특정 질병의 위험을 높이기도 하는데, 대표적인 예가 헌팅턴 무도병<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a>이다.</p><div class="no-row-height column-margin column-container"><li id="fn22" role="doc-endnote"><p><sup>22</sup>&nbsp;<strong>헌팅턴 무도병 (Huntington’s chorea)</strong>: Huntingtin 단백질을 발현하는 유전자(HTT)에 CAG 염기가 지나치게 반복되면 생성된 단백질에 지나치게 글루타메이트가 많아지면서 기능을 못하게 된다. 정상인은 6~35 번 반복되는 데 비해, 36번이 넘으면 발병 위험이 급격히 높아진다.</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/05-02/CNV-2.jpeg" class="img-fluid figure-img" width="352"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">유전자 복제수 변이 (copy number variation)의 개념. 그림에서 C라고 표시된 유전자의 개수는 결실(왼쪽)에 의해 줄어들기도 하고, 중복(오른쪽)에 의해 늘어나기도 한다.</figcaption><p></p>
+</figure>
+</div>
+<div class="page-columns page-full"><p>조현병의 위험을 변화시킨다고 알려진 CNV 부위는 22q11.2, 15q13.3, 1q21, NRXN1, 3q29, 7q11.23 그리고 16p11.2이 있으며, 이중 한 두개를 제외하고는 모두 동물 모델이 만들어졌다.<span class="citation" data-cites="forsingdal2019">[<a href="#ref-forsingdal2019" role="doc-biblioref">56</a>]</span> 22q11.2의 일부 염기서열이 결실되어 복제수가 적어지는 <s>DiGeorge 증후군</s><a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>은 가장 많이 알려진 변이로, 이 변이를 갖는 환자는 조현병 발병 위험이 25~30배 높아진다.<span class="citation" data-cites="schneider2014">[<a href="#ref-schneider2014" role="doc-biblioref">57</a>]</span> 2p16.3 부위에 <s>미세결실</s><a href="#fn24" class="footnote-ref" id="fnref24" role="doc-noteref"><sup>24</sup></a>이 있으면 시냅스 접착(synapse adhesion) 단백질인 Neurexin-1α와 -1β를 발현하는 NRXN1 유전자의 서열이 바뀌는데, 이 변이를 지닌 환자 역시 조현병 발병 위험이 9배 정도 증가한다.<span class="citation" data-cites="rujescu2009">[<a href="#ref-rujescu2009" role="doc-biblioref">58</a>]</span> 또 다른 예는 15q13.3의 미세결실인데, 이 부위에는 니코틴성 아세틸콜린 수용체가 있으며, 미세결실을 지닌 쥐는 좀더 공격적 반응을 보인다.<span class="citation" data-cites="lewis2018">[<a href="#ref-lewis2018" role="doc-biblioref">59</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn23" role="doc-endnote"><p><sup>23</sup>&nbsp;<strong>DiGeorge 증후군 (DiGeorge syndrome)</strong>: 22번 염색체의 부분 결손으로 인해서 생기는 질환. 나중에 갑상선과 부갑상선으로 발달하는 3번째, 4번째 인두낭(pharyngeal pouch)의 형성 부준이 특징적이다. 심장 결함(cardiac defects), 비정상 얼굴 모양(abnormal facial features), 흉선 발육 부전(thymus underdevelopment), 구개열(cleft palate), 저칼슘혈증(hypocalcemia)의 머리 글자를 따서 CATCH-22로 부르기도 한다.</p>
+<p>선천성 질환으로 3,4 인두낭에 서 유래되는 흉선과 부갑상선의 형성 부전을 보이며, 흔히 대동맥궁의 기형과 선천성 심질환, 안면 기형 등 을 동반한다</p></li><li id="fn24" role="doc-endnote"><p><sup>24</sup>&nbsp;<strong>미세결실 (microdeletion)</strong>: 염색체의 일부가 결실되는 것을 말하는데, 결실된 크기가 5Mb를 넘지 않기 때문에 통상적인 염색체 검사로는 현미경으로도 보이지 않는다. 이를 관찰하기 위해서는 대신 fluorescence in situ hybridization (FISH)와 같은 염색법을 사용해야 한다. 염색체 결실때문에 생기는 대표적인 질환으로는 DiGeorge 증후군을 비롯하여 Prader-Willi 증후군, neurofibromatosis 등이 있다.</p></li></div></div>
+</section>
+<section id="dysbindin-모델" class="level4 page-columns page-full" data-number="2.2.2.4">
+<h4 data-number="2.2.2.4" class="anchored" data-anchor-id="dysbindin-모델"><span class="header-section-number">2.2.2.4</span> Dysbindin 모델</h4>
+<div class="page-columns page-full"><p>Dystrobrevin-binding protein 1 (Dysbindin)은 주로 해마와 소뇌의 <s>이끼 섬유</s><a href="#fn25" class="footnote-ref" id="fnref25" role="doc-noteref"><sup>25</sup></a> 신경세포의 시냅스 말단에서 주로 발견되는 단백질이다.<span class="citation" data-cites="benson2001">[<a href="#ref-benson2001" role="doc-biblioref">60</a>]</span> 2002년 Straub 등<span class="citation" data-cites="straub2002">[<a href="#ref-straub2002" role="doc-biblioref">61</a>]</span>이 행한 가족기반 유전적 연합연구에서 조현병과의 강한 연관성이 밝혀진 이후 학계의 주목을 받아왔다. Dysbindin은 소포의 생성 및 분출(exocytosis), 재활용에 관여하며, 이를 통해 도파민을 비롯한 신호전달물질이 시냅스 간극으로 분비되는 양을 조절한다. DTNBP1의 변이는 NMDA 혹은 대사성 글루타메이트 수용체를 통한 신호전달을 방해하기 때문에, 조현병의 인지 증상과 연관이 있을 것으로 예상된다.<span class="citation" data-cites="winship2019">[<a href="#ref-winship2019" role="doc-biblioref">62</a>]</span> 게다가 조현병 환자의 해마나 전전두역에서 dysbindin이 발현되는 양이 줄어들어있다는 증거가 있다.<span class="citation" data-cites="weickert2008">[<a href="#ref-weickert2008" role="doc-biblioref">63</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn25" role="doc-endnote"><p><sup>25</sup>&nbsp;<strong>이끼 섬유 (mossy fiber)</strong>: 대뇌 혹은 뇌간에서 입력되는 정보는 이끼 섬유와 오름 섬유(climbing fiber)를 통해 소뇌 피질로 전달된다. 이끼섬유는 뇌교 (pons)를 통해서 들어오는 정보를 전달하는 섬유로서 소뇌에 몸 감각, 각성, 평형, 대뇌 피질의 운동정보를 전달한다.</p></li></div></div>
+<p>Dysbindin은 DTNBP1 유전자에 의해 코딩되는데, DTNBP1이 자연적으로 돌연변이를 일으킨 “<strong>sandy (sdy)“</strong> 마우스를 C57BL/6J 종과 역교배하여 <strong>“sdy/B6”</strong>라는 동물 모델을 만든다.<span class="citation" data-cites="talbot2009">[<a href="#ref-talbot2009" role="doc-biblioref">64</a>]</span> Sdy/B6 마우스는 과다한 운동성을 보이며 암페타민에 높은 민감성, 충동적이고 강박적인 행동을 보이는 등 기타 조현병 동물 모델과 유사한 양상을 보인다.<span class="citation" data-cites="bhardwaj2009 cox2009">[<a href="#ref-bhardwaj2009" role="doc-biblioref">65</a>,<a href="#ref-cox2009" role="doc-biblioref">66</a>]</span> 또한 작업 기억 및 장기 기억의 손상과 같은 인지 증상도 동반된다.<span class="citation" data-cites="takao2008">[<a href="#ref-takao2008" role="doc-biblioref">67</a>]</span></p>
+<div class="page-columns page-full"><p>Sdy/B6 모델은 새로운 발병 기전 발굴이나 신약 개발에 활발하게 사용되고 있다. Dysbindin은 일종의 <s>허브 단백질</s><a href="#fn26" class="footnote-ref" id="fnref26" role="doc-noteref"><sup>26</sup></a>로서, dystrophin-associated protein complex (DPC)와 BLOC-1 (biogenesis of lysosome-related organelles complex-1)이라는 단백질 복합체의 구조를 안정화시키는 역할을 한다.<span class="citation" data-cites="nazarian2006 lee2012">[<a href="#ref-nazarian2006" role="doc-biblioref">68</a>,<a href="#ref-lee2012" role="doc-biblioref">69</a>]</span> DTNBP1에 변이가 있으면 DPC와 BLOC-1 복합체의 기능이 저하되기 때문에, sdy/B6는 dysbindin 자체 뿐 아니라 결합체에 포함되는 또 다른 단백질들의 기능적 중요성을 파악하는데도 유용하다.<span class="citation" data-cites="morris2008 guo2009">[<a href="#ref-morris2008" role="doc-biblioref">70</a>,<a href="#ref-guo2009" role="doc-biblioref">71</a>]</span> 한편 sdy/B6 마우스에 대사성 글루타민 수용체의 다른 자리 입체성 조절제(mGluR5 modulator)인 CDPPB를 투여하면, 공간적 기억력 저하가 회복되는 양상을 보인다.<span class="citation" data-cites="bhardwaj2015">[<a href="#ref-bhardwaj2015" role="doc-biblioref">72</a>]</span> <s>mGluR5 조절제</s><a href="#fn27" class="footnote-ref" id="fnref27" role="doc-noteref"><sup>27</sup></a> 들은 새로운 개념의 항정신병 약물로 개발 중에 있다.</p><div class="no-row-height column-margin column-container"><li id="fn26" role="doc-endnote"><p><sup>26</sup>&nbsp;<strong>허브 단백질 (hub protein)</strong>: 단백질 상호작용 네트워크(protein interaction network)의 중심 부위에 위치하면서, 평범한 단백질에 비해 훨씬 많은 수의 단백질과 결합할 수 있는 단백질. 그 자체가 기능을 한다기 보다는, 기능을 발휘하는 단백질들을 한데 모아 기능복합체를 형성하게 함으로써 복잡한 기능을 발휘하도록 유도한다. 비계 단백질과 유사한 면이 있지만 훨씬 규모가 큰 네트워크를 이룬다.</p></li><li id="fn27" role="doc-endnote"><p><sup>27</sup>&nbsp;mGluR5 조절제는 원래 조현병보다는 자폐증 치료를 목적으로 좀더 활발하게 연구되고 왔다. mGluR5의 활성을 높이는(positive) 조절제와 낮추는(negative) 조절제가 있는데, 자폐증 치료에는 둘 다 효과가 있는 것으로 보인다. mGluR5는 NMDA 활성을 촉진시키는 효과가 있기 때문에, 조현병 치료제로는 postive allosteric modulator (PAM) 쪽이 더 전망이 밝다. 하지만 PAM은 경련을 유발하는 부작용이 있기 때문에, NMDA 활성을 너무 자극하지 않으면서 mGluR5를 활성화시키는 VU0409551와 같은 약물이 개발되고 있다.<span class="citation" data-cites="nicoletti2019">[<a href="#ref-nicoletti2019" role="doc-biblioref">73</a>]</span></p></li></div></div>
+</section>
+<section id="reelin-모델" class="level4 page-columns page-full" data-number="2.2.2.5">
+<h4 data-number="2.2.2.5" class="anchored" data-anchor-id="reelin-모델"><span class="header-section-number">2.2.2.5</span> Reelin 모델</h4>
+<div class="page-columns page-full"><p>Reelin은 큰 분자량의 <s>세포외 기질 당단백질</s><a href="#fn28" class="footnote-ref" id="fnref28" role="doc-noteref"><sup>28</sup></a> 중 하나로, 발달 과정에 있느냐 아니냐에 따라 서로 다른 기능을 한다. GABA를 분비하는 신경세포에 함께 분포하며, 발달 과정 중의 뇌에서는 신경세포가 정밀한 위치로 이동하는 것을 제어하며, 성인의 뇌에서는 장기 강화(long-term potentiation)와 신경가소성(neuroplasticity)에 기여한다. 따라서 조현병의 신경발달학적 가설을 이해할 때 중요한 위치에 놓여있는 단백질로서, 조현병 뿐 아니라 다양한 정신질환과 관련되어 연구되고 있다.<span class="citation" data-cites="ishii2016">[<a href="#ref-ishii2016" role="doc-biblioref">74</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn28" role="doc-endnote"><p><sup>28</sup>&nbsp;<strong>세포외 기질 당단백질 (extracellular matrix glycoprotein)</strong>: 세포와 세포 사이를 메꾸고 있는 세포외 기질(extracellular matrix) 혹은 결합 조직(connective tissue)을 지탱하는 단백질. 구조적 역할 뿐 아니라 다양한 생화학적 반응이 일어날 수 있는 토대를 마련해준다. 콜라겐(collagen)이 주된 성분으로 여기에 다양한 효소들과 당단백질(glycoprotein), 칼슘 등 미네랄이 덧붙여져 있다. 당단백은 아미노산에 탄수화물 곁가지가 붙어있다.</p></li></div></div>
+<p>Reelin 유전자가 knock-out 된 마우스를 <strong>“reeler 마우스”</strong>라고 부르며 유용한 동물 모델로 사용된다. 이 모델은 사실 reelin 유전자(RELN)가 발견되기도 전인 1948년에 우연히 돌연변이 종으로서 발견되었다.<span class="citation" data-cites="falconer1951">[<a href="#ref-falconer1951" role="doc-biblioref">75</a>]</span> 이 돌연변이를 지닌 마우스는 특히 소뇌 피질의 층판 구조(laminar organization)가 와해된다는 것이 알려지면서 갑자기 주목받기 시작하였다.<span class="citation" data-cites="hamburgh1963">[<a href="#ref-hamburgh1963" role="doc-biblioref">76</a>]</span> 인간에서도 유전적 연합 연구를 통해 Reelin 유전자 변이가 조현병의 위험성을 높인다는 것이 보고되었으며<span class="citation" data-cites="li2013">[<a href="#ref-li2013" role="doc-biblioref">77</a>]</span>, 조현병 및 양극성 장애 환자에서 단백질 양이 떨어져 있고 약물 치료를 통해 정상화된다는 것이 관찰되었다.<span class="citation" data-cites="impagnatiello1998 fatemi2000 yin2020">[<a href="#ref-impagnatiello1998" role="doc-biblioref">78</a>–<a href="#ref-yin2020" role="doc-biblioref">80</a>]</span></p>
+<p>Reeler 마우스 모델은 매우 다양하다. 고전적인 동형접합체 모델만 해도 <strong>Jackson reeler</strong>와 <strong>Orleans reeler</strong>가 있으며, 이형접합체 reeler 마우스(heterozygous reeler mice, HRM) 뿐 아니라 reelin을 과다발현하는 모델도 있다.<span class="citation" data-cites="lossi2019">[<a href="#ref-lossi2019" role="doc-biblioref">81</a>]</span> 이들 모델들은 특히 정상적 인지기능의 발달과정, 그 중에서도 태생기의 환경적 요인이 후성유전적으로 신경발달에 영향을 끼치는 기전을 밝히는데 기여해왔다.<span class="citation" data-cites="iafrati2014 negrónoyarzo2016">[<a href="#ref-iafrati2014" role="doc-biblioref">82</a>,<a href="#ref-negrónoyarzo2016" role="doc-biblioref">83</a>]</span> 신약 개발에도 활발하게 이용되고 있으며, 조현병 뿐 아니라 우울증, 치매 치료제 개발에도 이용되고 있다.<span class="citation" data-cites="costa2002 kang2020 brymer2020">[<a href="#ref-costa2002" role="doc-biblioref">84</a>–<a href="#ref-brymer2020" role="doc-biblioref">86</a>]</span></p>
+</section>
+</section>
+</section>
+<section id="부작용에-대한-동물-모델" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="부작용에-대한-동물-모델"><span class="header-section-number">2.3</span> 부작용에 대한 동물 모델</h2>
+<p>조현병의 증상이나 발병 기전을 재현하기 위한 모델만 있는 것이 아니라, 약물 부작용을 재현하기 위한 모델도 존재한다. 과거에는 부작용을 일종의 필요악으로 여겨 부작용 모델이나 효과 판정 모델이나 마찬가지라고 인식하기도 했으나, 이제는 더 이상 그렇지 않다. 새로 개발되는 약물은 효과 판정 모델에서 우수한 효과를 보여야 할 뿐 아니라, 부작용 모델에서 안전성이 확립되어야 다음 연구단계로 넘어갈 수 있다.</p>
+<section id="강직증-검사" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="강직증-검사"><span class="header-section-number">2.3.1</span> 강직증 검사</h3>
+<p>시험자가 억지로 실험동물의 팔다리를 구부려 불편한 자세를 취하도록 하면, 실험동물은 이내 발버둥치며 편한 자세로 돌아가려 한다. 만약 실험동물이 신속히 편안한 자세를 회복하지 못하면, 강직증이 있는 것으로 판단한다. 대표적인 예가 <strong>평행 막대 검사(bar test)</strong>이다. 평행으로 가로놓여진 막대 위에 쥐의 앞발만 얹어놓으면, 정상적인 쥐는 발을 내려 평지로 내려오거나, 아예 막대 위로 올라선다. 여기까지 걸리는 시간이 길면 길수록 강직증이 심한 것으로 추정한다.<span class="citation" data-cites="kuschinsky1972">[<a href="#ref-kuschinsky1972" role="doc-biblioref">87</a>]</span> 보편적으로 가장 많이 사용되지만, 절차가 표준화되어 있는 것도 아니고 절단점(cut-off point)이 정해져 있는 것도 아니다.<span class="citation" data-cites="sanberg1988">[<a href="#ref-sanberg1988" role="doc-biblioref">88</a>]</span> 유사한 검사로 <strong>wire grid test (혹은 wire hang test)</strong>라는 것이 있는데, 여기서는 수평에서 50도로 기울인 철망에 쥐의 앞다리를 양옆으로 벌린 채 올려놓는다. 역시 쥐가 이 포즈를 그대로 유지하는 시간을 강직증의 정도로 추정한다.<span class="citation" data-cites="fuenmayor1979">[<a href="#ref-fuenmayor1979" role="doc-biblioref">89</a>]</span></p>
+<p>정형 약물의 경우에는 용량과의 관계가 비교적 분명하여 약물의 치료적 창(therapeutic window)를 가늠하는데 유용하다.<span class="citation" data-cites="hoffman1995">[<a href="#ref-hoffman1995" role="doc-biblioref">90</a>]</span> 평행 막대의 높이나 wire grid의 각도 등을 조절함으로써 검사의 민감도를 변화시킬 수 있으며, 최근에는 센서에 의한 자동화/정량화도 가능해졌다.<span class="citation" data-cites="bricker2014">[<a href="#ref-bricker2014" role="doc-biblioref">91</a>]</span></p>
+</section>
+<section id="vacuous-chewing-movements-test" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="vacuous-chewing-movements-test"><span class="header-section-number">2.3.2</span> Vacuous chewing movements test</h3>
+<p>쥐에게 장기간 항정신병 약물을 투여하면 목적없이 입을 세로로 벌리고 간혹 혀를 내미는 현상을 보이는데, 이를 <strong>vacuous chewing movement (VCM)</strong>라고 부른다. VCM은 정상적으로는 나타나지 않으며, 유독 정형 약물 투여 후 많이 발생하고, 약을 끊은 후에도 잘 없어지지 않기 때문에 흔히 지연운동 장애(tardive dyskinesia, TD)의 동물모델로 사용된다.<span class="citation" data-cites="guzen2019">[<a href="#ref-guzen2019" role="doc-biblioref">92</a>]</span> 물론 약물 투여 후 3-4주가 지나지 않아 나타나기 시작하고, 항콜린제에 반응하는 등 추체외로 증후군과 구분이 석연치 않은 면이 있지만, 현재로서는 이보다 더 나은 모델이 나오지 않았다.</p>
+<p><img src="Images/05-02/img_2.png" class="img-fluid" width="458" alt="Vacuous chewing movement">​</p>
+<p>Vacuous chewing movement <span class="citation" data-cites="guzen2019">[<a href="#ref-guzen2019" role="doc-biblioref">92</a>]</span></p>
+</section>
+</section>
+<section id="동물-모델의-유용성" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="동물-모델의-유용성"><span class="header-section-number">2.4</span> 동물 모델의 유용성</h2>
+<p>전임상적 동물 모델이 아무리 발전한다고 해도, 인간과 동물의 병리현상이 전적으로 동일할 수는 없다. 게다가 현재 사용되는 대부분의 동물 모델은 설치류를 대상으로 한 것으로 인간과의 차이가 예상보다 크다. 영장류 모델을 사용하는 것이 보다 이상적이겠지만, 비용이나 시간, 그리고 윤리적 측면에서 현실적인 대안이 되지 못한다. 또한 조현병이라는 질환 자체가 너무나 이질적인 임상 양상의 집합이기 때문에, 단일한 모델이 조현병 전체를 대표한다고 보기도 힘들다. 아무리 이상적인 동물 모델이라고 해도 조현병 전체의 극히 단편적인 일부분만을 반영할 뿐이다.</p>
+<p>이런 근본적 한계에도 불구하고 동물 모델을 통한 연구가 거듭되다보니, 겉으로는 무척이나 정교해보이지만 안면 타당도(face validity)가 떨어지는 모델들이 양산되고 있다. 게다가 각각의 질병을 연구하는 학자들은, 동일한 동물 모델을 자신들이 연구하는 질병을 대표하는 것으로 아전인수격으로 해석하려고 한다. 예를 들어 사회적 상호작용 감소 모델에 대해서 조현병을 연구하는 학자는 이를 <strong>음성 증상</strong>으로 해석하지만, 불안 장애를 연구하는 학자는 <strong>사회 공포증</strong>으로, 자폐증을 연구하는 학자는 <strong>사회적 지능의 손상</strong>으로 해석한다. 이러한 모호성은 약물의 효능을 평가하는 과정에도 영향을 끼친다. 음성 증상을 반영하는 동물 모델에서 유의한 효과를 보인 물질이라 하더라도, 이 약물을 항정신병 약물로 개발해야할지 항우울제로 개발해야할지 자 구분이 되지 않는다.<span class="citation" data-cites="treadway2013">[<a href="#ref-treadway2013" role="doc-biblioref">93</a>]</span> 자칫하면 이론적 타당성이 아니라, 시장성을 근거로 개발 방향이 결정될 수도 있다.</p>
+<p>이러한 혼란은 조현병의 인지증상 개선제 개발에서도 여실히 드러난다. 정신병리학적으로 조현병 환자가 보이는 인지 저하와 치매 환자가 보이는 인지 저하를 명확히 구분하기 어렵다.<span class="citation" data-cites="ting2010">[<a href="#ref-ting2010" role="doc-biblioref">94</a>]</span> 따라서 Morris water test 수행성적을 올리는 약물이라고 해서 조현병의 인지 증상에 과연 도움이 될 지 확신하기 어렵다. 현재까지는 <strong>“치매는 아세틸콜린 활성, 조현병은 도파민 활성”</strong>이라는 단순한 이분법만 있을 뿐 더 정교한 이론은 만들어져있지 않다. 그러다보니, 조현병의 인지 증상을 타겟으로 개발된 어떤 약물도 일반적 비정형 약물의 치료 효과를 넘어서지 못하고 있다.<span class="citation" data-cites="barak2011">[<a href="#ref-barak2011" role="doc-biblioref">95</a>]</span></p>
+<p>한편 기존 모델에 적용되어 왔던 뿌리깊은 고정관념이 새로운 모델 개발을 가로막기도 한다. 예를 들어 MK-801/PCP 모델은 전통적인 조현병 모델로 타당성을 인정받아 왔으며, 이 모델을 통해 NMDA 수용체 차단은 조현병의 중요한 발병 기전 중 하나로 자리잡았다. 그러나 최근 S-ketamine이 우울증 치료의 새로운 패러다임으로 등장하면서, ketamine을 비롯한 사이키델릭 약물들이 심한 우울이나 음성 증상을 보이는 조현병 환자에게 안전하게 사용될 수도 있다는 견해가 나오기 시작하였다.<span class="citation" data-cites="brown2017 bartova2018 veraart2021">[<a href="#ref-brown2017" role="doc-biblioref">96</a>–<a href="#ref-veraart2021" role="doc-biblioref">98</a>]</span> 이는 전과 같으면 상상도 할 수 없는 이단적 견해로, 거의 대부분의 정신과 의사는 조현병 환자에게 ketamine을 사용하는 것은 위험하다고 생각할 것이다.<span class="citation" data-cites="beck2020">[<a href="#ref-beck2020" role="doc-biblioref">99</a>]</span> 그러나 NMDA 수용체를 차단하여 항치매 효과를 얻는 memantine의 경우를 생각해볼 때, 한번쯤 기존 관념의 굴레를 벗어던지는 것이 필요할 때도 있을 것이다.</p>
+<p>혹자는 현재까지의 항정신병 약물 개발은 <strong>“항정신증(anti-psychotic)”</strong> 약물 개발이었을 뿐, <strong>“항조현병(anti-schizophrenic)”</strong> 약물 개발은 아니었다고 못 박는다.<span class="citation" data-cites="sotiropoulos2021">[<a href="#ref-sotiropoulos2021" role="doc-biblioref">100</a>]</span> 그럴 수 밖에 없는 것이 현존하는 동물 모델들이 대부분 조현병 모델이라기 보다는 정신증 모델이었기 때문이다. 이런 모델을 갖고 개발된 약물은 급성기 치료에는 도움이 될 지언정, 장기적 예후를 변화시키기에는 역부족이다. 현존하는 동물 모델에 안주하여 기존 약물의 변주일뿐인 유사 약물들을 양산할 것이 아니라, 임상에서 얻어진 현상학/정신병리학/역학/유전학 등의 연구 성과를 반영한 새로운 동물 모델이 개발되어야 한다. 이렇듯 양방향으로의 소통이 있어야, 현재 제자리에서 맴돌고있는 항정신병 약물 개발이 새롭게 도약할 수 있을 것이다.</p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-weinberger1987" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Weinberger DR. <strong><em>Implications of normal brain development for the pathogenesis of schizophrenia</em></strong>. Archives of General Psychiatry. 1987;44: 660–669. doi:<a href="https://doi.org/10.1001/archpsyc.1987.01800190080012">10.1001/archpsyc.1987.01800190080012</a></div>
+</div>
+<div id="ref-lipska1993" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Lipska BK, Weinberger DR. <strong><em>Delayed effects of neonatal hippocampal damage on haloperidol-induced catalepsy and apomorphine-induced stereotypic behaviors in the rat</em></strong>. Brain Research Developmental Brain Research. 1993;75: 213–222. doi:<a href="https://doi.org/10.1016/0165-3806(93)90026-7">10.1016/0165-3806(93)90026-7</a></div>
+</div>
+<div id="ref-piontkewitz2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Piontkewitz Y, Arad M, Weiner I. <strong><em>Tracing the development of psychosis and its prevention: what can be learned from animal models</em></strong>. Neuropharmacology. 2012;62: 1273–1289. doi:<a href="https://doi.org/10.1016/j.neuropharm.2011.04.019">10.1016/j.neuropharm.2011.04.019</a></div>
+</div>
+<div id="ref-talamini1998" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Talamini LM, Koch T, Ter Horst GJ, Korf J. <strong><em>Methylazoxymethanol acetate-induced abnormalities in the entorhinal cortex of the rat; parallels with morphological findings in schizophrenia</em></strong>. Brain Research. 1998;789: 293–306. doi:<a href="https://doi.org/10.1016/s0006-8993(98)00020-1">10.1016/s0006-8993(98)00020-1</a></div>
+</div>
+<div id="ref-cattabeni1997" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Cattabeni F, Di Luca M. <strong><em>Developmental models of brain dysfunctions induced by targeted cellular ablations with methylazoxymethanol</em></strong>. Physiological Reviews. 1997;77: 199–215. doi:<a href="https://doi.org/10.1152/physrev.1997.77.1.199">10.1152/physrev.1997.77.1.199</a></div>
+</div>
+<div id="ref-moore2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Moore H, Jentsch JD, Ghajarnia M, Geyer MA, Grace AA. <strong><em>A neurobehavioral systems analysis of adult rats exposed to methylazoxymethanol acetate on E17: implications for the neuropathology of schizophrenia</em></strong>. Biological Psychiatry. 2006;60: 253–264. doi:<a href="https://doi.org/10.1016/j.biopsych.2006.01.003">10.1016/j.biopsych.2006.01.003</a></div>
+</div>
+<div id="ref-geyer1993" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Geyer MA, Wilkinson LS, Humby T, Robbins TW. <strong><em>Isolation rearing of rats produces a deficit in prepulse inhibition of acoustic startle similar to that in schizophrenia</em></strong>. Biological Psychiatry. 1993;34: 361–372. doi:<a href="https://doi.org/10.1016/0006-3223(93)90180-l">10.1016/0006-3223(93)90180-l</a></div>
+</div>
+<div id="ref-bakshi1998" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Bakshi VP, Swerdlow NR, Braff DL, Geyer MA. <strong><em>Reversal of isolation rearing-induced deficits in prepulse inhibition by Seroquel and olanzapine</em></strong>. Biological Psychiatry. 1998;43: 436–445. doi:<a href="https://doi.org/10.1016/s0006-3223(97)00246-1">10.1016/s0006-3223(97)00246-1</a></div>
+</div>
+<div id="ref-wilkinson1994" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Wilkinson LS, Killcross SS, Humby T, Hall FS, Geyer MA, Robbins TW. <strong><em>Social isolation in the rat produces developmentally specific deficits in prepulse inhibition of the acoustic startle response without disrupting latent inhibition</em></strong>. Neuropsychopharmacology: Official Publication of the American College of Neuropsychopharmacology. 1994;10: 61–72. doi:<a href="https://doi.org/10.1038/npp.1994.8">10.1038/npp.1994.8</a></div>
+</div>
+<div id="ref-varty1998" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Varty GB, Geyer MA. <strong><em>Effects of isolation rearing on startle reactivity, habituation, and prepulse inhibition in male Lewis, Sprague-Dawley, and Fischer F344 rats</em></strong>. Behavioral Neuroscience. 1998;112: 1450–1457. doi:<a href="https://doi.org/10.1037//0735-7044.112.6.1450">10.1037//0735-7044.112.6.1450</a></div>
+</div>
+<div id="ref-famitafreshi2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Famitafreshi H, Karimian M. <strong><em>Social Isolation Rearing Induces Neuropsychiatric Diseases: Updated Overview</em></strong>. Complex Psychiatry. 2018;4: 190–195. doi:<a href="https://doi.org/10.1159/000495659">10.1159/000495659</a></div>
+</div>
+<div id="ref-jenkins2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Jenkins TA. <strong><em>Perinatal complications and schizophrenia: Involvement of the immune system</em></strong>. Frontiers in Neuroscience. 2013;7. doi:<a href="https://doi.org/10.3389/fnins.2013.00110">10.3389/fnins.2013.00110</a></div>
+</div>
+<div id="ref-boksa2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Boksa P. <strong><em>Effects of prenatal infection on brain development and behavior: A review of findings from animal models</em></strong>. Brain, Behavior, and Immunity. 2010;24: 881–897. doi:<a href="https://doi.org/10.1016/j.bbi.2010.03.005">10.1016/j.bbi.2010.03.005</a></div>
+</div>
+<div id="ref-fortier2004" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Fortier M-È, Joober R, Luheshi GN, Boksa P. <strong><em>Maternal exposure to bacterial endotoxin during pregnancy enhances amphetamine-induced locomotion and startle responses in adult rat offspring</em></strong>. Journal of Psychiatric Research. 2004;38: 335–345. doi:<a href="https://doi.org/10.1016/j.jpsychires.2003.10.001">10.1016/j.jpsychires.2003.10.001</a></div>
+</div>
+<div id="ref-cui2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Cui K, Ashdown H, Luheshi GN, Boksa P. <strong><em>Effects of prenatal immune activation on hippocampal neurogenesis in the rat</em></strong>. Schizophrenia Research. 2009;113: 288–297. doi:<a href="https://doi.org/10.1016/j.schres.2009.05.003">10.1016/j.schres.2009.05.003</a></div>
+</div>
+<div id="ref-harvey2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Harvey L, Boksa P. <strong><em>Do prenatal immune activation and maternal iron deficiency interact to affect neurodevelopment and early behavior in rat offspring?</em></strong> Brain, Behavior, and Immunity. 2014;35: 144–154. doi:<a href="https://doi.org/10.1016/j.bbi.2013.09.009">10.1016/j.bbi.2013.09.009</a></div>
+</div>
+<div id="ref-adamson1969" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Adamson RH, Fabro S, Homan ER, O’Gara RW, Zendzian RP. <strong><em>Pharmacology of polyriboinosinic: polyribocytidylic acid, a new antiviral and antitumor agent</em></strong>. Antimicrobial Agents and Chemotherapy. 1969;9: 148–152. </div>
+</div>
+<div id="ref-levy1969" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Levy HB, Law LW, Rabson AS. <strong><em>Inhibition of tumor growth by polyinosinic-polycytidylic acid</em></strong>. Proceedings of the National Academy of Sciences of the United States of America. 1969;62: 357–361. doi:<a href="https://doi.org/10.1073/pnas.62.2.357">10.1073/pnas.62.2.357</a></div>
+</div>
+<div id="ref-caskey2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Caskey M, Lefebvre F, Filali-Mouhim A, Cameron MJ, Goulet J-P, Haddad EK, et al. <strong><em>Synthetic double-stranded RNA induces innate immune responses similar to a live viral vaccine in humans</em></strong>. The Journal of Experimental Medicine. 2011;208: 2357–2366. doi:<a href="https://doi.org/10.1084/jem.20111171">10.1084/jem.20111171</a></div>
+</div>
+<div id="ref-meyer2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Meyer U, Feldon J, Schedlowski M, Yee BK. <strong><em>Towards an immuno-precipitated neurodevelopmental animal model of schizophrenia</em></strong>. Neuroscience &amp; Biobehavioral Reviews. 2005;29: 913–947. doi:<a href="https://doi.org/10.1016/j.neubiorev.2004.10.012">10.1016/j.neubiorev.2004.10.012</a></div>
+</div>
+<div id="ref-meyer2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Meyer U, Feldon J. <strong><em>Epidemiology-driven neurodevelopmental animal models of schizophrenia</em></strong>. Progress in Neurobiology. 2010;90: 285–326. doi:<a href="https://doi.org/10.1016/j.pneurobio.2009.10.018">10.1016/j.pneurobio.2009.10.018</a></div>
+</div>
+<div id="ref-mackie2007" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Mackie S, Millar JK, Porteous DJ. <strong><em>Role of DISC1 in neural development and schizophrenia</em></strong>. Current Opinion in Neurobiology. 2007;17: 95–102. doi:<a href="https://doi.org/10.1016/j.conb.2007.01.007">10.1016/j.conb.2007.01.007</a></div>
+</div>
+<div id="ref-abazyan2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Abazyan B, Nomura J, Kannan G, Ishizuka K, Tamashiro KL, Nucifora F, et al. <strong><em>Prenatal interaction of mutant DISC1 and immune activation produces adult psychopathology</em></strong>. Biological Psychiatry. 2010;68: 1172–1181. doi:<a href="https://doi.org/10.1016/j.biopsych.2010.09.022">10.1016/j.biopsych.2010.09.022</a></div>
+</div>
+<div id="ref-bayer1999" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Bayer TA, Falkai P, Maier W. <strong><em>Genetic and non-genetic vulnerability factors in schizophrenia: the basis of the <span>"</span>two hit hypothesis<span>"</span></em></strong>. Journal of Psychiatric Research. 1999;33: 543–548. doi:<a href="https://doi.org/10.1016/s0022-3956(99)00039-4">10.1016/s0022-3956(99)00039-4</a></div>
+</div>
+<div id="ref-brandon2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Brandon NJ. <strong><em>What Happened When the Environment Met DISC1? Showing the Interactive Effects of Poly I:C and DISC1 on Mouse Phenotypes Related to Mood Disorders</em></strong>. Biological Psychiatry. 2010;68: 1080–1081. doi:<a href="https://doi.org/10.1016/j.biopsych.2010.10.016">10.1016/j.biopsych.2010.10.016</a></div>
+</div>
+<div id="ref-bowling2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Bowling H, Santini E. <strong><em>Unlocking the molecular mechanisms of antipsychotics - a new frontier for discovery</em></strong>. Swiss Medical Weekly. 2016;146: w14314. doi:<a href="https://doi.org/10.4414/smw.2016.14314">10.4414/smw.2016.14314</a></div>
+</div>
+<div id="ref-kim2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Kim H, Kim M, Im S-K, Fang S. <strong><em>Mouse Cre-LoxP system: general principles to determine tissue-specific roles of target genes</em></strong>. Laboratory Animal Research. 2018;34: 147–159. doi:<a href="https://doi.org/10.5625/lar.2018.34.4.147">10.5625/lar.2018.34.4.147</a></div>
+</div>
+<div id="ref-elbashir2001" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Elbashir SM, Harborth J, Lendeckel W, Yalcin A, Weber K, Tuschl T. <strong><em>Duplexes of 21-nucleotide RNAs mediate RNA interference in cultured mammalian cells</em></strong>. Nature. 2001;411: 494–498. doi:<a href="https://doi.org/10.1038/35078107">10.1038/35078107</a></div>
+</div>
+<div id="ref-chang2004" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Chang H-S, Lin C-H, Chen Y-C, Yu WCY. <strong><em>Using siRNA technique to generate transgenic animals with spatiotemporal and conditional gene knockdown</em></strong>. The American Journal of Pathology. 2004;165: 1535–1541. doi:<a href="https://doi.org/10.1016/S0002-9440(10)63411-6">10.1016/S0002-9440(10)63411-6</a></div>
+</div>
+<div id="ref-doudna2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Doudna JA, Charpentier E. <strong><em>Genome editing. The new frontier of genome engineering with CRISPR-Cas9</em></strong>. Science (New York, NY). 2014;346: 1258096. doi:<a href="https://doi.org/10.1126/science.1258096">10.1126/science.1258096</a></div>
+</div>
+<div id="ref-caligiuri2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Caligiuri SP, Kenny PJ. <strong><em>The Promise of Genome Editing for Modeling Psychiatric Disorders</em></strong>. Neuropsychopharmacology. 2018;43: 223–224. doi:<a href="https://doi.org/10.1038/npp.2017.197">10.1038/npp.2017.197</a></div>
+</div>
+<div id="ref-fujihara2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Fujihara K, Yamada K, Ichitani Y, Kakizaki T, Jiang W, Miyata S, et al. <strong><em>CRISPR/Cas9-engineered Gad1 elimination in rats leads to complex behavioral changes: implications for schizophrenia</em></strong>. Translational Psychiatry. 2020;10: 426. doi:<a href="https://doi.org/10.1038/s41398-020-01108-6">10.1038/s41398-020-01108-6</a></div>
+</div>
+<div id="ref-baker2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Baker M, Hong S-I, Kang S, Choi D-S. <strong><em>Rodent models for psychiatric disorders: problems and promises</em></strong>. Laboratory Animal Research. 2020;36: 9. doi:<a href="https://doi.org/10.1186/s42826-020-00039-z">10.1186/s42826-020-00039-z</a></div>
+</div>
+<div id="ref-taveggia2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">Taveggia C, Thaker P, Petrylak A, Caporaso GL, Toews A, Falls DL, et al. <strong><em>Type III neuregulin-1 promotes oligodendrocyte myelination</em></strong>. Glia. 2008;56: 284–293. doi:<a href="https://doi.org/10.1002/glia.20612">10.1002/glia.20612</a></div>
+</div>
+<div id="ref-mei2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">Mei L, Xiong W-C. <strong><em>Neuregulin 1 in neural development, synaptic plasticity and schizophrenia</em></strong>. Nature Reviews Neuroscience. 2008;9: 437–452. doi:<a href="https://doi.org/10.1038/nrn2392">10.1038/nrn2392</a></div>
+</div>
+<div id="ref-munafò2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">Munafò MR, Thiselton DL, Clark TG, Flint J. <strong><em>Association of the NRG1 gene and schizophrenia: a meta-analysis</em></strong>. Molecular Psychiatry. 2006;11: 539–546. doi:<a href="https://doi.org/10.1038/sj.mp.4001817">10.1038/sj.mp.4001817</a></div>
+</div>
+<div id="ref-agim2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">Agim ZS, Esendal M, Briollais L, Uyan O, Meschian M, Martinez LAM, et al. <strong><em>Discovery, Validation and Characterization of Erbb4 and Nrg1 Haplotypes Using Data from Three Genome-Wide Association Studies of Schizophrenia</em></strong>. Hu VW, editor. PLoS ONE. 2013;8: e53042. doi:<a href="https://doi.org/10.1371/journal.pone.0053042">10.1371/journal.pone.0053042</a></div>
+</div>
+<div id="ref-hall2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">Hall J, Whalley HC, Job DE, Baig BJ, McIntosh AM, Evans KL, et al. <strong><em>A neuregulin 1 variant associated with abnormal cortical function and psychotic symptoms</em></strong>. Nature Neuroscience. 2006;9: 1477–1478. doi:<a href="https://doi.org/10.1038/nn1795">10.1038/nn1795</a></div>
+</div>
+<div id="ref-karl2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Karl T. <strong><em>Neuregulin 1: A prime candidate for research into gene-environment interactions in schizophrenia? Insights from genetic rodent models</em></strong>. Frontiers in Behavioral Neuroscience. 2013;7. doi:<a href="https://doi.org/10.3389/fnbeh.2013.00106">10.3389/fnbeh.2013.00106</a></div>
+</div>
+<div id="ref-deakin2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">40. </div><div class="csl-right-inline">Deakin IH, Law AJ, Oliver PL, Schwab MH, Nave KA, Harrison PJ, et al. <strong><em>Behavioural characterization of neuregulin 1 type I overexpressing transgenic mice</em></strong>. Neuroreport. 2009;20: 1523–1528. doi:<a href="https://doi.org/10.1097/WNR.0b013e328330f6e7">10.1097/WNR.0b013e328330f6e7</a></div>
+</div>
+<div id="ref-marín2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">41. </div><div class="csl-right-inline">Marín O, Rico B. <strong><em>A New Beginning for a Broken Mind: Balancing Neuregulin 1 Reverses Synaptic Dysfunction</em></strong>. Neuron. 2013;78: 577–579. doi:<a href="https://doi.org/10.1016/j.neuron.2013.05.004">10.1016/j.neuron.2013.05.004</a></div>
+</div>
+<div id="ref-yin2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">42. </div><div class="csl-right-inline">Yin D-M, Chen Y-J, Lu Y-S, Bean Jonathan&nbsp;C, Sathyamurthy A, Shen C, et al. <strong><em>Reversal of Behavioral Deficits and Synaptic Dysfunction in Mice Overexpressing Neuregulin 1</em></strong>. Neuron. 2013;78: 644–657. doi:<a href="https://doi.org/10.1016/j.neuron.2013.03.028">10.1016/j.neuron.2013.03.028</a></div>
+</div>
+<div id="ref-rimer2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">43. </div><div class="csl-right-inline">Rimer M, Barrett DW, Maldonado MA, Vock VM, Gonzalez-Lima F. <strong><em>Neuregulin-1 immunoglobulin-like domain mutant mice: clozapine sensitivity and impaired latent inhibition</em></strong>. Neuroreport. 2005;16: 271–275. doi:<a href="https://doi.org/10.1097/00001756-200502280-00014">10.1097/00001756-200502280-00014</a></div>
+</div>
+<div id="ref-stclair1990" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">44. </div><div class="csl-right-inline">St Clair D, Blackwood D, Muir W, Walker M, St Clair D, Muir W, et al. <strong><em>Association within a family of a balanced autosomal translocation with major mental illness</em></strong>. The Lancet. 1990;336: 13–16. doi:<a href="https://doi.org/10.1016/0140-6736(90)91520-K">10.1016/0140-6736(90)91520-K</a></div>
+</div>
+<div id="ref-millar2000" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">45. </div><div class="csl-right-inline">Millar JK, Wilson-Annan JC, Anderson S, Christie S, Taylor MS, Semple CA, et al. <strong><em>Disruption of two novel genes by a translocation co-segregating with schizophrenia</em></strong>. Human Molecular Genetics. 2000;9: 1415–1423. doi:<a href="https://doi.org/10.1093/hmg/9.9.1415">10.1093/hmg/9.9.1415</a></div>
+</div>
+<div id="ref-bradshaw2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">46. </div><div class="csl-right-inline">Bradshaw NJ, Porteous DJ. <strong><em>DISC1-binding proteins in neural development, signalling and schizophrenia</em></strong>. Neuropharmacology. 2012;62: 1230–1241. doi:<a href="https://doi.org/10.1016/j.neuropharm.2010.12.027">10.1016/j.neuropharm.2010.12.027</a></div>
+</div>
+<div id="ref-su2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">47. </div><div class="csl-right-inline">Su P, Li S, Chen S, Lipina TV, Wang M, Lai TKY, et al. <strong><em>A dopamine D2 receptor-DISC1 protein complex may contribute to antipsychotic-like effects</em></strong>. Neuron. 2014;84: 1302–1316. doi:<a href="https://doi.org/10.1016/j.neuron.2014.11.007">10.1016/j.neuron.2014.11.007</a></div>
+</div>
+<div id="ref-sullivan2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">48. </div><div class="csl-right-inline">Sullivan PF. <strong><em>Questions about DISC1 as a genetic risk factor for schizophrenia</em></strong>. Molecular Psychiatry. 2013;18: 1050–1052. doi:<a href="https://doi.org/10.1038/mp.2012.182">10.1038/mp.2012.182</a></div>
+</div>
+<div id="ref-ma2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">49. </div><div class="csl-right-inline">Ma J-H, Sun X-Y, Guo T-J, Barot E, Wang D-F, Yan L-L, et al. <strong><em>Association on DISC1 SNPs with schizophrenia risk: A meta-analysis</em></strong>. Psychiatry Research. 2018;270: 306–309. doi:<a href="https://doi.org/10.1016/j.psychres.2018.09.056">10.1016/j.psychres.2018.09.056</a></div>
+</div>
+<div id="ref-facal2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">50. </div><div class="csl-right-inline">Facal F, Costas J. <strong><em>Evidence of association of the DISC1 interactome gene set with schizophrenia from GWAS</em></strong>. Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry. 2019;95: 109729. doi:<a href="https://doi.org/10.1016/j.pnpbp.2019.109729">10.1016/j.pnpbp.2019.109729</a></div>
+</div>
+<div id="ref-koike2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">51. </div><div class="csl-right-inline">Koike H, Arguello PA, Kvajo M, Karayiorgou M, Gogos JA. <strong><em><span><em>Disc1</em></span> is mutated in the 129S6/SvEv strain and modulates working memory in mice</em></strong>. Proceedings of the National Academy of Sciences. 2006;103: 3693–3697. doi:<a href="https://doi.org/10.1073/pnas.0511189103">10.1073/pnas.0511189103</a></div>
+</div>
+<div id="ref-pletnikov2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">52. </div><div class="csl-right-inline">Pletnikov MV, Ayhan Y, Nikolskaia O, Xu Y, Ovanesov MV, Huang H, et al. <strong><em>Inducible expression of mutant human DISC1 in mice is associated with brain and behavioral abnormalities reminiscent of schizophrenia</em></strong>. Molecular Psychiatry. 2008;13: 173–186, 115. doi:<a href="https://doi.org/10.1038/sj.mp.4002079">10.1038/sj.mp.4002079</a></div>
+</div>
+<div id="ref-hikida2007" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">53. </div><div class="csl-right-inline">Hikida T, Jaaro-Peled H, Seshadri S, Oishi K, Hookway C, Kong S, et al. <strong><em>Dominant-negative DISC1 transgenic mice display schizophrenia-associated phenotypes detected by measures translatable to humans</em></strong>. Proceedings of the National Academy of Sciences of the United States of America. 2007;104: 14501–14506. doi:<a href="https://doi.org/10.1073/pnas.0704774104">10.1073/pnas.0704774104</a></div>
+</div>
+<div id="ref-duan2007" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">54. </div><div class="csl-right-inline">Duan X, Chang JH, Ge S, Faulkner RL, Kim JY, Kitabatake Y, et al. <strong><em>Disrupted-In-Schizophrenia 1 regulates integration of newly generated neurons in the adult brain</em></strong>. Cell. 2007;130: 1146–1158. doi:<a href="https://doi.org/10.1016/j.cell.2007.07.010">10.1016/j.cell.2007.07.010</a></div>
+</div>
+<div id="ref-sawa2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">55. </div><div class="csl-right-inline">Sawa A, Ishizuka K, Katsanis N. <strong><em>The potential of DISC1 protein as a therapeutic target for mental illness</em></strong>. Expert Opinion on Therapeutic Targets. 2016;20: 641–643. doi:<a href="https://doi.org/10.1517/14728222.2016.1146694">10.1517/14728222.2016.1146694</a></div>
+</div>
+<div id="ref-forsingdal2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">56. </div><div class="csl-right-inline">Forsingdal A, Jørgensen TN, Olsen L, Werge T, Didriksen M, Nielsen J. <strong><em>Can Animal Models of Copy Number Variants That Predispose to Schizophrenia Elucidate Underlying Biology?</em></strong> Biological Psychiatry. 2019;85: 13–24. doi:<a href="https://doi.org/10.1016/j.biopsych.2018.07.004">10.1016/j.biopsych.2018.07.004</a></div>
+</div>
+<div id="ref-schneider2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">57. </div><div class="csl-right-inline">Schneider M, Debbané M, Bassett AS, Chow EWC, Fung WLA, Bree M van den, et al. <strong><em>Psychiatric disorders from childhood to adulthood in 22q11.2 deletion syndrome: results from the International Consortium on Brain and Behavior in 22q11.2 Deletion Syndrome</em></strong>. The American Journal of Psychiatry. 2014;171: 627–639. doi:<a href="https://doi.org/10.1176/appi.ajp.2013.13070864">10.1176/appi.ajp.2013.13070864</a></div>
+</div>
+<div id="ref-rujescu2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">58. </div><div class="csl-right-inline">Rujescu D, Ingason A, Cichon S, Pietiläinen OPH, Barnes MR, Toulopoulou T, et al. <strong><em>Disruption of the neurexin 1 gene is associated with schizophrenia</em></strong>. Human Molecular Genetics. 2009;18: 988–996. doi:<a href="https://doi.org/10.1093/hmg/ddn351">10.1093/hmg/ddn351</a></div>
+</div>
+<div id="ref-lewis2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">59. </div><div class="csl-right-inline">Lewis AS, Pittenger ST, Mineur YS, Stout D, Smith PH, Picciotto MR. <strong><em>Bidirectional Regulation of Aggression in Mice by Hippocampal Alpha-7 Nicotinic Acetylcholine Receptors</em></strong>. Neuropsychopharmacology. 2018;43: 1267–1275. doi:<a href="https://doi.org/10.1038/npp.2017.276">10.1038/npp.2017.276</a></div>
+</div>
+<div id="ref-benson2001" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">60. </div><div class="csl-right-inline">Benson MA, Newey SE, Martin-Rendon E, Hawkes R, Blake DJ. <strong><em>Dysbindin, a novel coiled-coil-containing protein that interacts with the dystrobrevins in muscle and brain</em></strong>. The Journal of Biological Chemistry. 2001;276: 24232–24241. doi:<a href="https://doi.org/10.1074/jbc.M010418200">10.1074/jbc.M010418200</a></div>
+</div>
+<div id="ref-straub2002" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">61. </div><div class="csl-right-inline">Straub RE, Jiang Y, MacLean CJ, Ma Y, Webb BT, Myakishev MV, et al. <strong><em>Genetic variation in the 6p22.3 gene DTNBP1, the human ortholog of the mouse dysbindin gene, is associated with schizophrenia</em></strong>. American Journal of Human Genetics. 2002;71: 337–348. doi:<a href="https://doi.org/10.1086/341750">10.1086/341750</a></div>
+</div>
+<div id="ref-winship2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">62. </div><div class="csl-right-inline">Winship IR, Dursun SM, Baker GB, Balista PA, Kandratavicius L, Maia-de-Oliveira JP, et al. <strong><em>An Overview of Animal Models Related to Schizophrenia</em></strong>. The Canadian Journal of Psychiatry. 2019;64: 5–17. doi:<a href="https://doi.org/10.1177/0706743718773728">10.1177/0706743718773728</a></div>
+</div>
+<div id="ref-weickert2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">63. </div><div class="csl-right-inline">Weickert CS, Rothmond DA, Hyde TM, Kleinman JE, Straub RE. <strong><em>Reduced DTNBP1 (dysbindin-1) mRNA in the hippocampal formation of schizophrenia patients</em></strong>. Schizophrenia Research. 2008;98: 105–110. doi:<a href="https://doi.org/10.1016/j.schres.2007.05.041">10.1016/j.schres.2007.05.041</a></div>
+</div>
+<div id="ref-talbot2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">64. </div><div class="csl-right-inline">Talbot K. <strong><em>The sandy (sdy) mouse: a dysbindin-1 mutant relevant to schizophrenia research</em></strong>. Progress in Brain Research. 2009;179: 87–94. doi:<a href="https://doi.org/10.1016/S0079-6123(09)17910-4">10.1016/S0079-6123(09)17910-4</a></div>
+</div>
+<div id="ref-bhardwaj2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">65. </div><div class="csl-right-inline">Bhardwaj SK, Baharnoori M, Sharif-Askari B, Kamath A, Williams S, Srivastava LK. <strong><em>Behavioral characterization of dysbindin-1 deficient sandy mice</em></strong>. Behavioural Brain Research. 2009;197: 435–441. doi:<a href="https://doi.org/10.1016/j.bbr.2008.10.011">10.1016/j.bbr.2008.10.011</a></div>
+</div>
+<div id="ref-cox2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">66. </div><div class="csl-right-inline">Cox MM, Tucker AM, Tang J, Talbot K, Richer DC, Yeh L, et al. <strong><em>Neurobehavioral abnormalities in the dysbindin-1 mutant, sandy, on a C57BL/6J genetic background</em></strong>. Genes, Brain, and Behavior. 2009;8: 390–397. doi:<a href="https://doi.org/10.1111/j.1601-183X.2009.00477.x">10.1111/j.1601-183X.2009.00477.x</a></div>
+</div>
+<div id="ref-takao2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">67. </div><div class="csl-right-inline">Takao K, Toyama K, Nakanishi K, Hattori S, Takamura H, Takeda M, et al. <strong><em>Impaired long-term memory retention and working memory in sdy mutant mice with a deletion in Dtnbp1, a susceptibility gene for schizophrenia</em></strong>. Molecular Brain. 2008;1: 11. doi:<a href="https://doi.org/10.1186/1756-6606-1-11">10.1186/1756-6606-1-11</a></div>
+</div>
+<div id="ref-nazarian2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">68. </div><div class="csl-right-inline">Nazarian R, Starcevic M, Spencer Melissa&nbsp;J, Dell’Angelica Esteban&nbsp;C. <strong><em>Reinvestigation of the dysbindin subunit of BLOC-1 (biogenesis of lysosome-related organelles complex-1) as a dystrobrevin-binding protein</em></strong>. Biochemical Journal. 2006;395: 587–598. doi:<a href="https://doi.org/10.1042/BJ20051965">10.1042/BJ20051965</a></div>
+</div>
+<div id="ref-lee2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">69. </div><div class="csl-right-inline">Lee HH, Nemecek D, Schindler C, Smith WJ, Ghirlando R, Steven AC, et al. <strong><em>Assembly and Architecture of Biogenesis of Lysosome-related Organelles Complex-1 (BLOC-1)</em></strong>. Journal of Biological Chemistry. 2012;287: 5882–5890. doi:<a href="https://doi.org/10.1074/jbc.M111.325746">10.1074/jbc.M111.325746</a></div>
+</div>
+<div id="ref-morris2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">70. </div><div class="csl-right-inline">Morris DW, Murphy K, Kenny N, Purcell SM, McGhee KA, Schwaiger S, et al. <strong><em>Dysbindin (DTNBP1) and the biogenesis of lysosome-related organelles complex 1 (BLOC-1): main and epistatic gene effects are potential contributors to schizophrenia susceptibility</em></strong>. Biological Psychiatry. 2008;63: 24–31. doi:<a href="https://doi.org/10.1016/j.biopsych.2006.12.025">10.1016/j.biopsych.2006.12.025</a></div>
+</div>
+<div id="ref-guo2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">71. </div><div class="csl-right-inline">Guo AY, Sun J, Riley BP, Thiselton DL, Kendler KS, Zhao Z. <strong><em>The dystrobrevin-binding protein 1 gene: features and networks</em></strong>. Molecular Psychiatry. 2009;14: 18–29. doi:<a href="https://doi.org/10.1038/mp.2008.88">10.1038/mp.2008.88</a></div>
+</div>
+<div id="ref-bhardwaj2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">72. </div><div class="csl-right-inline">Bhardwaj SK, Ryan RT, Wong TP, Srivastava LK. <strong><em>Loss of dysbindin-1, a risk gene for schizophrenia, leads to impaired group 1 metabotropic glutamate receptor function in mice</em></strong>. Frontiers in Behavioral Neuroscience. 2015;9. doi:<a href="https://doi.org/10.3389/fnbeh.2015.00072">10.3389/fnbeh.2015.00072</a></div>
+</div>
+<div id="ref-nicoletti2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">73. </div><div class="csl-right-inline">Nicoletti F, Orlando R, Di Menna L, Cannella M, Notartomaso S, Mascio G, et al. <strong><em>Targeting mGlu receptors for optimization of antipsychotic activity and disease-modifying effect in schizophrenia</em></strong>. Frontiers in Psychiatry. 2019;10: 49. doi:<a href="https://doi.org/10.3389/fpsyt.2019.00049">10.3389/fpsyt.2019.00049</a></div>
+</div>
+<div id="ref-ishii2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">74. </div><div class="csl-right-inline">Ishii K, Kubo K, Nakajima K. <strong><em>Reelin and neuropsychiatric disorders</em></strong>. Frontiers in Cellular Neuroscience. 2016;10. doi:<a href="https://doi.org/10.3389/fncel.2016.00229">10.3389/fncel.2016.00229</a></div>
+</div>
+<div id="ref-falconer1951" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">75. </div><div class="csl-right-inline">Falconer DS. <strong><em>Two new mutants, ’trembler’ and ’reeler’, with neurological actions in the house mouse (Mus musculus L.)</em></strong>. Journal of Genetics. 1951;50: 192–201. doi:<a href="https://doi.org/10.1007/BF02996215">10.1007/BF02996215</a></div>
+</div>
+<div id="ref-hamburgh1963" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">76. </div><div class="csl-right-inline">Hamburgh M. <strong><em>ANALYSIS OF THE POSTNATAL DEVELOPMENTAL EFFECTS OF <span>"</span>REELER,<span>"</span> A NEUROLOGICAL MUTATION IN MICE. A STUDY IN DEVELOPMENTAL GENETICS</em></strong>. Developmental Biology. 1963;8: 165–185. doi:<a href="https://doi.org/10.1016/0012-1606(63)90040-x">10.1016/0012-1606(63)90040-x</a></div>
+</div>
+<div id="ref-li2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">77. </div><div class="csl-right-inline">Li M, Luo X-J, Xiao X, Shi L, Liu X-Y, Yin L-D, et al. <strong><em>Analysis of common genetic variants identifies <span><em>RELN</em></span> as a risk gene for schizophrenia in Chinese population</em></strong>. The World Journal of Biological Psychiatry. 2013;14: 91–99. doi:<a href="https://doi.org/10.3109/15622975.2011.587891">10.3109/15622975.2011.587891</a></div>
+</div>
+<div id="ref-impagnatiello1998" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">78. </div><div class="csl-right-inline">Impagnatiello F, Guidotti AR, Pesold C, Dwivedi Y, Caruncho H, Pisu MG, et al. <strong><em>A decrease of reelin expression as a putative vulnerability factor in schizophrenia</em></strong>. Proceedings of the National Academy of Sciences. 1998;95: 15718–15723. doi:<a href="https://doi.org/10.1073/pnas.95.26.15718">10.1073/pnas.95.26.15718</a></div>
+</div>
+<div id="ref-fatemi2000" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">79. </div><div class="csl-right-inline">Fatemi SH, Earle JA, McMenomy T. <strong><em>Reduction in Reelin immunoreactivity in hippocampus of subjects with schizophrenia, bipolar disorder and major depression</em></strong>. Molecular Psychiatry. 2000;5: 654–663. doi:<a href="https://doi.org/10.1038/sj.mp.4000783">10.1038/sj.mp.4000783</a></div>
+</div>
+<div id="ref-yin2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">80. </div><div class="csl-right-inline">Yin J, Lu Y, Yu S, Dai Z, Zhang F, Yuan J. <strong><em>Exploring the mRNA expression level of RELN in peripheral blood of schizophrenia patients before and after antipsychotic treatment</em></strong>. Hereditas. 2020;157: 43. doi:<a href="https://doi.org/10.1186/s41065-020-00158-6">10.1186/s41065-020-00158-6</a></div>
+</div>
+<div id="ref-lossi2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">81. </div><div class="csl-right-inline">Lossi L, Castagna C, Granato A, Merighi A. <strong><em>The Reeler Mouse: A Translational Model of Human Neurological Conditions, or Simply a Good Tool for Better Understanding Neurodevelopment?</em></strong> Journal of Clinical Medicine. 2019;8: E2088. doi:<a href="https://doi.org/10.3390/jcm8122088">10.3390/jcm8122088</a></div>
+</div>
+<div id="ref-iafrati2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">82. </div><div class="csl-right-inline">Iafrati J, Orejarena MJ, Lassalle O, Bouamrane L, Chavis P. <strong><em>Reelin, an extracellular matrix protein linked to early onset psychiatric diseases, drives postnatal development of the prefrontal cortex via GluN2B-NMDARs and the mTOR pathway</em></strong>. Molecular Psychiatry. 2014;19: 417–426. doi:<a href="https://doi.org/10.1038/mp.2013.66">10.1038/mp.2013.66</a></div>
+</div>
+<div id="ref-negrónoyarzo2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">83. </div><div class="csl-right-inline">Negrón-Oyarzo I, Lara-Vásquez A, Palacios-García I, Fuentealba P, Aboitiz F. <strong><em>Schizophrenia and reelin: a model based on prenatal stress to study epigenetics, brain development and behavior</em></strong>. Biological Research. 2016;49: 16. doi:<a href="https://doi.org/10.1186/s40659-016-0076-5">10.1186/s40659-016-0076-5</a></div>
+</div>
+<div id="ref-costa2002" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">84. </div><div class="csl-right-inline">Costa E, Davis J, Pesold C, Tueting P, Guidotti A. <strong><em>The heterozygote reeler mouse as a model for the development of a new generation of antipsychotics</em></strong>. Current Opinion in Pharmacology. 2002;2: 56–62. doi:<a href="https://doi.org/10.1016/s1471-4892(01)00121-7">10.1016/s1471-4892(01)00121-7</a></div>
+</div>
+<div id="ref-kang2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">85. </div><div class="csl-right-inline">Kang Z-C, Wang H-G, Yang Y-L, Zhao X-Y, Zhou Q-M, Yang Y-L, et al. <strong><em>Pinocembrin Ameliorates Cognitive Impairment Induced by Vascular Dementia: Contribution of Reelin-dab1 Signaling Pathway</em></strong>. Drug Design, Development and Therapy. 2020;14: 3577–3587. doi:<a href="https://doi.org/10.2147/DDDT.S249176">10.2147/DDDT.S249176</a></div>
+</div>
+<div id="ref-brymer2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">86. </div><div class="csl-right-inline">Brymer KJ, Johnston J, Botterill JJ, Romay-Tallon R, Mitchell MA, Allen J, et al. <strong><em>Fast-acting antidepressant-like effects of Reelin evaluated in the repeated-corticosterone chronic stress paradigm</em></strong>. Neuropsychopharmacology: Official Publication of the American College of Neuropsychopharmacology. 2020;45: 1707–1716. doi:<a href="https://doi.org/10.1038/s41386-020-0609-z">10.1038/s41386-020-0609-z</a></div>
+</div>
+<div id="ref-kuschinsky1972" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">87. </div><div class="csl-right-inline">Kuschinsky K, Hornykiewicz O. <strong><em>Morphine catalepsy in the rat: relation to striatal dopamine metabolism</em></strong>. European Journal of Pharmacology. 1972;19: 119–122. doi:<a href="https://doi.org/10.1016/0014-2999(72)90086-6">10.1016/0014-2999(72)90086-6</a></div>
+</div>
+<div id="ref-sanberg1988" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">88. </div><div class="csl-right-inline">Sanberg PR, Bunsey MD, Giordano M, Norman AB. <strong><em>The catalepsy test: Its ups and downs.</em></strong> Behavioral Neuroscience. 1988;102: 748–759. doi:<a href="https://doi.org/10.1037/0735-7044.102.5.748">10.1037/0735-7044.102.5.748</a></div>
+</div>
+<div id="ref-fuenmayor1979" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">89. </div><div class="csl-right-inline">Fuenmayor LD, Vogt M. <strong><em>Production of catalepsy and depletion of brain monoamines by a butyrophenone derivative</em></strong>. British Journal of Pharmacology. 1979;67: 115–122. </div>
+</div>
+<div id="ref-hoffman1995" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">90. </div><div class="csl-right-inline">Hoffman DC, Donovan H. <strong><em>Catalepsy as a rodent model for detecting antipsychotic drugs with extrapyramidal side effect liability</em></strong>. Psychopharmacology. 1995;120: 128–133. doi:<a href="https://doi.org/10.1007/BF02246184">10.1007/BF02246184</a></div>
+</div>
+<div id="ref-bricker2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">91. </div><div class="csl-right-inline">Bricker B, Sampson D, Ablordeppey SY. <strong><em>Evaluation of the potential of antipsychotic agents to induce catalepsy in rats: assessment of a new, commercially available, semi-automated instrument</em></strong>. Pharmacology, Biochemistry, and Behavior. 2014;120: 109–116. doi:<a href="https://doi.org/10.1016/j.pbb.2014.02.013">10.1016/j.pbb.2014.02.013</a></div>
+</div>
+<div id="ref-guzen2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">92. </div><div class="csl-right-inline">Guzen FP, Cavalcanti JRL de P, Cavalcanti DML de P, Sales LGP, Silva MSM da, Silva ANA da, et al. <strong><em>Haloperidol<span>-</span>Induced Preclinical Tardive Dyskinesia Model in Rats</em></strong>. Current Protocols in Neuroscience. 2019;88. doi:<a href="https://doi.org/10.1002/cpns.68">10.1002/cpns.68</a></div>
+</div>
+<div id="ref-treadway2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">93. </div><div class="csl-right-inline">Treadway MT, Zald DH. <strong><em>Parsing Anhedonia: Translational Models of Reward-Processing Deficits in Psychopathology</em></strong>. Current Directions in Psychological Science. 2013;22: 244–249. doi:<a href="https://doi.org/10.1177/0963721412474460">10.1177/0963721412474460</a></div>
+</div>
+<div id="ref-ting2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">94. </div><div class="csl-right-inline">Ting C, Rajji TK, Ismail Z, Tang-Wai DF, Apanasiewicz N, Miranda D, et al. <strong><em>Differentiating the cognitive profile of schizophrenia from that of Alzheimer disease and depression in late life</em></strong>. PloS One. 2010;5: e10151. doi:<a href="https://doi.org/10.1371/journal.pone.0010151">10.1371/journal.pone.0010151</a></div>
+</div>
+<div id="ref-barak2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">95. </div><div class="csl-right-inline">Barak S, Weiner I. <strong><em>Putative cognitive enhancers in preclinical models related to schizophrenia: The search for an elusive target</em></strong>. Pharmacology Biochemistry and Behavior. 2011;99: 164–189. doi:<a href="https://doi.org/10.1016/j.pbb.2011.03.011">10.1016/j.pbb.2011.03.011</a></div>
+</div>
+<div id="ref-brown2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">96. </div><div class="csl-right-inline">Brown D, Exeer AM, Manalai P, Aziz W, Babb C. <strong><em>Ketamine role in schizoaffective disorder depressive type</em></strong>. Journal of Addiction Research &amp; Therapy. 2017;08. doi:<a href="https://doi.org/10.4172/2155-6105.1000346">10.4172/2155-6105.1000346</a></div>
+</div>
+<div id="ref-bartova2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">97. </div><div class="csl-right-inline">Bartova L, Papageorgiou K, Milenkovic I, Dold M, Weidenauer A, Willeit M, et al. <strong><em>Rapid antidepressant effect of S-ketamine in schizophrenia</em></strong>. European Neuropsychopharmacology: The Journal of the European College of Neuropsychopharmacology. 2018;28: 980–982. doi:<a href="https://doi.org/10.1016/j.euroneuro.2018.05.007">10.1016/j.euroneuro.2018.05.007</a></div>
+</div>
+<div id="ref-veraart2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">98. </div><div class="csl-right-inline">Veraart JKE, Smith-Apeldoorn SY, Spijker J, Kamphuis J, Schoevers RA. <strong><em>Ketamine Treatment for Depression in Patients With a History of Psychosis or Current Psychotic Symptoms: A Systematic Review</em></strong>. The Journal of Clinical Psychiatry. 2021;82: 20r13459. doi:<a href="https://doi.org/10.4088/JCP.20r13459">10.4088/JCP.20r13459</a></div>
+</div>
+<div id="ref-beck2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">99. </div><div class="csl-right-inline">Beck K, Hindley G, Borgan F, Ginestet C, McCutcheon R, Brugger S, et al. <strong><em>Association of Ketamine With Psychiatric Symptoms and Implications for Its Therapeutic Use and for Understanding Schizophrenia: A Systematic Review and Meta-analysis</em></strong>. JAMA Network Open. 2020;3: e204693. doi:<a href="https://doi.org/10.1001/jamanetworkopen.2020.4693">10.1001/jamanetworkopen.2020.4693</a></div>
+</div>
+<div id="ref-sotiropoulos2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">100. </div><div class="csl-right-inline">Sotiropoulos MG, Poulogiannopoulou E, Delis F, Dalla C, Antoniou K, Kokras N. <strong><em>Innovative screening models for the discovery of new schizophrenia drug therapies: an integrated approach</em></strong>. Expert Opinion on Drug Discovery. 2021;16: 791–806. doi:<a href="https://doi.org/10.1080/17460441.2021.1877657">10.1080/17460441.2021.1877657</a></div>
+</div>
+</div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+    } else {
+      disableStylesheet(alternateStylesheets);
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-01.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">고전적 동물 모델</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05-03.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">세포주 모델과 전산화 모델</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -35,7 +35,7 @@ book:
       chapters:
         - 08-01.qmd
         - 08-02.qmd
-        - 08-03.qmd
+        - 08-03.qmd   
     - part: "조현병 약물 치료의 일반적 원칙"
       chapters:
         - 08-04.qmd
@@ -50,6 +50,9 @@ book:
         - 09-04.qmd
         - 09-05.qmd
         - 09-06.qmd
+        - 09-07.qmd
+        - 09-08.qmd
+        - 09-09.qmd
     - part: "실제 임상에서 부딪히는 문제들"
       chapters:
         - 10-01.qmd

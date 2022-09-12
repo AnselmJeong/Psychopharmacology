@@ -4,3 +4,6 @@ tardive dyskinesia: 지연성 운동이상증
 WARNING: 05-01.html: Unable to resolve crossref @tbl-animal-models
 WARNING: 05-01.html: Unable to resolve crossref @tbl-animal-model
 WARNING: 06-09.html: Unable to resolve crossref @fig-depiction-autophagy
+
+[WARNING] Note with key '12-01-4' defined at /var/folders/0f/x5vbzxsj2j34hp9bkk6858vw0000gn/T/quarto-session38343253/6e4ddceb/quarto-input99c2eaec.md line 105 column 1 but not used.
+

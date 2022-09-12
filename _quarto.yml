@@ -58,9 +58,55 @@ book:
         - 10-01.qmd
         - 10-02.qmd
         - 10-03.qmd
+    - part: "치료저항성 환자의 치료"
+      chapters:
+        - 11-01.qmd
+        - 11-02.qmd
+        - 11-03.qmd
+        - 11-04.qmd
+        - 11-05.qmd
+        
+    - part: "초발 정신병, 소아/청소년 환자"
+      chapters:
+        - 12-01.qmd
+        - 12-02.qmd
+        - 12-03.qmd
+        - 12-04.qmd
+    - part: "음성/인지/긴장 증상의 치료"
+      chapters:
+        - 13-01.qmd
+        - 13-02.qmd
+        - 13-03.qmd
+        - 13-04.qmd
+        - 13-05.qmd
+    - part: "긴장증의 치료"
+      chapters:
+        - 14-01.qmd
+    - part: "중/노년기 이후의 조현병 치료"
+      chapters:
+        - 15-01.qmd
+        - 15-02.qmd
+        - 15-03.qmd
+    - part: "특수한 임상 상황에서의 치료"
+      chapters: 
+        - 16-01.qmd
+        - 16-02.qmd
+        - 16-03.qmd
+    - part: "조현병에 동반된 증상의 치료"
+      chapters: 
+        - 17-01.qmd
+        - 17-02.qmd
+        - 17-03.qmd
     
+
+        
       
 csl: plos.csl
+crossref: 
+  fig-prefix: 그림
+  tbl-prefix: 표
+  fig-title: 그림
+  tbl-title: 표
 
 
 
@@ -83,6 +129,11 @@ format:
     theme: yeti
     toc: false
     number-sections: true
+    
+  pdf:
+    mainfont: NanumGothic
+    latex-auto-install: true
+  
     
 
 editor: visual

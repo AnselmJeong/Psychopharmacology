@@ -92,11 +92,18 @@ book:
         - 16-01.qmd
         - 16-02.qmd
         - 16-03.qmd
-    - part: "조현병에 동반된 증상의 치료"
+    - part: "우울과 강박 증상의 치료"
       chapters: 
         - 17-01.qmd
         - 17-02.qmd
         - 17-03.qmd
+        - 17-04.qmd
+        
+    - part: "폭력과 자살의 문제"
+      chapters: 
+        - 18-01.qmd
+        - 18-02.qmd
+        - 18-03.qmd
     
 
         

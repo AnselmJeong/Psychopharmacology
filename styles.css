@@ -13,7 +13,16 @@ s {
   /* text-emphasis-style: filled; */
   text-decoration-line: none;
   font-weight: bold;
-  
+}
+
+u {
+  color: mediumorchid;
+  text-decoration-line: none;
+  font-style: bold;
+}
+
+.smallcaps {
+  color: indigo;
 }
 
 h2, h2 .header-section-number {

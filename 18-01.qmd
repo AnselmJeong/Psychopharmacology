@@ -74,7 +74,7 @@ bibliography: References/18-01.bib
 
 각각의 정신병리가 폭력에 미치는 영향을 조사한 연구에서, 환각이나 사고주입/탈취 등은 재범률에 영향을 주지 않았으나, 치료받지 않은 피해망상은 폭력 재범률을 확연히 높였다.[@Keers2014] 비슷한 결과로 환각만 지닌 환자의 공격성은 높아지지 않았으나, 피해 망상을 보이는 환자는 유의하게 공격적 행동을 보일 비율이 높았다.[@Taylor1998] 물론 망상과 환각이 동반될 때 폭력의 위험이 더욱 커진다.[@swanson1996]
 
-망상의 내용은 폭력행사 여부에 큰 영향을 미친다. 추적, 질투 망상 및 <s>카그라스 증후군</s>[^18-01-3] 등이 특히 폭력과 연관된다.[@silverstein2015] 위협을 받는 상황에서 자신이 외부의 힘에 조종되거나 제약을 받아 통제력을 상실한다는 느낌을 받으면 폭력이 유발된다는 주장이 있다.[@Link1998][^18-01-4] 현재로서는 이를 지지하는 연구\[@swanson1996; @Link1998; @Stompe2004; @Nederlof2011\]와 배척하는 연구\[@Appelbaum2000; @Skeem2006\]
+망상의 내용은 폭력행사 여부에 큰 영향을 미친다. 추적, 질투 망상 및 <s>카그라스 증후군</s>[^18-01-3] 등이 특히 폭력과 연관된다.[@silverstein2015] 위협을 받는 상황에서 자신이 외부의 힘에 조종되거나 제약을 받아 통제력을 상실한다는 느낌을 받으면 폭력이 유발된다는 주장이 있다.[@Link1998][^18-01-4] 현재로서는 이를 지지하는 연구[@swanson1996; @Link1998; @Stompe2004; @Nederlof2011]와 배척하는 연구[@Appelbaum2000; @Skeem2006]
 
 [^18-01-3]: **카그라스 증후군 (Capgras syndrome)**: 망상적 동일시 (delusional misidentification)의 하나로써 배우자, 가족 또는 주변인물들이 외모는 동일하지만 전혀 낯선 사람들로 바꿔치기 되었다고 믿는 망상. 1923년 사례를 발표한 프랑스인 정신과의사 조셉 카그라스(Joseph Capgras)의 이름에서 따왔다.
 
@@ -164,29 +164,22 @@ The Report Form for Aggressive Episode (REFA)는 공격적 행동의 심각도�
 
 정신과 의사들은 자살 위험을 평가하는데는 낯설지 않지만, 폭력 행동에 대해서는 익숙하지 않다. 이 때문에 구조화된 평가 도구의 필요성이 절실하였으나, 현재 나와있는 평가도구의 정확도는 그리 높지 못하다.[@Ramesh2018]
 
-현재까지 폭력 행동을 예측하기 위해 120가지 이상의 평가 도구가 개발되어 있다.[@tbl-violence-rating-scales] 이들은 크게 1) 통계적 예측 (actuarial prediction)과 2) 구조적 임상적 판단(structural clinical judgement)의 두 가지 접근법을 취하고 있다.
+현재까지 폭력 행동을 예측하기 위해 120가지 이상의 평가 도구가 개발되어 있다.([@tbl-violence-rating-scales]) 이들은 크게 1) 통계적 예측 (actuarial prediction)과 2) 구조적 임상적 판단(structural clinical judgement)의 두 가지 접근법을 취하고 있다.
 
 통계적 예측 방법을 따르는 척도는 폭력 발생과의 연관성에 따라 가중치가 부여된 예측 요인들로 구성된다. 전문가의 판단보다는 통계적 알고리듬을 따르기 때문에 신뢰성은 높을 것으로 인정되는데[@Borum1996], 반면 주로 과거의 정보에 의존하기 때문에 임상가가 지금 시점에서 치료 결정을 하는데는 크게 도움이 안된다.[@singh2010]
 
 구조적 임상적 판단은 경험적으로 또는 이론적으로 폭력과 연관되는 일련의 요인들을 임상가가 주관적으로 평가하여 미래의 폭력 위험을 예측하는 방법이다. 이는 위험을 관리하고 치료 계획을 세우는데 유용하지만, 주관적인 판단이 지나치게 개입될 여지가 많다.[@singh2010] 평가 도구의 종류는 많지만, 대부분 전반적인 정신질환자를 대상으로 표준화되었기 때문에, 조현병 환자에게 타당하다는 근거는 부족하다.
 
-\| 통계적 예측 도구 \| 구조적 임상적 판단단 \|
+| 통계적 예측 도구                      | 구조적 임상적 판단단                                              |
+|---------------------------------------|-------------------------------------------------------------------|
+| COVR, Classification of Violence Risk | HCR-20, Historical, Clinical, Risk Management-20                  |
+| UK700 risk instrument                 | HKT-30, Historische, Klinische, Toekomstige-30                    |
+| VRAG, Violence Risk Appraisal Guide   | SAPROF, Structured Assessment of Protective Factors               |
+| VRS, Violence Risk Scale              | SORM, Structured Outcome Assessment and Community Risk Monitoring |
+|                                       | START, Short-Term Assessment of Risk and Treatability             |
+|                                       | V-RISK-10, Violence Risk Screening-10                             |
 
-\| \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- \| \-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-- \|
-
-\| COVR, Classification of Violence Risk \| HCR-20, Historical, Clinical, Risk Management-20 \|
-
-\| UK700 risk instrument \| HKT-30, Historische, Klinische, Toekomstige-30 \|
-
-\| VRAG, Violence Risk Appraisal Guide \| SAPROF, Structured Assessment of Protective Factors \|
-
-\| VRS, Violence Risk Scale \| SORM, Structured Outcome Assessment and Community Risk Monitoring
-
-\| \| START, Short-Term Assessment of Risk and Treatability \|
-
-\|                                                             \| V-RISK-10, Violence Risk Screening-10 \|
-
-:   다양한 폭력 행위 평가도구 {#tbl-violence-rating-scales}
+: 다양한 폭력 행위 평가도구 {#tbl-violence-rating-scales}
 
 ### 폭력 행위에 대한 병식
 

@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="정성훈">
+
+<title>SPR - 31&nbsp; 세포주 모델과 전산화 모델</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-01.html" rel="next">
+<link href="./05-02.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">세포주 모델과 전산화 모델</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">SPR</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/AnselmJeong/Psychopharmacology" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">조현병의 역사</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">조현병의 역사; 크레펠린까지</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">블로일러와 정신분열병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">근대적 조현병 개념과 DSM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DSM-5의 도래와 정신의학의 딜레마</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">조현병의 진단</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">조현병의 감별 진단</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">조현병의 자연경과</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">조현병의 생물학적 이해</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">조현병의 유전학적 이해</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">후성유전학적 변화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">신경발달학적 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">신경퇴행적 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">신경면역학과 신경염증 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">조현병의 신경생리학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">조현병의 도파민 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">도파민-세로토닌 가설과 비정형성</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">커넥톰과 기능적 연결성</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">글루타메이트 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">신경인지 기능의 이상</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">언어와 조현병</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">조현병 치료의 기본 개념</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">질병 중심 치료와 증상 중심 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">치료의 의미</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">약물 치료의 혜택</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">조현병의 치료와 자연경과</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">조현병 약물치료의 역사와 현재</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">정신약물학의 태동</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">정신약물학의 태동</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">2세대 항정신병 약물</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">근거중심의학 - 임상시험</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">메타 분석과 임상진료지침</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">전임상 모델</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">고전적 동물 모델</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">새롭게 제시된 동물모델</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">세포주 모델과 전산화 모델</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">항정신병 약물의 작용 기전</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">향정신성 의약품 개발과 우연의 역할</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">고전적 약물 작용 이론</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">도파민과 그 밖의 신경전달물질 수용체</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">세포 내 신호전달계</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">조기 유전자와 타겟 유전자</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">후성유전학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">시냅스의 미세구조</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">신경망의 구조적 변화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">자가포식</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">신경염증</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">뇌 내의 에너지 대사</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">신경가소성</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">다양한 항정신병 약물</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">정형 항정신병 약물</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">비정형 항정신병 약물</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">신세대 비정형 약물</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">조현병 약물 치료의 일반적 원칙</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">약물 처방의 철학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">항정신병 약물의 선택</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">용량 결정을 비롯한 제반 문제들</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">교체, 중단, 다약제 병용</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">부작용과 그 대처법</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">부작용</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">추체외로 증후군</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">지연성 운동장애</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">신경이완제 악성증후군</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">대사증후군</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">프로락틴과 비뇨기계 장애</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">내분비, 심혈관계 부작용</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">소화기계 부작용</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">그 밖의 부작용</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">실제 임상에서 부딪히는 문제들</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">약물 치료의 준비</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">약물 치료 실제 과정</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">치료 중 부딪히게되는 문제들</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">치료저항성 환자의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">치료저항성의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">64</span>&nbsp; <span class="chapter-title">치료저항성 환자의 평가</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">65</span>&nbsp; <span class="chapter-title">치료저항성 환자의 치료전략</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">66</span>&nbsp; <span class="chapter-title">클로자핀 투여</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">67</span>&nbsp; <span class="chapter-title">전기경련 치료와 뇌 자극술</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">초발 정신병, 소아/청소년 환자</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">68</span>&nbsp; <span class="chapter-title">조기 정신병과 전구기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">69</span>&nbsp; <span class="chapter-title">초발 정신병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">70</span>&nbsp; <span class="chapter-title">소아/청소년기 정신병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">71</span>&nbsp; <span class="chapter-title">소아/청소년기 정신병의 약물치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">음성/인지/긴장 증상의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">72</span>&nbsp; <span class="chapter-title">음성 증상의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">73</span>&nbsp; <span class="chapter-title">음성 증상의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">74</span>&nbsp; <span class="chapter-title">조현병에서의 인지 증상</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">75</span>&nbsp; <span class="chapter-title">질병경과에 따른 인지기능의 변화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">76</span>&nbsp; <span class="chapter-title">인지 증상의 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">긴장증의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">77</span>&nbsp; <span class="chapter-title">긴장증의 개념과 임상양상</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true">중/노년기 이후의 조현병 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">78</span>&nbsp; <span class="chapter-title">노년기 조현병의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">79</span>&nbsp; <span class="chapter-title">늦게 발병한 조현병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">80</span>&nbsp; <span class="chapter-title">노년기 조현병 환자의 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true">특수한 임상 상황에서의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">81</span>&nbsp; <span class="chapter-title">물질/약물남용을 동반한 환자의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">82</span>&nbsp; <span class="chapter-title">조현병 환자의 임신과 출산</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">83</span>&nbsp; <span class="chapter-title">임신 중 약물 치료의 실제</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="true">우울과 강박 증상의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">84</span>&nbsp; <span class="chapter-title">조현병에 동반된 우울 증상</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">85</span>&nbsp; <span class="chapter-title">조현병에 동반된 우울 증상의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">86</span>&nbsp; <span class="chapter-title">조현병에 동반된 강박증상의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">87</span>&nbsp; <span class="chapter-title">조현병에 동반된 강박증상의 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="true">폭력과 자살의 문제</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">88</span>&nbsp; <span class="chapter-title">조현병과 폭력</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">89</span>&nbsp; <span class="chapter-title">폭력 성향의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">90</span>&nbsp; <span class="chapter-title">정신질환자와 범죄</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">91</span>&nbsp; <span class="chapter-title">조현병에서의 자살</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">92</span>&nbsp; <span class="chapter-title">자살위험의 평가와 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#전임상-생체-외-연구" id="toc-전임상-생체-외-연구" class="nav-link active" data-scroll-target="#전임상-생체-외-연구"><span class="toc-section-number">31.1</span>  전임상 생체 외 연구</a>
+  <ul class="collapse">
+  <li><a href="#후각-세포-채집" id="toc-후각-세포-채집" class="nav-link" data-scroll-target="#후각-세포-채집"><span class="toc-section-number">31.1.1</span>  후각 세포 채집</a></li>
+  <li><a href="#신경-세포주" id="toc-신경-세포주" class="nav-link" data-scroll-target="#신경-세포주"><span class="toc-section-number">31.1.2</span>  신경 세포주</a></li>
+  <li><a href="#일차-세포-배양" id="toc-일차-세포-배양" class="nav-link" data-scroll-target="#일차-세포-배양"><span class="toc-section-number">31.1.3</span>  일차 세포 배양</a></li>
+  <li><a href="#유도-만능-줄기-세포-모델" id="toc-유도-만능-줄기-세포-모델" class="nav-link" data-scroll-target="#유도-만능-줄기-세포-모델"><span class="toc-section-number">31.1.4</span>  유도 만능 줄기 세포 모델</a></li>
+  <li><a href="#직접-세포-전환" id="toc-직접-세포-전환" class="nav-link" data-scroll-target="#직접-세포-전환"><span class="toc-section-number">31.1.5</span>  직접 세포 전환</a></li>
+  </ul></li>
+  <li><a href="#전산화-모델-및-시스템-생물학" id="toc-전산화-모델-및-시스템-생물학" class="nav-link" data-scroll-target="#전산화-모델-및-시스템-생물학"><span class="toc-section-number">31.2</span>  전산화 모델 및 시스템 생물학</a>
+  <ul class="collapse">
+  <li><a href="#시스템-생물학" id="toc-시스템-생물학" class="nav-link" data-scroll-target="#시스템-생물학"><span class="toc-section-number">31.2.1</span>  시스템 생물학</a></li>
+  <li><a href="#맞춤의학과-정밀의학" id="toc-맞춤의학과-정밀의학" class="nav-link" data-scroll-target="#맞춤의학과-정밀의학"><span class="toc-section-number">31.2.2</span>  맞춤의학과 정밀의학</a></li>
+  <li><a href="#정보-축적과-데이터베이스의-구축" id="toc-정보-축적과-데이터베이스의-구축" class="nav-link" data-scroll-target="#정보-축적과-데이터베이스의-구축"><span class="toc-section-number">31.2.3</span>  정보 축적과 데이터베이스의 구축</a></li>
+  <li><a href="#시스템-정신의학-네트워크-정신의학" id="toc-시스템-정신의학-네트워크-정신의학" class="nav-link" data-scroll-target="#시스템-정신의학-네트워크-정신의학"><span class="toc-section-number">31.2.4</span>  시스템 정신의학, 네트워크 정신의학</a></li>
+  <li><a href="#단일-세포-rna-서열-분석" id="toc-단일-세포-rna-서열-분석" class="nav-link" data-scroll-target="#단일-세포-rna-서열-분석"><span class="toc-section-number">31.2.5</span>  단일 세포 RNA 서열 분석</a></li>
+  <li><a href="#인공-뇌와-계산-정신의학" id="toc-인공-뇌와-계산-정신의학" class="nav-link" data-scroll-target="#인공-뇌와-계산-정신의학"><span class="toc-section-number">31.2.6</span>  인공 뇌와 계산 정신의학</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/AnselmJeong/Psychopharmacology/edit/main/05-03.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">세포주 모델과 전산화 모델</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>정성훈 </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="전임상-생체-외-연구" class="level2 page-columns page-full" data-number="31.1">
+<h2 data-number="31.1" class="anchored" data-anchor-id="전임상-생체-외-연구"><span class="header-section-number">31.1</span> 전임상 생체 외 연구</h2>
+<div class="page-columns page-full"><p><s>역 중개 연구</s><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>란 임상에서 얻은 아이디어를 실제 생리학적 메커니즘으로 재확인하는 과정이다. 다시 말하여 환자들을 대상으로 관찰된 현상을 동물 모델에서 재현하고, 이어서 모델에 쓰인 동물의 생체 조직을 얻어 행동 변화를 일으키는 세포 내외의 변화를 찾아내는 과정이라 할 수 있다. 여기서 후자의 단계를 <strong>생체 외 연구(In vitro study)</strong>라고 하며, 주로 세포 내 신호전달계, 세포 외 환경변화와 유전자의 관계 등을 연구한다. 이를 위해서는 인간의 신경세포를 충실히 재현하는 실험 모델이 필요하게 되는데, 이를 얻기 위해 다양한 방법들이 개발되어왔다.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;전임상 동물 모델에서 얻은 결과를 임상에 적용하는 연구를 중개 연구(translational research)라고 한다. 이에 비해 임상에서 얻은 경험적 지식을 전임상 모델 개발에 응용하는 것을 <strong>역 중개 연구(back-translational research)</strong>라고 한다.</p></li></div></div>
+<section id="후각-세포-채집" class="level3 page-columns page-full" data-number="31.1.1">
+<h3 data-number="31.1.1" class="anchored" data-anchor-id="후각-세포-채집"><span class="header-section-number">31.1.1</span> 후각 세포 채집</h3>
+<div class="page-columns page-full"><p>살아있는 인간 뇌 조직을 떼어내어 실험에 사용할 수는 없지만, 지난 수십년 동안 연구자들은 비강(nasal cavity)에서 채집한 <s>후각 상피 세포</s><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>를 뇌 조직 대신 사용해왔다. 예전에는 생검 후 출혈이나 후각 손상이 빈번하여 잘 활용되지 않았으나, 안전한 생검 기법이 도입된 이후로는 좀더 활발히 사용되고 있다.<span class="citation" data-cites="lovell1982">[<a href="#ref-lovell1982" role="doc-biblioref">1</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;<strong>후각 상피 (olfactory epithelium)</strong>: 인간의 비강을 덮고 있는 약 9cm<sup>2</sup> 넓이의 상피이다. 여기에는 후각을 담당하는 신경세포 말단이, 이를 지탱하는 지지 세포 사이에 분포하고 있다. 이렇듯 신경세포가 직접 체외로 노출되어 있는 것 외에도, 평생 분열과 증식을 계속한다는 것도 큰 특징이다. 후각 상피에는 basal cell이라는 일종의 줄기 세포가 있으며, 이는 신경세포 혹은 지지세포로 분화한다.</p></li></div></div>
+<p>조현병 환자와 그 가족 중에는 후각 기능이 떨어져 있는 사람이 많고, 후각 기능의 손상은 음성 증상과 비례한다.<span class="citation" data-cites="moberg1999">[<a href="#ref-moberg1999" role="doc-biblioref">2</a>]</span> 줄기세포와의 차별점이라면 발달 과정 중에 있는 줄기세포와는 달리, 발달 과정을 끝낸 성숙한 신경세포의 이상을 조사할 수 있다는 점이다.<span class="citation" data-cites="choi2018">[<a href="#ref-choi2018" role="doc-biblioref">3</a>]</span> 더불어 후각 상피는 성인이 된 후에도 여전히 분열, 증식하는 유일한 신경세포인데다가 채집 방법이 쉽기 때문에, 오래된 기술임에도 불구하고 여전히 중요한 연구 기법으로 인정받는다.<span class="citation" data-cites="lavoie2017">[<a href="#ref-lavoie2017" role="doc-biblioref">4</a>]</span></p>
+</section>
+<section id="신경-세포주" class="level3 page-columns page-full" data-number="31.1.2">
+<h3 data-number="31.1.2" class="anchored" data-anchor-id="신경-세포주"><span class="header-section-number">31.1.2</span> 신경 세포주</h3>
+<div class="page-columns page-full"><p><strong>세포주(cell line)</strong>란 하나의 암세포를 조심스럽게 배양하여 스스로 증식할 수 있는 <s>클론</s><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>으로 성장시킨 것으로, 외부에서 영양 물질을 공급해주기만 한다면 영원히 죽지 않는다. 이 세포들은 모두 유전자 구성이 동일하기 때문에, 실험결과를 통제하거나 재현하는데 유리하다. 정신의학 연구를 위해서는 신경세포의 특성을 최대한 많이 지닌 세포주를 사용해야 하는데, 가장 널리 사용되는 것은 <s>SH-SY5Y 세포주</s><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>이다. SH-SY5Y 세포는 도파민을 비롯한 단가 아민 신경전달물질을 생성하고, 수상돌기 간극을 자라나게 하는 등 신경세포의 특성을 많이 지니고 있어서 항정신병 약물의 최초 선별에 널리 사용된다.<span class="citation" data-cites="koszla2020">[<a href="#ref-koszla2020" role="doc-biblioref">5</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn3"><p><sup>3</sup>&nbsp;<strong>클론 (clone)</strong>: 여기서는 동일한 유전적 정보를 지닌 세포 집합을 의미한다.</p></li><li id="fn4"><p><sup>4</sup>&nbsp;<strong>SH-SY5Y 세포주</strong>: 신경아세포종(neuroblastoma)를 앓고 있던 환자의 골수에서 채취된 암세포 중에서 특별히 신경세포의 특성을 가장 많이 띤 세포를 골라 불멸화시킨 세포주이다.1978년에 처음 발표되었다. 전세계 모든 연구실에서 사용되는 SH-SY5Y 세포주는 모두 이 세포주의 자손이다.</p></li></div></div>
+</section>
+<section id="일차-세포-배양" class="level3" data-number="31.1.3">
+<h3 data-number="31.1.3" class="anchored" data-anchor-id="일차-세포-배양"><span class="header-section-number">31.1.3</span> 일차 세포 배양</h3>
+<p>신경 세포주는 불멸이라 배양하기는 쉽지만, 여전히 암세포이기 때문에 실제 신경세포와 차이가 크다. 따라서 좀더 신경세포의 독특한 특성을 연구하고 싶다면, 쥐의 해마 혹은 대뇌 피질에서 신경세포를 채집한 후 이를 직접 배양하여 사용한다. 이를 <strong>일차 세포 배양(primary cell culture)</strong>이라고 하는데, 이렇게 얻은 세포주는 세포내 변화뿐 아니라 세포의 분화, 시냅스 형성 및 구조변화 등 발달과정을 연구하는데 이용된다. 또한 약물 효과는 물론 독성에 대해서도 연구할 수 있을 정도로 정교하다.<span class="citation" data-cites="sahu2019">[<a href="#ref-sahu2019" role="doc-biblioref">6</a>]</span></p>
+<p>하지만 애초에 살아있는 신경 세포를 채집하기가 힘들고, 얻어진 세포를 죽이지 않고 키우는 것도 쉽지 않다. 게다가 전세계 공통으로 쓰이는 세포주와는 달리 채집된 원천에 따라, 배양 조건에 따라, 실험실에 따라 특성이 천차만별이기 때문에, 얻어질 실험결과를 일반화하기 어렵다.</p>
+<p>천신만고 끝에 신경세포를 키우는데 성공했다고 해도, 분열하지 않기 때문에 조만간 죽게 되고, 실험을 계속하려면 또 다시 채집/배양 과정을 되풀이 해야만 한다. 이를 극복하기 위해, 출산 전이나 출산 직후의 뇌에서 배아 줄기 세포(embryonic stem cell)을 얻어 키우는 방법이 도입되었다. 얻어진 세포를 적합한 환경에서 키우면 신경세포로 분화되며, 이후 다양한 실험을 할 수 있는 세포주가 얻어진다.<span class="citation" data-cites="sahu2019">[<a href="#ref-sahu2019" role="doc-biblioref">6</a>]</span></p>
+</section>
+<section id="유도-만능-줄기-세포-모델" class="level3 page-columns page-full" data-number="31.1.4">
+<h3 data-number="31.1.4" class="anchored" data-anchor-id="유도-만능-줄기-세포-모델"><span class="header-section-number">31.1.4</span> 유도 만능 줄기 세포 모델</h3>
+<div class="page-columns page-full"><p>일차 세포 배양에서와 같이 성체에서 신경조직을 얻어 배양하는 것은 제대로 키우기 어려울 뿐더러, 개체의 발달 과정에서 벌어지는 현상을 연구하기에 적합하지 않다. 배아 줄기 세포를 얻어 키우기도 하지만, 이는 윤리적 문제때문에 동물에서나 가능하다. 물론 인간 태아의 탯줄로부터 줄기 세포를 얻는 방법도 고려할 수 있지만, 성인이 되어 조현병이 발병하게될 태아를 미리 찾아낼 방법이 없다. 이러한 한계를 극복하는 기술이 성인의 체세포를 역분화시켜 줄기 세포를 얻는 것이다. 조현병 환자로부터 체세포를 얻어내어 역분화시킨다면, 유전적 취약성을 지니고 있는 줄기세포가 발달 과정 중에 어떤 이상을 보이는 지 재현할 수 있을 것이다. 이러한 기술을 <s>유도 만능 줄기 세포 (iPSC)</s><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>라고 하며, 2006년 <s>Yamanaka</s><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>에 의해 개발되었다.<span class="citation" data-cites="takahashi2006">[<a href="#ref-takahashi2006" role="doc-biblioref">7</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn5"><p><sup>5</sup>&nbsp;<strong>유도 만능 줄기 세포 (induced pluripotent stem cell, iPSC)</strong>: 성인에게서 얻어진 체세포에 역분화를 일으키는 특수한 유전자를 도입한 후 발현시키거나, 특수 유전자로부터 유도된 단백질을 체세포에 주입하여 만들어낸다. 어떤 유전자가 이러한 특수한 성질을 지니는 지 찾아내는 것이 관건이다.</p></li><li id="fn6"><p><sup>6</sup>&nbsp;<strong>Shinya Yamanaka (1962~ )</strong>: 일본 교토 대학 교수로 역분화 줄기 세포 기술을 개발한 공로로 2012년 노벨 생리의학상을 수상하였다. 그가 발견한 4개의 유전자(Myc, Oct3/4, Sox2, Klf4)를 Yamanaka factors라고 부른다.</p></li></div></div>
+<p>조현병에 iPSC 기술을 최초로 응용한 연구는 2011년에 발표되었다.<span class="citation" data-cites="brennand2011">[<a href="#ref-brennand2011" role="doc-biblioref">8</a>]</span> 연구자들은 환자 및 대조군으로부터 상피세포를 얻어 iPSC로 역분화시킨 후, 신경 조직으로 분화하는 과정을 세밀히 관찰함으로써 두 군 간의 차이를 탐색했다. 더불어 분화의 중간 과정에 항정신병 약물을 투여함으로써 치료 가능성 역시 살펴보았다. iPSC는 신경세포 뿐 아니라 이를 지탱하는 신경교세포로도 분화하기 때문에 그럴듯한 뇌조직으로 발달해나간다. 이를 통해 3차원적 구조의 변화는 물론, 신경섬유가 뻗어나가는 경로도 연구할 수 있다.<span class="citation" data-cites="mohamed2019">[<a href="#ref-mohamed2019" role="doc-biblioref">9</a>]</span> 한편 mRNA 전사량을 측정하면, 각 발달과정에서 주요 단백질들이 어떻게 양적으로 변화하는 지 시계열 자료를 얻어낼 수도 있으며<span class="citation" data-cites="mcneill2020">[<a href="#ref-mcneill2020" role="doc-biblioref">10</a>]</span>, iPSC의 유전자 프로파일을 인위적으로 조작함으로써 특정 유전자의 기능을 좀더 확실히 밝혀낼 수 있다.<span class="citation" data-cites="ma2017">[<a href="#ref-ma2017" role="doc-biblioref">11</a>]</span></p>
+<p>이렇듯 iPSC는 무궁무진한 가능성을 지니고 있지만 단점이 없는 것은 아니다. 개개인의 유전적 프로파일을 반영한다는 것은 장점이긴 하지만, 결과를 일반화할 수 없다는 것은 일차 세포 배양과 마찬가지이다. 또한 신경교세포까지는 분화하지만, 희소돌기아교세포로는 분화가 이루어지지 않기 때문에 수초화 단계가 진행되지 않는다. 즉 아무리 기다려도 태아 수준에 머물러있기 때문에, 청소년기 이후에 발병과정이 어떻게 이루어지는지를 확인하기는 어렵다.<span class="citation" data-cites="mcneill2020">[<a href="#ref-mcneill2020" role="doc-biblioref">10</a>]</span></p>
+</section>
+<section id="직접-세포-전환" class="level3 page-columns page-full" data-number="31.1.5">
+<h3 data-number="31.1.5" class="anchored" data-anchor-id="직접-세포-전환"><span class="header-section-number">31.1.5</span> 직접 세포 전환</h3>
+<p>iPSC는 일단 성체 세포를 만능 줄기 세포로 역분화시켰다가, 다시 원하는 세포로 분화시키는 <strong>간접 프로그래밍(indirect programming)</strong> 방법을 사용한다. 이 과정은 무척 복잡할 뿐 아니라, 중간에 소실되는 세포가 많아 효율이 무척 떨어진다. 만약 성체 세포를 iPSC라는 중간 과정없이 직접 신경 세포로 전환시킨다면 훨씬 효율을 높이고 수고도 줄 것이다.</p>
+<div class="page-columns page-full"><p>2000년대 중반 연구자들은 <s>C/EBP</s><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>이라는 전사 인자를 주입함으로써 성숙한 T/B 세포를 대식구(macrophage)로 전환시키는데 성공하였다.<span class="citation" data-cites="laiosa2006">[<a href="#ref-laiosa2006" role="doc-biblioref">12</a>]</span> 이런 방법을 <strong>직접 프로그래밍(direct programming)</strong> 혹은 <strong>직접 세포 전환(direct cell conversion)</strong>이라 한다. 연구가 거듭되면서, 사용하는 전사 인자의 종류에 따라 서로 다른 세포로 전환시킬 수 있다는 것이 밝혀졌다. 급기야 2010년에는 섬유아세포를 심근세포로 전환시키는데 성공했으며<span class="citation" data-cites="ieda2010">[<a href="#ref-ieda2010" role="doc-biblioref">13</a>]</span>, 2012년에는 이렇게 만들어진 심근세포를 살아있는 쥐에 이식하는데도 성공하였다.<span class="citation" data-cites="song2012">[<a href="#ref-song2012" role="doc-biblioref">14</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn7"><p><sup>7</sup>&nbsp;CCAAT/enhancer-binding proteins (C/EBP)</p></li></div></div>
+<p>이 무렵에는 전사인자를 외부에서 주입해주어야 했으나, microRNA 기술이 도입된 이후에는 세포내에 microRNA를 주입하여 목적한 전사인자를 발현시키는 식으로 프로그래밍이 이루어졌다. Yoo 등<span class="citation" data-cites="yoo2011">[<a href="#ref-yoo2011" role="doc-biblioref">15</a>]</span>은 microRNA를 써서 인간 섬유아세포를 신경세포로 전환하는데 성공하였다.</p>
+<p>직접 프로그래밍 기법은 연구는 물론이거니와 치료적으로도 중요한 의미가 있다. 심근경색이나 뇌졸중처럼 원래는 재생될 수 없는 조직이 파괴된 경우, 직접 프로그래밍을 시도하여 손상 부위에서 새로운 세포들이 자라날 수 있도록 유도한다. 한편 역분화 과정을 겪지 않기 때문에, 세포가 갖고 있는 유전자 정보뿐 아니라 출생 후 경험을 통해 획득한 후성유전학적(epigenetic) 특질까지 고스란히 복제할 수 있다. 이는 유전자와 환경의 상호작용으로 발병하는 정신질환을 연구하는데 매우 매력적인 부분이다. iPSC보다 좀더 성숙한 뇌조직을 만들어낼 수 있는지는 아직 확실하지 않지만, 가능성은 남아있다.<span class="citation" data-cites="wang2021">[<a href="#ref-wang2021" role="doc-biblioref">16</a>]</span></p>
+<div class="page-columns page-full"><p>직접 세포 전환 기술은 아직 초보 단계에 머물러 있다. iPSC보다 나아졌다고 하지만 복잡하고 정교한 과정이 필요하며, 전환의 성공률도 낮은 편이다. 한편 iPSC와는 달리 증식하지 않기때문에 <s>뇌 오가노이드</s><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>를 만들 수 없다.</p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;<strong>뇌 오가노이드 (cerebral organoid)</strong>: Jürgen Knoblich를 비롯한 오스트리아 연구진은 2013년 소두증을 가진 환자로부터 iPSC를 배양한 후 이를 정교하게 분화시켜, 약 4~5mm 정도의 뇌 유사 구조물을 키우는데 성공하였다.<span class="citation" data-cites="lancaster2013">[<a href="#ref-lancaster2013" role="doc-biblioref">17</a>]</span> 이를 brain organoid 혹은 cerabral organoid라고 한다.</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/05-03/img_3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Human Cell Models for Schizophrenia <span class="citation" data-cites="wilson2013">[<a href="#ref-wilson2013" role="doc-biblioref">18</a>]</span></figcaption><p></p>
+</figure>
+</div>
+<p><img src="Images/05-03/img_4.png" class="img-fluid" alt="asdsfs">​</p>
+<p>From 33387152</p>
+</section>
+</section>
+<section id="전산화-모델-및-시스템-생물학" class="level2 page-columns page-full" data-number="31.2">
+<h2 data-number="31.2" class="anchored" data-anchor-id="전산화-모델-및-시스템-생물학"><span class="header-section-number">31.2</span> 전산화 모델 및 시스템 생물학</h2>
+<section id="시스템-생물학" class="level3" data-number="31.2.1">
+<h3 data-number="31.2.1" class="anchored" data-anchor-id="시스템-생물학"><span class="header-section-number">31.2.1</span> 시스템 생물학</h3>
+<p>과학 연구는 거대한 환원론적 패러다임(reductionist paradigm)에 의지하여 한 발자국씩 나아간다. 현상을 나누고 또 나누어서, 더 이상 나눌 수 없는 세부사항을 연구 대상으로 삼아 이해하고자 하며, 세부사항에 대해 얻어진 퍼즐 조각을 모두 한데 합치면 전체 현상에 대한 큰 그림을 그릴 수 있을 것이라고 기대한다.<span class="citation" data-cites="schaffner2013">[<a href="#ref-schaffner2013" role="doc-biblioref">19</a>]</span> 그런데 문제는 단편적인 지식들을 아무리 모아도 전체적 현상을 이해하기 어렵다는 것이다. 게다가 점점 더 전문화된 영역으로 시야를 좁히려는 연구자들의 성향때문에, 전체를 바라보기는 점점 더 어렵게 되었다. 그러나보니 정신의학에서도, 분자 수준의 정교한 신경생물학적 지식이, 거시적인 인간 행동이나 심리, 그리고 사회 현상을 이해하는데는 아무런 도움을 주지 못한다는 비판이 고개를 들게 되었다.<span class="citation" data-cites="alawieh2012">[<a href="#ref-alawieh2012" role="doc-biblioref">20</a>]</span></p>
+<p>이러한 한계를 극복하기 위해서는 가장 아래 단계인 유전자로부터 가장 윗 단계인 정신병리나 역학에 이르기까지 서로 다른 층위의 계층적 자료를 통합할 수 있는 새로운 관점이나 방법론이 필요하다.<span class="citation" data-cites="hidalgo2009">[<a href="#ref-hidalgo2009" role="doc-biblioref">21</a>]</span> 개개 요소의 성질을 파헤치는 것도 중요하지만, 그만큼 중요한 것은 이들이 한데 모여 이루어내는 동역학적 효과를 이해하는 것이다. 복잡계적 이해의 틀, 혹은 시스템적 시각이 필요해지는 것은 바로 이 떄문이다.<span class="citation" data-cites="mo2009 johnson2019 montagud2021">[<a href="#ref-mo2009" role="doc-biblioref">22</a>–<a href="#ref-montagud2021" role="doc-biblioref">24</a>]</span></p>
+<p><strong>시스템 생물학(system biology)</strong>이란 생명 현상을 <strong>복합체(complex system)</strong>가 발휘하는 기능으로 규정하고, 현상의 서로 다른 층위를 다루는 의학, 생물학, 수학, 물리학, 화학 등을 종합적으로 사용하여, 거시적 현상에 가장 근접한 모델을 세우는 것을 목표로 한다. 환원적 이해의 틀에서는 <strong>“분자 A는 B라는 기능을 한다”</strong>라는 묘사에서 멈추는 반면, 시스템 생물학에서는 서로 다른 기능을 갖는 요소들이 상호작용하면서 발현시키는 평형 상태와 그 시간적 변화를 수학적 모델로 기술하려 한다. 그러다보니 미분 방정식을 이용한 동역학(dynamics)에 대한 이해가 필연적으로 요구되며, 수학 및 컴퓨터 공학을 이용한 모델링과 시뮬레이션이 중요하게 다루어진다.<span class="citation" data-cites="liu2005">[<a href="#ref-liu2005" role="doc-biblioref">25</a>]</span></p>
+<p>시스템 생물학의 개념은 오래 전부터 정립되어 있었으나, 인간 게놈 프로젝트를 통하여 방대한 데이터가 얻어진 이후 본격적으로 각광을 받기 시작하였다.<span class="citation" data-cites="trewavas2006">[<a href="#ref-trewavas2006" role="doc-biblioref">26</a>]</span> 게놈 프로젝트를 계기로 세포 수준에서의 자동화 분석 기술이 한차원 높은 단계로 약진하였고, 유전체(genome) 뿐 아니라, 전사체(transcriptome), 단백체(proteome), 대사체(metabolome)에 대한 정보가 축적되기 시작하였다.<span class="citation" data-cites="manzoni2018">[<a href="#ref-manzoni2018" role="doc-biblioref">27</a>]</span> 이들을 다루는 소위 <strong>Omics</strong> 학문들은, 하나의 세포가 담고 있는 <strong>완전한(complete)</strong> 정보를 추적하며, 이를 통해 세포의 기능을 미시적으로부터 거시적 수준까지 이해하고 재현하고자 한다. 이렇게 얻어진 지식은 맞춤의학(personalized medicine) 및 정밀의학(precision medicine)을 실현하는 밑거름이 될 것으로 기대된다.<span class="citation" data-cites="chen_systems_2012 chen2013 filipp2017">[<a href="#ref-chen_systems_2012" role="doc-biblioref">28</a>–<a href="#ref-filipp2017" role="doc-biblioref">30</a>]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/05-03/img_5.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">조현병의 omics 연구 전략 <span class="citation" data-cites="guan2022">[<a href="#ref-guan2022" role="doc-biblioref">31</a>]</span></figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="맞춤의학과-정밀의학" class="level3 page-columns page-full" data-number="31.2.2">
+<h3 data-number="31.2.2" class="anchored" data-anchor-id="맞춤의학과-정밀의학"><span class="header-section-number">31.2.2</span> 맞춤의학과 정밀의학</h3>
+<div class="page-columns page-full"><p><strong>맞춤의학(personalized medicine)</strong>은 개인의 유전체 혹은 기타 omics 정보를 이용하여, 그 사람에게 가장 적합한 치료를 선택하는 것을 목표로 삼는다.<span class="citation" data-cites="lisoway2021">[<a href="#ref-lisoway2021" role="doc-biblioref">32</a>]</span> 거의 흡사한 분야인 <strong>정밀의학(precision medicine</strong>)은 개개인에게 적합한 치료를 찾아낸다는 의미에서 맞춤의학과 지향하는 바는 같지만, 좀더 전산화, 정보화에 의지한다는 미묘한 차이가 있다. 2015년 미국 국립보건원은 <strong>“Precision Medicine Initiative”</strong>라는 연구 프로그램을 발족하였다.[<span class="citation" data-cites="collins2015">[<a href="#ref-collins2015" role="doc-biblioref">33</a>]</span>]<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> 한해에 쏟아지는 생물학적 정보의 양은 이미 기상학, 천문학에서 얻어지는 정보보다도 방대해졌기 때문에, 전산화, 정보화의 비중이 강조될 수 밖에 없다. 그야말로 세포 하나에서 얻어지는 정보를 처리하고자 해도, 슈퍼 컴퓨터 및 컴퓨터 클러스터를 동원한 고성능 컴퓨팅(high performance computing, HPC)에 의지할 수 밖에 없다.<span class="citation" data-cites="jagiella2017">[<a href="#ref-jagiella2017" role="doc-biblioref">35</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;당시 미국 대통령 Obama는 이 프로그램을 이끌 수장으로 생물학자가 아니라 반도체 제조 회사인 인텔에서 경력을 쌓은 Eric Dishman을 임명하였다. 이는 정밀의학이 가능해지려면 방대한 자료를 해석할 수 있는 정보화 시스템의 구축이 무엇보다 필요하다는 인식때문이었을 것이다.<span class="citation" data-cites="allofusresearchprograminvestigators2019">[<a href="#ref-allofusresearchprograminvestigators2019" role="doc-biblioref">34</a>]</span></p></li></div></div>
+<p>정신의학 역시 이러한 거대한 흐름에서 예외가 될 수 없다. 정신현상은 언뜻 다지털 정보와 가장 거리가 먼 듯이 보이지만, 오히려 다른 생리 현상에 비해 훨씬 더 고차원적이고 고려되어야할 정보량이 많기 때문에 더욱 방대한 연산 능력이 필요하다. 더욱이 최근들어 딥 러닝과 인공지능에 대한 관심이 급속히 늘어나면서, 인공지능을 통해 얻은 통찰을 정신현상을 이해하는데 사용할 수 있으리라는 기대가 커지고 있다. 이런 환경적 변화와 시대적 요청에 의해 태어난 학문 분야가 <strong>계산 정신의학(computational psychiatry)</strong>이다.<span class="citation" data-cites="huys2016">[<a href="#ref-huys2016" role="doc-biblioref">36</a>]</span> 이는 또 하나의 전임상적 실험 기법으로, 발병 기전 이해 및 약물 개발에 있어서 조금씩 역할을 키워나가고 있다. 계산 정신의학의 개념을 살펴보기 전에 이를 가능하게 한 환경적 변화에 대해 조금 더 살펴보고자 한다.</p>
+</section>
+<section id="정보-축적과-데이터베이스의-구축" class="level3 page-columns page-full" data-number="31.2.3">
+<h3 data-number="31.2.3" class="anchored" data-anchor-id="정보-축적과-데이터베이스의-구축"><span class="header-section-number">31.2.3</span> 정보 축적과 데이터베이스의 구축</h3>
+<div class="page-columns page-full"><p>인간 게놈 프로젝트는 <strong>차세대 염기서열 분석(Next Generation Sequencing, NGS)</strong><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>를 통해 얻어지는 방대한 유전적 정보를 어떻게 수집, 저장, 배포하겠느냐는 고민과 동시에 진행되었다. 1988년에 세워진 미국 <s>국립생물공학정보센터 (NCBI)</s><a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>는 유전체 서열 데이터베이스인 <s>GenBank</s><a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>를 비롯하여, 유전자 변이, 표현형, 질병과의 연관성에 이르기까지 각종 생명공학 정보를 체계적으로 보관하고, 전 세계 연구자들이 이를 열람할 수 있도록 도구를 제공하고 있다. 미국과 유럽은 생명 정보 공학에 있어서 주도권을 놓치지 않기 위해 우호적 경쟁관계에 놓여있었는데, 미국이 NCBI를 발족하여 선수를 치자 유럽 연합은 1992년에 <s>유럽 생물정보학 연구소(EMBL-EBI)</s><a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>을 세워 이에 대응하였다.</p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;혹은 High-throughput sequencing이라 불리운다.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;<strong>National Center for Biotechnology Information (NCBI)</strong>: 미국 국립보건원 산하 조직으로 1988년 설립되었다. 나날이 발전하는 생명공학과 의학을 통해 집적된 생물정보학 데이터의 효율적인 수집, 저장, 배포를 위해, 염기서열, 아미노산 서열, 단백질 구조, 유전적 변이, 질병 및 의학 논문의 서지 목록(pubmed) 등 무척이나 다양한 데이터베이스를 관리, 운영하고 있다.</p></li><li id="fn12"><p><sup>12</sup>&nbsp;<a href="https://www.ncbi.nlm.nih.gov/genbank/">GeneBank</a>: 전세계 연구자들의 자발적인 협조를 통해 얻어진 공개된 모든 DNA 염기서열과 번역된 아미노산 서열을 보관한 데이터베이스. 로스알라모스 연구소 직원이었던 Walter Goad에 의해 1982년에 시작되었다. 현재는 미국의 국립생물공학정보센터(NCBI)에 의해 관리되고 있다.</p></li><li id="fn13"><p><sup>13</sup>&nbsp;<strong>European Bioinformatics Institute (EMBL-EBI)</strong>: 유럽분자생물실험실(European Molecular Biology Laboratory, EMBL)의 산하 기관으로 생물정보학에 관한 연구를 수행과 정보를 제공하고 있다. 미국의 NCBI에 자극받아 유럽 각국의 협력하에 1992년 설립되었다. EBI에서도 NCBI에서 제공하는 것들과 유사한 데이터베이스를 독자적으로 운영하고 있다.</p></li></div></div>
+<p>정신 유전학은 환자가 밀집된 거대 가계를 대상으로 하는 연계 연구로 시작하였지만, 이내 대상 환자 수가 수백, 수천명에 이르는 연합 연구로 옮겨갔고, 10여년 전부터는 광범위 유전체 연합 연구(GWAS)를 주된 연구 방법으로 채택하였다. GWAS에는 거대한 표본 수가 필요하기 때문에 단일 연구팀이 수행하기는 어려움이 많았고, 일찌감치 진단과 유전형 자료를 공유하는 데이터베이스가 만들어졌다. <a href="https://www.med.unc.edu/pgc/">Psychiatric Genomics Consortium (PSG)</a>는 노스 캐롤라이나 의과대학을 주도로 2007년에 시작되었으며, 현재 40여개국에서 천명이 넘는 연구자들이 힘을 합하고 있다. 조현병만 해도 2018년 현재 10만면이 넘는 표본이 수집되어 있다.<span class="citation" data-cites="sullivan_psychiatric_2018">[<a href="#ref-sullivan_psychiatric_2018" role="doc-biblioref">37</a>]</span> 이러한 유전 정보 외에도 <a href="https://www.proteomicsdb.org/">단백체</a>, <a href="https://singlecell.broadinstitute.org/single_cell/">단일 세포내의 전사체</a>, <a href="https://hmdb.ca/">대사체</a> 데이터 베이스가 속속 구축되어 연구자들의 참여를 기다리고 있다.</p>
+<div class="page-columns page-full"><p>정신의학과 관련하여 구축되어 있는 데이터베이스 혹은 데이터뱅크(data bank)들은 세포 생물학적 데이터에만 국한되지 않는다. <s>알렌 뇌 지도</s><a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>는 정밀한 뇌 영상과 유전적 자료를 결합하기 위해 2004년부터 영상 자료를 제공하고 있다. 이외에도 각 정신과 질환별로 뇌영상 자료를 공유하는 데이터베이스들이 있으며, 뇌파를 비롯한 생리학적 자료, <s>Human Connectome Project</s><a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a>에서 얻어진 신경경로 자료, fMRI 자료 들이 제공된다.</p><div class="no-row-height column-margin column-container"><li id="fn14"><p><sup>14</sup>&nbsp;<strong>Allen Brain Atlas</strong>: 마이크로소프트 사의 창립 멤버였던 Paul G. Allen의 기부로 2003년 Allen Institute of Brain Science가 설립되었다. 이 연구소에서는 쥐, 영장류 그리고 인간 뇌에 대한 매우 상세한 영상을 제공할 뿐 아니라, 뇌 부위에 따른 유전자 전사 및 단백질 발현량 정보를 제공하는데 이를 <a href="https://portal.brain-map.org/">Allen Brain Atlas</a>라고 한다. 현재 성체는 물론 발달 중인 개체의 지도를 제공하고 있으며, 2011년 부터는 신경망의 연결에 대한 지도도 제공하기 시작하였다.</p></li><li id="fn15"><p><sup>15</sup>&nbsp;<a href="http://www.humanconnectomeproject.org/">Human Connectome Project (HCP)</a>: 인간 뇌의 신경섬유 경로에 대한 방대한 자료를 수집함으로써 신경망 구성의 청사진을 얻으려는 계획으로, 2009년부터 5년 예정으로 시작되었다. 얻어진 네트워크 지도를 connectome이라 한다.</p></li></div></div>
+<p>이렇게 방대한 자료에 대한 접근 권한은 타당한 자격을 지닌 연구자라면 연구 계획에 대한 간단한 심사과정을 거쳐 얻을 수 있다. 아쉽게도 공개되어 있는 데이터는 뇌영상학 정도까지이며, 증상이나 진단 등 외적 표현형에 관한 데이터베이스는 아직 구축되지 않았다. 아마도 환자 개인의 프라이버시에 해당되는 자료라 함부로 공유하기 어려웠으리라 짐작된다. 생물학적 자료가 표현형과 연결된 후에야 비로소 진정한 의미에서 시스템 정신의학이 시작될 수 있기 때문에 무척 아쉬울 따름이다.</p>
+</section>
+<section id="시스템-정신의학-네트워크-정신의학" class="level3 page-columns page-full" data-number="31.2.4">
+<h3 data-number="31.2.4" class="anchored" data-anchor-id="시스템-정신의학-네트워크-정신의학"><span class="header-section-number">31.2.4</span> 시스템 정신의학, 네트워크 정신의학</h3>
+<div class="page-columns page-full"><p>시스템 생물학, 시스템 의학이란 구호는 거창하였지만, 서로 다른 층위의 자료를 어떻게 통합할 것인지 구체적인 방법론은 마련되지 않았다. 1970년대부터 학자들의 입에 오르내리기 시작한 <strong>비선형 동역학 시스템(nonlinear dynamic system)</strong> 혹은 <strong>복잡 적응계(complex adaptive system)</strong> 이론은 1984년 미국의 <s>산타페 연구소</s><a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a>가 문을 열면서 이론적 틀이 마련되었고, 카오스(chaos)라는 단어가 대중의 상상력을 사로잡기 시작하였다. 그러나 복잡계 이론은 난해한 수학적 지식을 필요로 하였고, 말 그대로 너무 어렵고 복잡한 나머지, 기껏해야 수사학적 장치로 전락하여 정신의학이나 정신치료에 차용되었을 뿐이다. 정작 복잡계 이론을 이루는 수학 공식으로 신경세포와 뇌내 구조물의 생리를 모델링할 수는 없었다.<span class="citation" data-cites="tobin1997">[<a href="#ref-tobin1997" role="doc-biblioref">38</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn16"><p><sup>16</sup>&nbsp;<a href="https://www.santafe.edu/"><strong>산타페 연구소 (Santa Fe Institute, SFI)</strong></a>: 복잡계 분야 연구를 위해 설립된 연구소로 미국 뉴멕시코주 산타페에 위치하고 있다. 노벨물리학상 수상자인 Murray Gell-Mann과 Phillip Anderson, 그리고 노벨 경제학상 수상자인 Kenneth Arrow를 주축으로 하여, 복잡성 (complexity) 에 대한 보편적이며 통합적인 패러다임을 만들기 위해 1984년에 창립되어 현재까지 활발하게 운영되고 있다. 학문간의 경계를 무너뜨리고, 생물학, 컴퓨터 공학 뿐 아니라 정치학, 경제학, 사회학에 이르기까지 모든 종류의 시스템에서, 구성 요소들이 자체조직화(self-organization) 과정을 거쳐 발현시키는 질서과 구조를 연구하고 있다.</p></li></div></div>
+<p>이에 대한 대안으로 소위 <strong>네트워크 생물학(network biology)</strong> 또는 <strong>네트워크 의학(network medicine)</strong> 개념이 새로 등장하였다.<span class="citation" data-cites="barabási2011">[<a href="#ref-barabási2011" role="doc-biblioref">39</a>]</span> 이는 시스템을 구성하는 요소들의 집합적 상호작용이 전체 계의 특성을 구현한다는 기본 개념은 동일하지만, 과거 복잡계 이론에서 중요시하였던 비선형과 동역학을 일단 제거하였다. 미분 방정식으로 시간에 따른 동적(dynamic) 변화를 모델링하기 보다는, 상호연결의 패턴을 정적(static)으로 분석함으로써 거시적인 특성을 도출해내려 하였다.<span class="citation" data-cites="saxe2016">[<a href="#ref-saxe2016" role="doc-biblioref">40</a>]</span> 이를 <strong>정적 네트워크 분석(static network analysis)</strong>이라고도 하는데, 심리생리적 모델링의 첫번째 과제라고도 할 수 있다. 그 대표적인 예는 <strong>단백질 상호작용 네트워크(protein-protein network)</strong>로, <a href="https://string-db.org/">STRING 데이터베이스</a>는 단백질 상호작용 자료를 수집, 제공하고 있으며, <a href="https://thebiogrid.org/">BioGRID</a>는 한걸음 더 나아가 유전자, 단백질, 기타 화합물의 상호작용에 대한 자료를 제공한다.</p>
+<div class="page-columns page-full"><p>일찌기 2008년 대만 연구자들은 단백질 상호작용 패턴을 기초로 하여 조현병 취약 유전자에 속하는 ​​ NRG1와 CACNG2 유전자 사이의 가능한 생물학적 연관 경로를 제시하였다.<span class="citation" data-cites="hsu2008">[<a href="#ref-hsu2008" role="doc-biblioref">41</a>]</span> 이러한 선례를 따라 연구자들은, 데이터베이스에 등재된 상호작용 자료를 근거로 각 질환의 네트워크 구조를 비교하기도 하며, 수치모델에 의해 기능을 알지 못하는 유전자가 어떤 경로에 속할 지를 예측하기도 한다.<span class="citation" data-cites="lee2011 ganapathiraju2016">[<a href="#ref-lee2011" role="doc-biblioref">42</a>,<a href="#ref-ganapathiraju2016" role="doc-biblioref">43</a>]</span> 이러한 네트워크 의학적 시각에서 게놈은 단순한 유전자들의 모임이 아니라 그들 사이의 상호관계 차원에서 연구되어야 하며, 단백체 역시 proteome이 아니라 interactome<a href="#fn17" class="footnote-ref" id="fnref17" role="doc-noteref"><sup>17</sup></a>이 더 중요하다고 이해된다. 이런 시대적 흐름을 바탕으로 하버드 대학의 Silbersweig와 Loscalzo<span class="citation" data-cites="silbersweig2017">[<a href="#ref-silbersweig2017" role="doc-biblioref">45</a>]</span>는 <strong>“네트워크 정신의학(Network Psychiatry)”</strong>을 통해서 분자 수준의 생명 현상을 그 맥락에서 이해할 수 있을 뿐 아니라, 정신병리와 나아가서는 진단까지 새로운 시각으로 바라볼 수 있을 것이라 내다보았다. 이러한 전망은 앞으로 점점 더 정신의학 연구에서도 빅 데이터를 컴퓨터로 분석하는 방법론이 점점 더 강조될 것임을 시사한다.</p><div class="no-row-height column-margin column-container"><li id="fn17"><p><sup>17</sup>&nbsp;예를 들어 Dana-Faber 암 연구소에서 진행한 <a href="http://www.interactome-atlas.org/">the Human Reference Interactome Mapping Project</a>는 17,500 개 이상의 단백질 간의 상호 작용을 조사하여 이를 하나의 네트워크 지도로 표시하였다.<span class="citation" data-cites="luck2020">[<a href="#ref-luck2020" role="doc-biblioref">44</a>]</span></p></li></div></div>
+</section>
+<section id="단일-세포-rna-서열-분석" class="level3" data-number="31.2.5">
+<h3 data-number="31.2.5" class="anchored" data-anchor-id="단일-세포-rna-서열-분석"><span class="header-section-number">31.2.5</span> 단일 세포 RNA 서열 분석</h3>
+<p>지금까지 생물의 염기 서열을 분석할 때는 차세대 염기서열 분석기기를 사용한다고 해도 역시 표본을 구성하는 다량의 세포 전체를 뭉뚱그려 분석할 수 밖에 없었다. 예를 들어 인간 게놈 프로젝트에는 혈액 표본 전체의 B형 림프구, 혹은 떼어낸 피부 조직 전체의 섬유아세포가 사용되었다. 유전형은 모든 세포가 동일하기 때문에 이와 같은 연구 방법이 문제가 되지 않았지만, 단백제, 전사체 등을 분석할 때는 개개 세포마다 조금씩 내용이 다를 것이기 때문에 문제가 될 수 있다.</p>
+<p>이를 극복하기 위해 단일 세포를 대상으로 RNA 염기서열을 분석하는 방법(single cell RNA sequencing, scRNA-seq)이 개발되었다.<span class="citation" data-cites="chen2019">[<a href="#ref-chen2019" role="doc-biblioref">46</a>]</span> 이는 표본이 동질한 미세 조직, 혹은 그야말로 세포 하나이기 때문에 엄청나게 정교해야만 한다. 같은 조직에 속하는 세포라도 환경적 요인, 후성유전학적 요인에 의해 RNA 전사 패턴이 달라지기 때문에, 가급적 다양한 세포에 대해 하나하나 분석을 시도한다. 게다가 시점에 따라 달라지는 전사 패턴을 규명하려면 더더욱 정보량이 커지게 된다. 이런 식으로 서로 다른 세포, 서로 다른 시점에서 얻어진 RNA 서열을 분석하고자 한다면, 효율적인 알고리듬과 큰 규모의 연산능력이 필요해진다.</p>
+<p>최첨단의 연구 기법이지만 정신의학에서도 이미 scRNA-seq 모델이 사용되고 있다. Li 등<span class="citation" data-cites="li_integrative_2018">[<a href="#ref-li_integrative_2018" role="doc-biblioref">47</a>]</span>은 분만 전부터 후에 이르는 개체 발달의 전 범위에 걸쳐, 다양한 뇌 조직에서의 전사체와 후성유전체를 scRNA-seq의 방법을 동원하여 분석하였다. 연구자들은 정신질환을 일으킨다고 알려진 몇몇 유전자의 발현 양상을 공간적, 시간적으로 추적함으로써, 신경발달 도중 정신질환이 점차 자리잡는 과정에 대한 단서를 얻을 수 있었다.</p>
+</section>
+<section id="인공-뇌와-계산-정신의학" class="level3 page-columns page-full" data-number="31.2.6">
+<h3 data-number="31.2.6" class="anchored" data-anchor-id="인공-뇌와-계산-정신의학"><span class="header-section-number">31.2.6</span> 인공 뇌와 계산 정신의학</h3>
+<div class="page-columns page-full"><p>어떤 연구자가 새로운 화학 물질의 약리학적 효과를 시험하고자 한다면, 지금까지는 세포주나 실험 동물에 투여하여 그 효과를 확인하는 수 밖에 없었다. 이런 고전적인 방법은 물적, 인적 자원 뿐 아니라 오랜 시간이 걸리기 때문에, 신속하게 대량의 물질을 시험해야 할 때는 비용/효과비가 떨어지고, 수요를 따라가지도 못한다. 하지만 만약 컴퓨터 알고리즘으로 생리현상을 시뮬레이션 할 수 있다면, 화합물의 화학 구조만 입력하면 예상되는 반응을 가늠할 수 있는 시스템을 구축할 수 있을 것이다. 이를 가상 선별(virtual screening)이라 하며, 이미 molecular docking, pharmacophore modeling, <s>QSAR</s><a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a> 등 관련 기술이 개발, 적용되고 있다.<span class="citation" data-cites="lin2020">[<a href="#ref-lin2020" role="doc-biblioref">48</a>]</span> 여기서 한발 더 나아가 컴퓨터로 모델링한 인공 신경세포 혹은 인공 뇌가 있다면, 향정신성 의약품 개발도 비약적으로 앞당길 수 있을 것이다.<span class="citation" data-cites="herwig2014">[<a href="#ref-herwig2014" role="doc-biblioref">49</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn18"><p><sup>18</sup>&nbsp;<strong>Quantitative structure-activity relationship (QSAR)</strong>: 생물학적 거대분자를 이루는 개개 원소의 물리화학적 성질, 그리고 이들의 결합관계를 기초로 하여, 화합물의 구조적, 생물학적 성질을 예측하는 모델링 기법</p></li></div></div>
+<div class="page-columns page-full"><p>2009년 신경과학자인 <s>Henry Markram</s><a href="#fn19" class="footnote-ref" id="fnref19" role="doc-noteref"><sup>19</sup></a>은 컴퓨터 상에서 인간 뇌를 소프트웨어로 구현해내겠다는 장대한 계획을 발표하였다. 그는 이 모델을 통해 뇌파와 같은 뇌의 생리적 현상 뿐 아니라, 인간의 지각, 사고, 추론 과정을 연구할 수 있으리라 기대하였다. 언뜻 들으면 황당무계한 주장같기도 하지만, 딥 러닝 기술의 개발로 인공 지능 연구가 급성장하면서 실현 가능성이 조금은 높아졌다.</p><div class="no-row-height column-margin column-container"><li id="fn19"><p><sup>19</sup>&nbsp;<strong>Henry Markram (1962~)</strong>: 이스라엘의 신경과학자로 유럽 연합에서 추진한 Human Brain Project를 통해 인간의 뇌를 시뮬레이션 하는 모델을 만들려했으나 학계의 반대로 물러났다. 이 계획은 현재 <a href="https://www.epfl.ch/research/domains/bluebrain/">Blue Brain Project</a>로 이름을 바꾸어 인간 뇌 대신 쥐의 뇌 모델을 만드는데 주력하고 있다.</p></li></div></div>
+<div class="page-columns page-full"><p>인공 지능의 비약적인 발전은 생각보다 오래 전부터 이루어져 왔다. Rumelhart와 <s>Hinton</s><a href="#fn20" class="footnote-ref" id="fnref20" role="doc-noteref"><sup>20</sup></a> 등이 다층 신경망(multi-layered neural network)을 학습시키는데, 역전사 (back-propagation)를 이용할 수 있다고 발표한 것이 1985년이었으며, <s>LeCun</s><a href="#fn21" class="footnote-ref" id="fnref21" role="doc-noteref"><sup>21</sup></a>이 합성곱 신경망(convolutional neural network)를 이용하여 그림으로된 숫자를 읽어내는데 성공한 것이 1989년이었다. 1999년에는 그래픽 처리장치(graphic processing unit, GPU)가 개발되면서 역전사에 필요한 막대한 연산이 현실적으로 가능해졌고, 그야말로 딥 러닝 혁명이 시작되었다.</p><div class="no-row-height column-margin column-container"><li id="fn20"><p><sup>20</sup>&nbsp;<strong>Geoffrey Hinton (1947~)</strong>: 캐나다의 인지심리학자이자 컴퓨터 공학자. 1986년에 역전사 기법을 처음 제안하였고, 2012년에는 AlexNet을 통해 컴퓨터가 인간과 필적할 정도로 영상을 분류해낼 수 있음을 입증하여 딥 러닝의 대부로 여겨진다. 현대적 딥 러닝은 Geoffrey Hinton, Yoshua Bengio, Yann LeCun에 의해 태어났다고 해도 과언이 아니며, 이 세명은 2018년 Turing 상을 수상하였다.</p></li><li id="fn21"><p><sup>21</sup>&nbsp;<strong>Yann André LeCun (1960~)</strong>: 프랑스의 컴퓨터 공학자로 특히 컴퓨터 비전(computer vision)의 발전에 공헌하였다.</p></li></div></div>
+<div class="page-columns page-full"><p>딥 러닝 기술은 인간의 인지 과정을 이해하는데도 막대한 영향을 끼쳤다. 인간의 사고 과정을 본딴 인공 지능을 만들겠다는 이상과 더불어, 인간의 사고 자체가 정교한 알고리즘에 지나지 않는다는 철학과 사상이 힘을 얻었다. 이런 시대적 상황을 고려했을 때 Markram이 인간 뇌를 시뮬레이션하겠다는 야망을 품은 것도 허황된 꿈은 아니었을 것이다. 그 덕분이었는지 유럽 집행위원회(European Commission)은 10억 유로의 예산을 들여 2013년에 인간 뇌 프로젝트(Human Brain Project, HBP)를 발족시킨다.<a href="#fn22" class="footnote-ref" id="fnref22" role="doc-noteref"><sup>22</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn22"><p><sup>22</sup>&nbsp;애초에 HBP는 신경세포 하나하나의 생리현상을 수학방정식으로 모델링하고, 이렇게 만들어진 모의 신경 단위(neural unit)들을 서로 연결시켜 네트워크를 만든 후 집단이 창발시키는 현상을 연구하는 것을 목표로 하였다. 그러나 유럽과 미국 전역의 신경과학자들은 이러한 꿈이 논리적, 기술적으로 불가능하다고 반대하는 청원서를 올렸고, HBP는 연구 목표를 수정할 수 밖에 없었다.<span class="citation" data-cites="abbott2015">[<a href="#ref-abbott2015" role="doc-biblioref">50</a>]</span> 하나하나 신경세포의 모델링을 모두 합쳐 고위 인지 기능을 구현해내겠다는 “bottom-up” 접근 방식은, 아무리 고성능의 연산 능력을 투입하고, 시뮬레이션하는 네트워크의 규모를 키워도 해결될 수 없다는 것이 청원의 골자였다. 이 과정에서 Henry Markram은 HBP를 떠날 수 밖에 없었다.</p></li></div></div>
+<div class="page-columns page-full"><p>유럽의 HBP에 대응하여, 같은 해인 2013년에 미국에서는 <strong>“Brain Initiative”</strong><a href="#fn23" class="footnote-ref" id="fnref23" role="doc-noteref"><sup>23</sup></a>가 발족되었다. Brain initiative는 광범위한 연구 목표를 세워놓고 있지만, 이를 간단히 요약하면, 신경세포의 내부 생리를 이해하고, 신경세포가 구성하는 연결망에 대해 세세한 지도를 만들며, 이렇게 모인 방대한 자료를 이용해 수학적 모델링 및 시뮬레이션을 진행하겠다는 것이다. 그럼으로써 집단을 구성하는 신경세포들의 역동적인 전기적 활성 변화를 시간과 공간 변화에 따라 추적하는 것이 Brain Initiative의 주요 목적이다.</p><div class="no-row-height column-margin column-container"><li id="fn23"><p><sup>23</sup>&nbsp;<a href="https://braininitiative.nih.gov/">The Brain Research Through Advancing Innovative Neurotechnologies (BRAIN) Initiative</a>의 약자이다.</p></li></div></div>
+<p>이러한 시대적 배경 하에 태어난 새로운 학문 분야가 <strong>계산신경과학(computational neuroscience)</strong>과 그 하위 분야인 <strong>계산정신의학(computational psychiatry)</strong>이다. 이미 1988년 Sejnowski 등<span class="citation" data-cites="sejnowski1988">[<a href="#ref-sejnowski1988" role="doc-biblioref">51</a>]</span>은 신경생리학 데이터를 분석하기 위해서는 컴퓨터의 힘을 적극 동원할 필요가 있음을 강조함으로써 계산신경과학을 탄생시켰다. 뒤이어 2012년 Montague등<span class="citation" data-cites="montague2012">[<a href="#ref-montague2012" role="doc-biblioref">52</a>]</span>은 분자생물학에서 얻어진 지식과, 행동 및 정신병리 차원에서 얻어진 지식 사이의 간극을 메우기 위해서는 컴퓨터를 이용한 수학적 모델링이 필요하다고 역설함으로써 계산정신의학의 탄생을 알렸다. 계산정신의학자들은 뉴런을 하나의 정보 처리 단위로 간주하고, 하나의 뉴런 안에서 일어나는 신호 전달을 시뮬레이션 하는 것은 물론, 대단위 신경망에서의 정보처리를 컴퓨터로 시뮬레이션하여 이를 정신병리와 대응시키고자 한다. 보통 두 주제로 나뉘는데, 첫번째는 실험실로부터 얻어진 방대한 데이터를 기계 학습(machine learning)이라는 체로 걸러냄으로써 그동안 알지 못했던 새로운 사실을 찾아내는 것이며(data driven analysis), 두번째는 기존 이론을 출발점으로 모델을 만들어 시뮬레이션된 결과를 데이터와 비교함으로써, 모델을 수정 보완하는 동시에 기존 이론을 다듬어 나가는 과정이다.(theory driven analysis)<span class="citation" data-cites="huys2016">[<a href="#ref-huys2016" role="doc-biblioref">36</a>]</span> 계산정신의학은 이제 걸음마를 떼는 단계에 불과하지만 빅데이터 분석 및 인공 지능 기술이 나날이 발전해나가는 가운데, 많은 성장 가능성을 품고 있다.</p>
+</section>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-lovell1982" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Lovell MA, Jafek BW, Moran DT, Rowley JC. <strong><em>Biopsy of human olfactory mucosa. An instrument and a technique</em></strong>. Archives of Otolaryngology (Chicago, Ill: 1960). 1982;108: 247–249. doi:<a href="https://doi.org/10.1001/archotol.1982.00790520047013">10.1001/archotol.1982.00790520047013</a></div>
+</div>
+<div id="ref-moberg1999" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Moberg P. <strong><em>Olfactory dysfunction in schizophrenia a qualitative and quantitative review</em></strong>. Neuropsychopharmacology. 1999;21: 325–340. doi:<a href="https://doi.org/10.1016/S0893-133X(99)00019-6">10.1016/S0893-133X(99)00019-6</a></div>
+</div>
+<div id="ref-choi2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Choi R, Goldstein BJ. <strong><em>Olfactory epithelium: Cells, clinical disorders, and insights from an adult stem cell niche</em></strong>. Laryngoscope Investigative Otolaryngology. 2018;3: 35–42. doi:<a href="https://doi.org/10.1002/lio2.135">10.1002/lio2.135</a></div>
+</div>
+<div id="ref-lavoie2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Lavoie J, Sawa A, Ishizuka K. <strong><em>Application of olfactory tissue and its neural progenitors to schizophrenia and psychiatric research</em></strong>. Current Opinion in Psychiatry. 2017;30: 176–183. doi:<a href="https://doi.org/10.1097/YCO.0000000000000327">10.1097/YCO.0000000000000327</a></div>
+</div>
+<div id="ref-koszla2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Koszła O, Targowska-Duda KM, Kędzierska E, Kaczor AA. <strong><em>In Vitro and In Vivo Models for the Investigation of Potential Drugs Against Schizophrenia</em></strong>. Biomolecules. 2020;10: E160. doi:<a href="https://doi.org/10.3390/biom10010160">10.3390/biom10010160</a></div>
+</div>
+<div id="ref-sahu2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Sahu MP, Nikkilä O, Lågas S, Kolehmainen S, Castrén E. <strong><em>Culturing primary neurons from rat hippocampus and cortex</em></strong>. Neuronal Signaling. 2019;3: NS20180207. doi:<a href="https://doi.org/10.1042/NS20180207">10.1042/NS20180207</a></div>
+</div>
+<div id="ref-takahashi2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Takahashi K, Yamanaka S. <strong><em>Induction of pluripotent stem cells from mouse embryonic and adult fibroblast cultures by defined factors</em></strong>. Cell. 2006;126: 663–676. doi:<a href="https://doi.org/10.1016/j.cell.2006.07.024">10.1016/j.cell.2006.07.024</a></div>
+</div>
+<div id="ref-brennand2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Brennand KJ, Simone A, Jou J, Gelboin-Burkhart C, Tran N, Sangar S, et al. <strong><em>Modelling schizophrenia using human induced pluripotent stem cells</em></strong>. Nature. 2011;473: 221–225. doi:<a href="https://doi.org/10.1038/nature09915">10.1038/nature09915</a></div>
+</div>
+<div id="ref-mohamed2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Mohamed N-V, Larroquette F, Beitel LK, Fon EA, Durcan TM. <strong><em>One Step Into the Future: New iPSC Tools to Advance Research in Parkinson’s Disease and Neurological Disorders</em></strong>. Journal of Parkinson’s Disease. 2019;9: 265–281. doi:<a href="https://doi.org/10.3233/JPD-181515">10.3233/JPD-181515</a></div>
+</div>
+<div id="ref-mcneill2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">McNeill RV, Ziegler GC, Radtke F, Nieberler M, Lesch K-P, Kittel-Schneider S. <strong><em>Mental health dished up<span></span>the use of iPSC models in neuropsychiatric research</em></strong>. Journal of Neural Transmission. 2020;127: 1547–1568. doi:<a href="https://doi.org/10.1007/s00702-020-02197-9">10.1007/s00702-020-02197-9</a></div>
+</div>
+<div id="ref-ma2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Ma D, Ng SH, Zeng L, Zhao Y, Tan EK. <strong><em>Generation of a human induced pluripotent stem cell (iPSC) line carrying the Parkinson’s disease linked LRRK2 variant S1647T</em></strong>. Stem Cell Research. 2017;18: 54–56. doi:<a href="https://doi.org/10.1016/j.scr.2016.12.010">10.1016/j.scr.2016.12.010</a></div>
+</div>
+<div id="ref-laiosa2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Laiosa CV, Stadtfeld M, Xie H, Andres-Aguayo L de, Graf T. <strong><em>Reprogramming of committed T cell progenitors to macrophages and dendritic cells by C/EBP alpha and PU.1 transcription factors</em></strong>. Immunity. 2006;25: 731–744. doi:<a href="https://doi.org/10.1016/j.immuni.2006.09.011">10.1016/j.immuni.2006.09.011</a></div>
+</div>
+<div id="ref-ieda2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Ieda M, Fu J-D, Delgado-Olguin P, Vedantham V, Hayashi Y, Bruneau BG, et al. <strong><em>Direct reprogramming of fibroblasts into functional cardiomyocytes by defined factors</em></strong>. Cell. 2010;142: 375–386. doi:<a href="https://doi.org/10.1016/j.cell.2010.07.002">10.1016/j.cell.2010.07.002</a></div>
+</div>
+<div id="ref-song2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Song K, Nam Y-J, Luo X, Qi X, Tan W, Huang GN, et al. <strong><em>Heart repair by reprogramming non-myocytes with cardiac transcription factors</em></strong>. Nature. 2012;485: 599–604. doi:<a href="https://doi.org/10.1038/nature11139">10.1038/nature11139</a></div>
+</div>
+<div id="ref-yoo2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Yoo AS, Sun AX, Li L, Shcheglovitov A, Portmann T, Li Y, et al. <strong><em>MicroRNA-mediated conversion of human fibroblasts to neurons</em></strong>. Nature. 2011;476: 228–231. doi:<a href="https://doi.org/10.1038/nature10323">10.1038/nature10323</a></div>
+</div>
+<div id="ref-wang2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Wang H, Yang Y, Liu J, Qian L. <strong><em>Direct cell reprogramming: approaches, mechanisms and progress</em></strong>. Nature Reviews Molecular Cell Biology. 2021;22: 410–424. doi:<a href="https://doi.org/10.1038/s41580-021-00335-z">10.1038/s41580-021-00335-z</a></div>
+</div>
+<div id="ref-lancaster2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Lancaster MA, Renner M, Martin C-A, Wenzel D, Bicknell LS, Hurles ME, et al. <strong><em>Cerebral organoids model human brain development and microcephaly</em></strong>. Nature. 2013;501: 373–379. doi:<a href="https://doi.org/10.1038/nature12517">10.1038/nature12517</a></div>
+</div>
+<div id="ref-wilson2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Wilson AM, Sawa A. <strong><em>Human Cell Models for Schizophrenia</em></strong>. In: Silverstein SM, Moghaddam B, Wykes T, editors. Cambridge (MA): MIT Press; 2013. Available: <a href="http://www.ncbi.nlm.nih.gov/books/NBK569659/">http://www.ncbi.nlm.nih.gov/books/NBK569659/</a></div>
+</div>
+<div id="ref-schaffner2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Schaffner KF. <strong><em>Reduction and Reductionism in Psychiatry</em></strong>. Fulford KWM, Davies M, Gipps RGT, Graham G, Sadler JZ, Stanghellini G, et al., editors. Oxford University Press; 2013. doi:<a href="https://doi.org/10.1093/oxfordhb/9780199579563.013.0059">10.1093/oxfordhb/9780199579563.013.0059</a></div>
+</div>
+<div id="ref-alawieh2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Alawieh A, Zaraket FA, Li J-L, Mondello S, Nokkari A, Razafsha M, et al. <strong><em>Systems biology, bioinformatics, and biomarkers in neuropsychiatry</em></strong>. Frontiers in Neuroscience. 2012;6. doi:<a href="https://doi.org/10.3389/fnins.2012.00187">10.3389/fnins.2012.00187</a></div>
+</div>
+<div id="ref-hidalgo2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Hidalgo CA, Blumm N, Barabási A-L, Christakis NA. <strong><em>A Dynamic Network Approach for the Study of Human Phenotypes</em></strong>. Meyers LA, editor. PLoS Computational Biology. 2009;5: e1000353. doi:<a href="https://doi.org/10.1371/journal.pcbi.1000353">10.1371/journal.pcbi.1000353</a></div>
+</div>
+<div id="ref-mo2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Mo ML, Palsson BØ. <strong><em>Understanding human metabolic physiology: a genome-to-systems approach</em></strong>. Trends in Biotechnology. 2009;27: 37–44. doi:<a href="https://doi.org/10.1016/j.tibtech.2008.09.007">10.1016/j.tibtech.2008.09.007</a></div>
+</div>
+<div id="ref-johnson2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Johnson E, Bierut L, Cox N. <strong><em>Integrative Omics In Psychiatric Diseases: Tools For Discovery and Understanding Biology</em></strong>. European Neuropsychopharmacology. 2019;29: S741–S742. doi:<a href="https://doi.org/10.1016/j.euroneuro.2017.06.073">10.1016/j.euroneuro.2017.06.073</a></div>
+</div>
+<div id="ref-montagud2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Montagud A, Ponce-de-Leon M, Valencia A. <strong><em>Systems biology at the giga-scale: Large multiscale models of complex, heterogeneous multicellular systems</em></strong>. Current Opinion in Systems Biology. 2021;28: 100385. doi:<a href="https://doi.org/10.1016/j.coisb.2021.100385">10.1016/j.coisb.2021.100385</a></div>
+</div>
+<div id="ref-liu2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Liu ET. <strong><em>Systems Biology, Integrative Biology, Predictive Biology</em></strong>. Cell. 2005;121: 505–506. doi:<a href="https://doi.org/10.1016/j.cell.2005.04.021">10.1016/j.cell.2005.04.021</a></div>
+</div>
+<div id="ref-trewavas2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Trewavas A. <strong><em>A brief history of systems biology. <span>"</span>Every object that biology studies is a system of systems.<span>"</span> Francois Jacob (1974)</em></strong>. The Plant Cell. 2006;18: 2420–2430. doi:<a href="https://doi.org/10.1105/tpc.106.042267">10.1105/tpc.106.042267</a></div>
+</div>
+<div id="ref-manzoni2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Manzoni C, Kia DA, Vandrovcova J, Hardy J, Wood NW, Lewis PA, et al. <strong><em>Genome, transcriptome and proteome: the rise of omics data and their integration in biomedical sciences</em></strong>. Briefings in Bioinformatics. 2018;19: 286–302. doi:<a href="https://doi.org/10.1093/bib/bbw114">10.1093/bib/bbw114</a></div>
+</div>
+<div id="ref-chen_systems_2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Chen R, Snyder M. <strong><em>Systems biology: Personalized medicine for the future?</em></strong> Current Opinion in Pharmacology. 2012;12: 623–628. doi:<a href="https://doi.org/10.1016/j.coph.2012.07.011">10.1016/j.coph.2012.07.011</a></div>
+</div>
+<div id="ref-chen2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Chen R, Snyder M. <strong><em>Promise of personalized omics to precision medicine</em></strong>. Wiley Interdisciplinary Reviews Systems Biology and Medicine. 2013;5: 73–82. doi:<a href="https://doi.org/10.1002/wsbm.1198">10.1002/wsbm.1198</a></div>
+</div>
+<div id="ref-filipp2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Filipp FV. <strong><em>Precision medicine driven by cancer systems biology</em></strong>. Cancer and Metastasis Reviews. 2017;36: 91–108. doi:<a href="https://doi.org/10.1007/s10555-017-9662-4">10.1007/s10555-017-9662-4</a></div>
+</div>
+<div id="ref-guan2022" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Guan F, Ni T, Zhu W, Williams LK, Cui L-B, Li M, et al. <strong><em>Integrative omics of schizophrenia: from genetic determinants to clinical classification and risk prediction</em></strong>. Molecular Psychiatry. 2022;27: 113–126. doi:<a href="https://doi.org/10.1038/s41380-021-01201-2">10.1038/s41380-021-01201-2</a></div>
+</div>
+<div id="ref-lisoway2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Lisoway AJ, Chen CC, Zai CC, Tiwari AK, Kennedy JL. <strong><em>Toward personalized medicine in schizophrenia: Genetics and epigenetics of antipsychotic treatment</em></strong>. Schizophrenia Research. 2021;232: 112–124. doi:<a href="https://doi.org/10.1016/j.schres.2021.05.010">10.1016/j.schres.2021.05.010</a></div>
+</div>
+<div id="ref-collins2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Collins FS, Varmus H. <strong><em>A new initiative on precision medicine</em></strong>. The New England Journal of Medicine. 2015;372: 793–795. doi:<a href="https://doi.org/10.1056/NEJMp1500523">10.1056/NEJMp1500523</a></div>
+</div>
+<div id="ref-allofusresearchprograminvestigators2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">All of Us Research Program Investigators, Denny JC, Rutter JL, Goldstein DB, Philippakis A, Smoller JW, et al. <strong><em>The <span>"</span>All of Us<span>"</span> Research Program</em></strong>. The New England Journal of Medicine. 2019;381: 668–676. doi:<a href="https://doi.org/10.1056/NEJMsr1809937">10.1056/NEJMsr1809937</a></div>
+</div>
+<div id="ref-jagiella2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">Jagiella N, Rickert D, Theis FJ, Hasenauer J. <strong><em>Parallelization and High-Performance Computing Enables Automated Statistical Inference of Multi-scale Models</em></strong>. Cell Systems. 2017;4: 194–206.e9. doi:<a href="https://doi.org/10.1016/j.cels.2016.12.002">10.1016/j.cels.2016.12.002</a></div>
+</div>
+<div id="ref-huys2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">Huys QJM, Maia TV, Frank MJ. <strong><em>Computational psychiatry as a bridge from neuroscience to clinical applications</em></strong>. Nature Neuroscience. 2016;19: 404–413. doi:<a href="https://doi.org/10.1038/nn.4238">10.1038/nn.4238</a></div>
+</div>
+<div id="ref-sullivan_psychiatric_2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">Sullivan PF, Agrawal A, Bulik CM, Andreassen OA, Børglum AD, Breen G, et al. <strong><em>Psychiatric <span>Genomics</span>: <span>An</span> <span>Update</span> and an <span>Agenda</span></em></strong>. American Journal of Psychiatry. 2018;175: 15–27. doi:<a href="https://doi.org/10.1176/appi.ajp.2017.17030283">10.1176/appi.ajp.2017.17030283</a></div>
+</div>
+<div id="ref-tobin1997" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">Tobin J. <strong><em>Chaos theory, psychiatry, and a quiet revolution</em></strong>. Irish Journal of Psychological Medicine. 1997;14: 112–114. doi:<a href="https://doi.org/10.1017/S0790966700003244">10.1017/S0790966700003244</a></div>
+</div>
+<div id="ref-barabási2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Barabási A-L, Gulbahce N, Loscalzo J. <strong><em>Network medicine: a network-based approach to human disease</em></strong>. Nature Reviews Genetics. 2011;12: 56–68. doi:<a href="https://doi.org/10.1038/nrg2918">10.1038/nrg2918</a></div>
+</div>
+<div id="ref-saxe2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">40. </div><div class="csl-right-inline">Saxe GN, Statnikov A, Fenyo D, Ren J, Li Z, Prasad M, et al. <strong><em>A Complex Systems Approach to Causal Discovery in Psychiatry</em></strong>. Seedat S, editor. PLOS ONE. 2016;11: e0151174. doi:<a href="https://doi.org/10.1371/journal.pone.0151174">10.1371/journal.pone.0151174</a></div>
+</div>
+<div id="ref-hsu2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">41. </div><div class="csl-right-inline">Hsu P-C, Yang U-C, Shih K-H, Liu C-M, Liu Y-L, Hwu H-G. <strong><em>A protein interaction based model for schizophrenia study</em></strong>. BMC Bioinformatics. 2008;9: S23. doi:<a href="https://doi.org/10.1186/1471-2105-9-S12-S23">10.1186/1471-2105-9-S12-S23</a></div>
+</div>
+<div id="ref-lee2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">42. </div><div class="csl-right-inline">Lee S-A, Tsao TT-H, Yang K-C, Lin H, Kuo Y-L, Hsu C-H, et al. <strong><em>Construction and analysis of the protein-protein interaction networks for schizophrenia, bipolar disorder, and major depression</em></strong>. BMC bioinformatics. 2011;12 Suppl 13: S20. doi:<a href="https://doi.org/10.1186/1471-2105-12-S13-S20">10.1186/1471-2105-12-S13-S20</a></div>
+</div>
+<div id="ref-ganapathiraju2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">43. </div><div class="csl-right-inline">Ganapathiraju MK, Thahir M, Handen A, Sarkar SN, Sweet RA, Nimgaonkar VL, et al. <strong><em>Schizophrenia interactome with 504 novel protein<span></span>protein interactions</em></strong>. npj Schizophrenia. 2016;2: 16012. doi:<a href="https://doi.org/10.1038/npjschz.2016.12">10.1038/npjschz.2016.12</a></div>
+</div>
+<div id="ref-luck2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">44. </div><div class="csl-right-inline">Luck K, Kim D-K, Lambourne L, Spirohn K, Begg BE, Bian W, et al. <strong><em>A reference map of the human binary protein interactome</em></strong>. Nature. 2020;580: 402–408. doi:<a href="https://doi.org/10.1038/s41586-020-2188-x">10.1038/s41586-020-2188-x</a></div>
+</div>
+<div id="ref-silbersweig2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">45. </div><div class="csl-right-inline">Silbersweig D, Loscalzo J. <strong><em>Precision Psychiatry Meets Network Medicine: Network Psychiatry</em></strong>. JAMA Psychiatry. 2017;74: 665. doi:<a href="https://doi.org/10.1001/jamapsychiatry.2017.0580">10.1001/jamapsychiatry.2017.0580</a></div>
+</div>
+<div id="ref-chen2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">46. </div><div class="csl-right-inline">Chen G, Ning B, Shi T. <strong><em>Single-cell RNA-seq technologies and related computational data analysis</em></strong>. Frontiers in Genetics. 2019;10: 317. doi:<a href="https://doi.org/10.3389/fgene.2019.00317">10.3389/fgene.2019.00317</a></div>
+</div>
+<div id="ref-li_integrative_2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">47. </div><div class="csl-right-inline">Li M, Santpere G, Imamura Kawasawa Y, Evgrafov OV, Gulden FO, Pochareddy S, et al. <strong><em>Integrative functional genomic analysis of human brain development and neuropsychiatric risks</em></strong>. Science (New York, NY). 2018;362: eaat7615. doi:<a href="https://doi.org/10.1126/science.aat7615">10.1126/science.aat7615</a></div>
+</div>
+<div id="ref-lin2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">48. </div><div class="csl-right-inline">Lin X, Li X, Lin X. <strong><em>A Review on Applications of Computational Methods in Drug Screening and Design</em></strong>. Molecules (Basel, Switzerland). 2020;25: E1375. doi:<a href="https://doi.org/10.3390/molecules25061375">10.3390/molecules25061375</a></div>
+</div>
+<div id="ref-herwig2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">49. </div><div class="csl-right-inline">Herwig R. <strong><em>Computational modeling of drug response with applications to neuroscience</em></strong>. Dialogues in Clinical Neuroscience. 2014;16: 465–477. </div>
+</div>
+<div id="ref-abbott2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">50. </div><div class="csl-right-inline">Abbott A. <strong><em>Mediators call for change to science of Human Brain Project</em></strong>. Nature. 2015; nature.2015.17082. doi:<a href="https://doi.org/10.1038/nature.2015.17082">10.1038/nature.2015.17082</a></div>
+</div>
+<div id="ref-sejnowski1988" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">51. </div><div class="csl-right-inline">Sejnowski TJ, Koch C, Churchland PS. <strong><em>Computational Neuroscience</em></strong>. Science. 1988;241: 1299–1306. doi:<a href="https://doi.org/10.1126/science.3045969">10.1126/science.3045969</a></div>
+</div>
+<div id="ref-montague2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">52. </div><div class="csl-right-inline">Montague PR, Dolan RJ, Friston KJ, Dayan P. <strong><em>Computational psychiatry</em></strong>. Trends in Cognitive Sciences. 2012;16: 72–80. doi:<a href="https://doi.org/10.1016/j.tics.2011.11.018">10.1016/j.tics.2011.11.018</a></div>
+</div>
+</div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-02.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">새롭게 제시된 동물모델</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-01.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">향정신성 의약품 개발과 우연의 역할</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

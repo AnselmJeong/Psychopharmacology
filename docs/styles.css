@@ -1,0 +1,43 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap');
+
+
+
+
+body {
+  /* color: aqua; */
+}
+
+s {
+  color: coral;
+  /* text-emphasis-style: filled; */
+  text-decoration-line: none;
+  font-weight: bold;
+}
+
+u {
+  color: mediumorchid;
+  text-decoration-line: none;
+  font-style: bold;
+}
+
+.smallcaps {
+  color: indigo;
+}
+
+h2, h2 .header-section-number {
+  color: #394983;
+  font-weight: bold;
+}
+
+h3, .h3, h4, .h4 {
+    margin-bottom: 1rem;
+}
+
+.footnote-ref {
+  color: coral;
+}
+
+.sidebar-item-text.sidebar-link.text-start {
+  font-weight: bold;
+}

@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.251">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="정성훈">
+
+<title>SPR - 39&nbsp; 신경망의 구조적 변화</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./06-09.html" rel="next">
+<link href="./06-07.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">신경망의 구조적 변화</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">SPR</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/AnselmJeong/Psychopharmacology" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="https://twitter.com/intent/tweet?url=|url|" title="Twitter" class="sidebar-tool px-1"><i class="bi bi-twitter"></i></a>
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">조현병의 역사</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">조현병의 역사; 크레펠린까지</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-01-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">블로일러와 정신분열병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">근대적 조현병 개념과 DSM</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">DSM-5의 도래와 정신의학의 딜레마</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">조현병의 진단</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">조현병의 감별 진단</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">조현병의 자연경과</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">조현병의 생물학적 이해</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">조현병의 유전학적 이해</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">후성유전학적 변화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">신경발달학적 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">신경퇴행적 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">신경면역학과 신경염증 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">조현병의 신경생리학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">조현병의 도파민 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">도파민-세로토닌 가설과 비정형성</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">커넥톰과 기능적 연결성</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">글루타메이트 가설</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">신경인지 기능의 이상</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">언어와 조현병</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">조현병 치료의 기본 개념</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">질병 중심 치료와 증상 중심 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">치료의 의미</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">약물 치료의 혜택</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">조현병의 치료와 자연경과</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">조현병 약물치료의 역사와 현재</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">정신약물학의 태동</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">정신약물학의 태동</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">2세대 항정신병 약물</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">근거중심의학 - 임상시험</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">메타 분석과 임상진료지침</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">전임상 모델</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">고전적 동물 모델</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">새롭게 제시된 동물모델</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">세포주 모델과 전산화 모델</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">항정신병 약물의 작용 기전</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">향정신성 의약품 개발과 우연의 역할</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">고전적 약물 작용 이론</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">도파민과 그 밖의 신경전달물질 수용체</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">세포 내 신호전달계</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">조기 유전자와 타겟 유전자</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">후성유전학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">시냅스의 미세구조</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-08.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">신경망의 구조적 변화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">자가포식</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-10.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">신경염증</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">42</span>&nbsp; <span class="chapter-title">뇌 내의 에너지 대사</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">43</span>&nbsp; <span class="chapter-title">신경가소성</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">다양한 항정신병 약물</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">44</span>&nbsp; <span class="chapter-title">정형 항정신병 약물</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">45</span>&nbsp; <span class="chapter-title">비정형 항정신병 약물</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">46</span>&nbsp; <span class="chapter-title">신세대 비정형 약물</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">조현병 약물 치료의 일반적 원칙</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">47</span>&nbsp; <span class="chapter-title">약물 처방의 철학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">48</span>&nbsp; <span class="chapter-title">항정신병 약물의 선택</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">49</span>&nbsp; <span class="chapter-title">용량 결정을 비롯한 제반 문제들</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">50</span>&nbsp; <span class="chapter-title">교체, 중단, 다약제 병용</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">부작용과 그 대처법</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">51</span>&nbsp; <span class="chapter-title">부작용</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">52</span>&nbsp; <span class="chapter-title">추체외로 증후군</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">53</span>&nbsp; <span class="chapter-title">지연성 운동장애</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">54</span>&nbsp; <span class="chapter-title">신경이완제 악성증후군</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">55</span>&nbsp; <span class="chapter-title">대사증후군</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-06.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">56</span>&nbsp; <span class="chapter-title">프로락틴과 비뇨기계 장애</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-07.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">57</span>&nbsp; <span class="chapter-title">내분비, 심혈관계 부작용</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-08.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">58</span>&nbsp; <span class="chapter-title">소화기계 부작용</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-09.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">59</span>&nbsp; <span class="chapter-title">그 밖의 부작용</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">실제 임상에서 부딪히는 문제들</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">60</span>&nbsp; <span class="chapter-title">약물 치료의 준비</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">61</span>&nbsp; <span class="chapter-title">약물 치료 실제 과정</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">62</span>&nbsp; <span class="chapter-title">치료 중 부딪히게되는 문제들</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">치료저항성 환자의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">63</span>&nbsp; <span class="chapter-title">치료저항성의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">64</span>&nbsp; <span class="chapter-title">치료저항성 환자의 평가</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">65</span>&nbsp; <span class="chapter-title">치료저항성 환자의 치료전략</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">66</span>&nbsp; <span class="chapter-title">클로자핀 투여</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./11-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">67</span>&nbsp; <span class="chapter-title">전기경련 치료와 뇌 자극술</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">초발 정신병, 소아/청소년 환자</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">68</span>&nbsp; <span class="chapter-title">조기 정신병과 전구기</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">69</span>&nbsp; <span class="chapter-title">초발 정신병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">70</span>&nbsp; <span class="chapter-title">소아/청소년기 정신병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./12-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">71</span>&nbsp; <span class="chapter-title">소아/청소년기 정신병의 약물치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">음성/인지/긴장 증상의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">72</span>&nbsp; <span class="chapter-title">음성 증상의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">73</span>&nbsp; <span class="chapter-title">음성 증상의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">74</span>&nbsp; <span class="chapter-title">조현병에서의 인지 증상</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">75</span>&nbsp; <span class="chapter-title">질병경과에 따른 인지기능의 변화</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./13-05.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">76</span>&nbsp; <span class="chapter-title">인지 증상의 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">긴장증의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./14-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">77</span>&nbsp; <span class="chapter-title">긴장증의 개념과 임상양상</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true">중/노년기 이후의 조현병 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">78</span>&nbsp; <span class="chapter-title">노년기 조현병의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">79</span>&nbsp; <span class="chapter-title">늦게 발병한 조현병</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./15-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">80</span>&nbsp; <span class="chapter-title">노년기 조현병 환자의 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true">특수한 임상 상황에서의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">81</span>&nbsp; <span class="chapter-title">물질/약물남용을 동반한 환자의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">82</span>&nbsp; <span class="chapter-title">조현병 환자의 임신과 출산</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./16-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">83</span>&nbsp; <span class="chapter-title">임신 중 약물 치료의 실제</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="true">우울과 강박 증상의 치료</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">84</span>&nbsp; <span class="chapter-title">조현병에 동반된 우울 증상</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">85</span>&nbsp; <span class="chapter-title">조현병에 동반된 우울 증상의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">86</span>&nbsp; <span class="chapter-title">조현병에 동반된 강박증상의 개념</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./17-04.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">87</span>&nbsp; <span class="chapter-title">조현병에 동반된 강박증상의 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="true">폭력과 자살의 문제</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">88</span>&nbsp; <span class="chapter-title">조현병과 폭력</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">89</span>&nbsp; <span class="chapter-title">폭력 성향의 치료</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./18-03.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">90</span>&nbsp; <span class="chapter-title">정신질환자와 범죄</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-01.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">91</span>&nbsp; <span class="chapter-title">조현병에서의 자살</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./19-02.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">92</span>&nbsp; <span class="chapter-title">자살위험의 평가와 치료</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#신경망의-리모델링" id="toc-신경망의-리모델링" class="nav-link active" data-scroll-target="#신경망의-리모델링"><span class="toc-section-number">39.1</span>  신경망의 리모델링</a></li>
+  <li><a href="#신경돌기의-생성" id="toc-신경돌기의-생성" class="nav-link" data-scroll-target="#신경돌기의-생성"><span class="toc-section-number">39.2</span>  신경돌기의 생성</a>
+  <ul class="collapse">
+  <li><a href="#미세소관과-세포뼈대" id="toc-미세소관과-세포뼈대" class="nav-link" data-scroll-target="#미세소관과-세포뼈대"><span class="toc-section-number">39.2.1</span>  미세소관과 세포뼈대</a></li>
+  <li><a href="#조현병과-미세소관" id="toc-조현병과-미세소관" class="nav-link" data-scroll-target="#조현병과-미세소관"><span class="toc-section-number">39.2.2</span>  조현병과 미세소관</a></li>
+  </ul></li>
+  <li><a href="#sec-시냅스-가지치기" id="toc-sec-시냅스-가지치기" class="nav-link" data-scroll-target="#sec-시냅스-가지치기"><span class="toc-section-number">39.3</span>  시냅스 가지치기</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/AnselmJeong/Psychopharmacology/edit/main/06-08.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">신경망의 구조적 변화</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>정성훈 </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="신경망의-리모델링" class="level2" data-number="39.1">
+<h2 data-number="39.1" class="anchored" data-anchor-id="신경망의-리모델링"><span class="header-section-number">39.1</span> 신경망의 리모델링</h2>
+<p>중추 신경계는 학습과 기억을 통해 얻어진 정보를 장기간 저장할 때는 새로운 신경돌기(neurite)를 자라나게 하거나, 혹은 수상돌기 간극(dendrite spine)의 생성을 유도하여 신경망의 구조적 리모델링을 꾀한다. 발달 과정 중에도 신경망을 성숙시킨다 함은 신경돌기를 생성하고 필요없는 돌기는 솎아내는 과정에 다름아니다. 조현병이 이 과정의 이상때문에 생기는 질환이라면, 신경망을 리모델링하는 구체적 기전에 이상이 있을 것이라 예상하는 것은 자연스러울 것이다. 설령 발달이 끝난 성체의 신경 조직이라도, 학습한 바를 저장하는 신경가소성 과정에 문제가 생긴다면 다양한 정신질환을 촉발할 수 있다.</p>
+</section>
+<section id="신경돌기의-생성" class="level2 page-columns page-full" data-number="39.2">
+<h2 data-number="39.2" class="anchored" data-anchor-id="신경돌기의-생성"><span class="header-section-number">39.2</span> 신경돌기의 생성</h2>
+<section id="미세소관과-세포뼈대" class="level3 page-columns page-full" data-number="39.2.1">
+<h3 data-number="39.2.1" class="anchored" data-anchor-id="미세소관과-세포뼈대"><span class="header-section-number">39.2.1</span> 미세소관과 세포뼈대</h3>
+<div class="page-columns page-full"><p>세포뼈대(cytoskeleton)는 세포의 형태를 지탱하는 구조물을 가리키며, 1) actin으로 된 <strong>microfilament</strong>, 2) keratin 등으로 만들어진 <strong>intermediate filament</strong> (혹은 neurofilament), 그리고 3) 미세 소관(<strong>microtubule</strong>)으로 구성된다. 신경세포가 <s>BDNF</s><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>등 외부 자극을 받으면 actin과 미세소관 네트워크가 재조직화되면서 filopodia라는 돌출 부위를 만들어낸다. 평상시 actin은 세포막에 무방향성(non-oriented)으로 분포되어있는데, 자극을 받으면 어느 한 방향으로 뻗어나가기 시작한다. 이후에는 미세소관이 actin이 미리 만들어놓은 경로를 따라 뻗어나가기 시작한다. 미세소관은 말 그대로 세포내 다양한 분자들이 이동하는 통로이며, 미세소관을 통해 공급된 분자들이 돌출부에 모이면서 신경돌기(neurite)가 형성된다.<span class="citation" data-cites="sainath2015">[<a href="#ref-sainath2015" role="doc-biblioref">1</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;<strong>Brain-derived neurotrophic factor (BDNF)</strong>: 신경세포에 작용하는 성장 인자 중 가장 중요한 물질이다. 중추신경계와 말초신경계 모두에 작용하며, 기존 신경세포의 생존과 성장은 물론 줄기세포가 신경세포로 분화하는 것을 돕는다. 또한 장기 기억을 유지하는데도 결정적인 역할을 한다. 뇌에서 분비되는 다른 성장 인자는 NT-3, NT-4, nerve growth factor (NGF)가 있다.</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/06-08/growth_cone.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">신경돌기(neurite)의 구조: 녹색으로 염색된 부분은 미세소관이며, 붉은색으로 염색된 부분은 actin으로 구성된 filopidia와 lamellipodia이다.<span class="citation" data-cites="kalil2011">[<a href="#ref-kalil2011" role="doc-biblioref">2</a>]</span></figcaption><p></p>
+</figure>
+</div>
+<p>미세소관은 α- 그리고 β-tubulin의 이량체(dimer)로 구성되는 직경 23 nm 정도의 미세한 관이다. 미세소관은 필요에 따라 생성과 분해를 반복한다. 단세포 생물에서는 섬모를 만들어 운동성을 제공하지만, 다세포 생물에서는 신경돌기를 만들어 신경망 형성 및 세포 이동에 관여한다. 세포의 이동과 관련된 모든 생체 프로세스, 즉 뉴런의 방향성 결정, 발달과정 중의 뉴런 이동, 축삭의 성장, 시냅스 형성 등은 미세소관을 고려하지 않고는 이해할 수 없다.<span class="citation" data-cites="lasser2018">[<a href="#ref-lasser2018" role="doc-biblioref">3</a>]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/06-08/Microtubule-structure.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">미세소관의 구조</figcaption><p></p>
+</figure>
+</div>
+<div class="page-columns page-full"><p>미세소관은 세포의 모양을 지탱하는 주요 구조이지만, 동시에 분자들을 이동시키는 통로이기 때문에, 어떤 물질을 통과시키고 또 어디로 보낼 지를 결정한다. 이런 역할을 통해 정보전달에도 한 몫 한다는 것이 점차 밝혀지고 있다.<span class="citation" data-cites="dent2014">[<a href="#ref-dent2014" role="doc-biblioref">4</a>]</span> 소위 MAP (Microtubule Associated Proteins)이라 불리우는 미세소관 관련 단백질에는 MAP1B, MAP2, Tau 그리고 <s>MAP6</s><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>등의 구조 단백질과, <s>CRMP</s><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>이라고 하는 기능성 단백질이 포함된다. MAP6와 CRMP는 미세소관을 새로 생성할 지, 아니면 제거할 지, 새로 만든다면 어느 방향으로 뻗어나갈 지 등을 결정한다.<span class="citation" data-cites="nakamura2020 cuveillier2021">[<a href="#ref-nakamura2020" role="doc-biblioref">5</a>,<a href="#ref-cuveillier2021" role="doc-biblioref">6</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;MAP6 (Microtubule-associated protein 6)는 STOP (stable tubule-only polypeptide)이라고도 불리운다. 미세소관을 구성하는 microtubule-associated protein 중 하나로, tubulin과 결합하여 미세소관을 형성한다.</p></li><li id="fn3"><p><sup>3</sup>&nbsp;<strong>CRMP (Collapsin response mediator proteins)</strong>: 세포질 내에 존재하는 단백질로 발달 과정에 있는 신경세포에서 가장 중요한 인단백질(phosphoprotein) 중 하나이다. CRMP 1,2,3,4,5의 다섯가지 종류가 있다. 주로 신경돌기의 생성, 성장원뿔(growth cone)의 생성과 해체를 담당하며, 미세소관의 합성 속도를 통제한다.)</p></li></div></div>
+</section>
+<section id="조현병과-미세소관" class="level3 page-columns page-full" data-number="39.2.2">
+<h3 data-number="39.2.2" class="anchored" data-anchor-id="조현병과-미세소관"><span class="header-section-number">39.2.2</span> 조현병과 미세소관</h3>
+<p>소위 <strong>Microtubule-deficient model of schizophrenia</strong>라는 모델은 STOP (=MAP6)을 knockout 시킨 동물 모델에서 비롯되었다.<span class="citation" data-cites="andrieux2002">[<a href="#ref-andrieux2002" role="doc-biblioref">7</a>]</span> STOP 유전자가 제거된 쥐는 해마의 도파민 활성이 감소하며<span class="citation" data-cites="brun2005">[<a href="#ref-brun2005" role="doc-biblioref">8</a>]</span>, 과다행동 및 감각관문(sensory gating)의 결함을 보인다.<span class="citation" data-cites="andrieux2002 fradley2005 powell2007">[<a href="#ref-andrieux2002" role="doc-biblioref">7</a>,<a href="#ref-fradley2005" role="doc-biblioref">9</a>,<a href="#ref-powell2007" role="doc-biblioref">10</a>]</span> 흥미롭게도 정형 혹은 비정형 약물을 장기간 투여하면 STOP 마우스의 행동적 이상이 일부 호전된다.<span class="citation" data-cites="bégou2008">[<a href="#ref-bégou2008" role="doc-biblioref">11</a>]</span> 물론 이러한 행동 이상과 인지기능 저하는 항우울제 혹은 전기경련에 의해서도 호전되는 양상을 보인다.<span class="citation" data-cites="jonckheere2018">[<a href="#ref-jonckheere2018" role="doc-biblioref">12</a>]</span></p>
+<div class="page-columns page-full"><p>이러한 가설을 바탕으로 <strong>microtubule stabilizer</strong>라는 개념의 약물들이 개발되었다.<span class="citation" data-cites="andrieux2006">[<a href="#ref-andrieux2006" role="doc-biblioref">13</a>]</span> STOP 결여 마우스에게 미세소관을 보호해주는 약물인 <s>NAP (davunetide)</s><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>를 투여하면 조현병 유사 행동이 일부 소실되며, 인지 저하 역시 조금이나마 회복한다.<span class="citation" data-cites="merenlenderwagner2010 gozes2011">[<a href="#ref-merenlenderwagner2010" role="doc-biblioref">14</a>,<a href="#ref-gozes2011" role="doc-biblioref">15</a>]</span> 그 밖에 <s>epothilone D</s><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>을 투여하여 시냅스 밀도나 장기 강화를 개선하고 동물 모델의 행동을 호전시켰다는 보고가 있다.<span class="citation" data-cites="andrieux2006">[<a href="#ref-andrieux2006" role="doc-biblioref">13</a>]</span> 인간을 대상으로 한 임상 연구로는 NAP를 비강으로 투여한 위약대조연구가 유일하다.<span class="citation" data-cites="javitt2012">[<a href="#ref-javitt2012" role="doc-biblioref">17</a>]</span> 결과가 뚜렷하지는 않았지만 특별한 부작용없이 일부 인지기능을 향상시킨다는 것이 확인되었다.</p><div class="no-row-height column-margin column-container"><li id="fn4"><p><sup>4</sup>&nbsp;<strong>NAP (davunetide)</strong>: activity-dependent neuroprotective protein (ADNP)는 외부 위해자극으로부터 신경세포를 보호하는 역할을 하며, 기능을 제대로 발휘하지 못하면 자폐증 스펙트럼 장애에 속하는 ADNP 증후군을 일으킨다. ADNP는 미세소관과 결합할 수 있고, ADNP를 제거한 쥐는 신경돌기가 제대로 자라지 못하기 때문에, ADNP가 미세소관의 구조를 보호한다고 여겨진다. ADNP는 100개 이상의 아미노산으로 이루어진 단백질이지만, 그중 활성을 나타내는 8개 아미노산으로 이루어진 조각을 분리하여 약물로 개발한 것이 NAP이다. NAP는 다양한 신경퇴행성 질환의 치료제로 임상 시험 중이다.</p></li><li id="fn5"><p><sup>5</sup>&nbsp;<strong>Epothilone D</strong>: 자연에서 발견되는 항생물질로 미세소관을 안정시키기 때문에 Microtubule-stabilizing agent라고도 불리운다. 하지만 세포가 분열하는 것을 가로 막고, 미토콘드리아의 이동을 차단하기 때문에 조금만 농도가 높아져도 세포가 죽게 된다.<span class="citation" data-cites="clark2020">[<a href="#ref-clark2020" role="doc-biblioref">16</a>]</span></p></li></div></div>
+<p>NAP와 epothilone D의 뒤를 잇는 microtubule stabilizer 들은 주로 항암제로 개발되어왔다. 대표적인 약물로 난소암 치료제인 paclitaxel (Taxol®)을 비롯하여, docetaxel, ixabepilone, cabazitaxel, nab-paclitaxel (Abraxane®) 등이 있다.<span class="citation" data-cites="rohena2014">[<a href="#ref-rohena2014" role="doc-biblioref">18</a>]</span> 이러한 약물들은 뇌-혈관 장벽을 통과하지 못한다는 기술적인 난점때문에 그 동안 신경퇴행성 질환에 사용되지 못하였으나, 현재는 많은 문제점들을 해결하여 다양한 신경학적 질환에 1,2상 연구가 진행되고 있다.<span class="citation" data-cites="varidaki2018">[<a href="#ref-varidaki2018" role="doc-biblioref">19</a>]</span></p>
+<p>CRMP 역시 조현병 발병 과정 중 여러 곳에서 영향을 미칠 수 있다.<span class="citation" data-cites="quach2015 cuveillier2021">[<a href="#ref-cuveillier2021" role="doc-biblioref">6</a>,<a href="#ref-quach2015" role="doc-biblioref">20</a>]</span> 관련 유전자인 CRMP1과 CRMP2의 변이는 조현병, 특히 무쾌감증(anhedonia)과 관련된다고 한다.<span class="citation" data-cites="bader2012">[<a href="#ref-bader2012" role="doc-biblioref">21</a>]</span> 앞서 STOP 마우스에서 보여졌던 여러가지 형질들은 CRMP1 혹은 CRMP3 knockout 마우스에서도 거의 동일하게 드러난다.<span class="citation" data-cites="yamashita2013">[<a href="#ref-yamashita2013" role="doc-biblioref">22</a>]</span> 게다가 STOP 모델에서와 마찬가지로 CRMP에 의한 결함 역시 항정신병 약물에 의해 경감된다. 아마도 클로자핀, 리스페리돈 등의 약물이 CRMP2, CRMP4의 인산화를 감소시키는 것과 관련이 있을 것이다.<span class="citation" data-cites="kedrackakrok2015">[<a href="#ref-kedrackakrok2015" role="doc-biblioref">23</a>]</span></p>
+<div class="page-columns page-full"><p>하지만 무엇보다도 조현병 발병에 있어서 뼈대 단백질의 중요성을 실감하게 하는 것은, DISC-1과 조현병의 연합관계일 것이다.(5-3-4-2절) DISC-1은 다양한 단백질과 상호작용을 할 수 있지만, 그 중 가장 비중이 큰 것이 MAP과의 상호작용이다.<span class="citation" data-cites="morris2003">[<a href="#ref-morris2003" role="doc-biblioref">24</a>]</span> 특히 <s>NDEL1</s><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> 그리고 <s>PCM1</s><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>과의 상호작용은 미세소관의 구조화와 소관 내부를 통한 axonal transport를 조절한다.<span class="citation" data-cites="bradshaw2012">[<a href="#ref-bradshaw2012" role="doc-biblioref">25</a>]</span> 또한 NDEL1, LIS와의 상호작용은 운동단백질인 dynein의 기능을 조절한다. DISC1에 인공적으로 변이를 일으킨 마우스는 특징적인 인지기능 저하를 보이는데, 리스페리돈이나 NAP를 투여하면 이러한 결함이 다소 호전된다.<span class="citation" data-cites="vaisburd2015">[<a href="#ref-vaisburd2015" role="doc-biblioref">26</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn6"><p><sup>6</sup>&nbsp;Nuclear distribution element-like protein (NDEL1)</p></li><li id="fn7"><p><sup>7</sup>&nbsp;Pericentriolar material-1 (PCM1)</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/06-08/DISC-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Centrosome의 구조를 지탱하는 DISC-1 <span class="citation" data-cites="brandon2009">[<a href="#ref-brandon2009" role="doc-biblioref">27</a>]</span> DISC1 play a role in anchoring these molecules in association with the dynein motor complex and centrosome, regulating microtubule organization.</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="sec-시냅스-가지치기" class="level2 page-columns page-full" data-number="39.3">
+<h2 data-number="39.3" class="anchored" data-anchor-id="sec-시냅스-가지치기"><span class="header-section-number">39.3</span> 시냅스 가지치기</h2>
+<p>학령전기 아동으로부터 사춘기에 이르기까지 후기 발달 단계에 있는 뇌에서는 <strong>시냅스 가지치기(synapse pruning)</strong>라는 독특한 과정이 일어난다. 그때까지 뉴런 사이의 연결을 그저 늘리기만 해오던 뇌는, 이제는 불필요해진 연결을 솎아내기 시작한다. 이는 신호 대 잡음비를 늘리고 신경망의 연결을 더욱 효율적으로 만들어, 삶에 꼭 필요한 정보와 기술을 갈고 다듬는데 필요하다.<span class="citation" data-cites="scholl2021">[<a href="#ref-scholl2021" role="doc-biblioref">28</a>]</span></p>
+<div class="page-columns page-full"><p>대뇌의 시냅스 수는 생후 2~3년 사이에 최고 치에 도달한다.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> <span class="citation" data-cites="huttenlocher1979">[<a href="#ref-huttenlocher1979" role="doc-biblioref">29</a>]</span> 이 시기에 신경세포 하나가 맺는 시냅스의 개수는 평균 15,000개 이상에 달한다. 이 시기가 지나면 급격히 시냅스 수가 줄어들며, 뇌 부위에 따라 50% 이상 감소하는 곳도 있다. 가지치기가 언제까지 지속되는지도 부위에 따라 다르다. 시각 중추의 경우 6세 정도가 되면 가지치기가 완성되나, 전전두엽은 성인기까지도 가치치기가 지속된다.<span class="citation" data-cites="petanjek2011">[<a href="#ref-petanjek2011" role="doc-biblioref">30</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn8"><p><sup>8</sup>&nbsp;시카고 대학의 소아신경과 의사였던 Peter Huttenlocher는 갓난 아이로부터 90세 노인에 이르는 사후 뇌조직을 전자현미경으로 관찰하여, 시냅스의 갯수를 일일이 세어 기록하였다. 그는 인간 시냅스의 갯수가 출생 후 2-3세에 최대치에 도달하며, 청소년기에 급격히 감소하여 이후에는 안정된 수를 유지한다는 것을 알아내었으며, 이를 1979년에 발표하였다.</p></li></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/06-08/pruning.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">발생 중인 소뇌에서의 시냅스 가지치기 <span class="citation" data-cites="faust2021">[<a href="#ref-faust2021" role="doc-biblioref">31</a>]</span></figcaption><p></p>
+</figure>
+</div>
+<div class="page-columns page-full"><p>연구자들은 부적절한 가지치기가 자폐증과 조현병을 일으키는데 부분적으로 기여한다고 믿는다. 재미있는 것은 자폐증은 가지치기기가 제대로 이루어지지 않아 (under-pruned) 불필요한 시냅스가 너무 많이 남아있는 상태이고, 조현병은 지나친 가지치기가 일어나 (over-pruned) 꼭 필요한 시냅스가 결여된 상태라는 것이다. <strong>“조현병이 지나친 가지치기에 의해 일어난다는 가설(over-pruning hypothesis of schizophrenia)”</strong>은 같은 나이의 조현병 환자의 뇌에서 시냅스 혹은 수상돌기의 수가 훨씬 적게 관찰된다는 사실에 기반한다.<span class="citation" data-cites="feinberg1982 glantz2000">[<a href="#ref-feinberg1982" role="doc-biblioref">32</a>,<a href="#ref-glantz2000" role="doc-biblioref">33</a>]</span> 물론 시냅스나 간극의 수가 줄어드는 것을 외부 독성에 의해서 신경세포의 퇴행이 일어나기 때문이라 생각할 수도 있지만, 그렇게 보기에는 동반되는 신경교증(gliosis)의 범위가 너무나 작다. 조현병 환자라 해도 실제로 뉴런의 개수가 줄어드는 것은 아니며, 단지 <s>신경그물</s><a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>의 용적이 줄어드는 것 뿐이다.</p><div class="no-row-height column-margin column-container"><li id="fn9"><p><sup>9</sup>&nbsp;<strong>신경그물 (neuropil)</strong>: 수초로 싸여있지 않은 축삭, 수상돌기, 그리고 신경교세포의 가지들로 이루어진 매우 치밀한 그물같은 구조를 가리킨다.</p></li></div></div>
+<div class="page-columns page-full"><p>가지치기(pruning)이라는 용어를 처음 사용한 것은 <s>Feinberg</s><a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>였다. 1982년 그가 처음 이 이론을 발표할 때만 해도 이를 뒷받침할만한 근거가 부족했기 때문에 확고한 이론으로 자리잡지는 못하였다.<span class="citation" data-cites="feinberg1982">[<a href="#ref-feinberg1982" role="doc-biblioref">32</a>]</span> 지난 40년동안 조금씩 증거가 갖춰졌는데, 첫번째는 직접 환자 뇌에서 시냅스를 관찰하는 신경해부학적 증거였고, 둘째는 가지치기에 참여하는 단백질 양의 변화를 관찰하는 것이었다. 조현병 환자 뇌에서 시냅스가 줄어들어있다는 것은 분명하기 때문에, 자연히 지나친 가지치기가 일어났으리라 짐작할 수 있다. 초발 환자를 종적으로 추적하면 발병 초기 수년 내에 현저한 대뇌 피질의 위축을 관찰할 수 있는데<span class="citation" data-cites="sun2009">[<a href="#ref-sun2009" role="doc-biblioref">34</a>]</span>, 이는 원래는 정상적인 가지치기 과정이 지나치게 일어나는 것이라 이해되었다. 아마도 조현병의 발병 시기가 후기 청소년기와 초기 청년기에 집중된 것은 이 시기가 전전두엽의 가지치기가 가장 활발한 시기이기 때문일 것이다. 최근 영국 연구진은 시냅스 밀도를 반영하는 <s>SV2A</s><a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>라는 물질을 PET로 촬영하는데 성공함으로써, 살아있는 조현병 환자의 뇌에서 시냅스 밀도가 유의하게 떨어져 있다는 것을 보고하였다.<span class="citation" data-cites="onwordi2020">[<a href="#ref-onwordi2020" role="doc-biblioref">35</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn10"><p><sup>10</sup>&nbsp;<strong>Irwin Feinberg</strong>: 캘리포니아 대학 정신과 교수. 주로 수면정신의학 분야에서 업적을 남겼다.</p></li><li id="fn11"><p><sup>11</sup>&nbsp;Synaptic vesicle glycoprotein 2A (SV2A)</p></li></div></div>
+<p>조현병 환자에서 왜 가지치기가 지나치게 일어나는지, 약물이 어떤 영향을 끼치는지는 여전히 해결되지 않는 숙제이다. 연구자들은 아마도 글루타메이트 신호전달이 너무 과하게 전달되기 때문이거나, 시냅스 구조를 안정화시키는 다양한 단백질들이 제대로 기능하지 못하기 때문일 것이라 생각한다. 앞 절에서 논의했던 뼈대 단백질 들의 이상은 모두 시냅스를 제대로 유지하지 못하게 만든다. 위에서 열거했던 뼈대 단백질 외에도 Cdc42, Duo 그리고 reelin은 모두 조현병 환자의 뇌에서 감소되어 있다고 알려져있는데, 이들은 actin의 대사에 밀접하게 연결되어 있다. 특히 reelin은 신경발달학적 가설을 설명할 때 빼놓을 수 없는 중요한 단백질이다.(5-3-4-5절) 조현병 환자의 전전두엽에서 reelin mRNA가 감소되어 있으며, reelin 유전자 promotor의 메틸화가 증가되어 있다는 것은, 조현병과 관련된 연구 중에서 몇 안되는 확실한 관찰결과이다.<span class="citation" data-cites="knable2001 grayson2005">[<a href="#ref-knable2001" role="doc-biblioref">36</a>,<a href="#ref-grayson2005" role="doc-biblioref">37</a>]</span> Reelin은 n-cofilin을 인산화시키는데, n-cofilin은 actin과 결합하여 actin 섬유가 끊어지는 것을 막아준다. 따라서 reelin이 기능을 하지 못하면 새로 만들어진 시냅스 간극이 구조를 유지하지 못하고 무너져 내린다.<span class="citation" data-cites="chai2009">[<a href="#ref-chai2009" role="doc-biblioref">38</a>]</span></p>
+<div class="page-columns page-full"><p>한편 실제로 기존에 있던 시냅스나 간극을 먹어치워 파괴하는 것은 신경교세포들이다.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> 어떤 시냅스나 간극을 먹어치울지를 결정하는데는 면역 체계의 구성요소인 <s>보체</s><a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a> 들이 작용한다. 2007년 스탠포드 대학교의 연구진이 처음으로 보체가, 쓸모없어진 시냅스를 제거하는데 중요한 역할을 한다는 것을 발견하였다.<span class="citation" data-cites="stevens2007">[<a href="#ref-stevens2007" role="doc-biblioref">40</a>]</span> 정확히 어떤 기준으로 쓸모없어진 시냅스를 구분하는 지는 알 수 없으나, 시냅스에 보체가 결합되면 주변의 신경교세포들은 신경세포 자체는 그대로 놔둔채, trogocytosis라는 과정을 통해 시냅스를 말 그대로 <strong>“갉아먹는다.”</strong><span class="citation" data-cites="schafer2012">[<a href="#ref-schafer2012" role="doc-biblioref">41</a>]</span></p><div class="no-row-height column-margin column-container"><li id="fn12"><p><sup>12</sup>&nbsp;발달과정 중에 지나치게 과밀해진 시냅스는 fractalkine (CX3CL1)이라고 하는 chemokine을 분비하며, 이는 주변의 신경교세포를 자극하여 표식자가 붙은 신경돌기를 제거하도록 유도한다. 성인기에 들어서도 신경교세포는 항상 시냅스가 최적의 밀도를 유지하도록 감독한다.<span class="citation" data-cites="hong2016">[<a href="#ref-hong2016" role="doc-biblioref">39</a>]</span></p></li><li id="fn13"><p><sup>13</sup>&nbsp;<strong>보체 (complement)</strong>: 면역 체계가 이물질을 제거하고자 할 때, 이를 여러 기전으로 보완하는 단백질. 이물질에 자극받아 보체 단백질들이 활성화되면, 보체들은 이물질을 둘러싸서 세포벽에 구멍을 내거나, 항체가 달라붙기 쉽게 하거나, 염증반응을 일으켜 대식세포의 살상작용을 강화한다.</p></li></div></div>
+<p>C4는 시냅스 가지치기에 적극 관여하는 보체 중 하나인데, 주로 중추신경계에 분포하기 때문에 주목을 받아왔다. 2016년 하버드 대학교 연구진은 C4 유전자 내부 변이인 rs13194504가 조현병과 강력하게 연합관계를 이루며, C4A mRNA의 발현양 역시 조현병 발병 위험과 현저한 비례관계에 있음을 찾아내었다.<span class="citation" data-cites="sekar2016">[<a href="#ref-sekar2016" role="doc-biblioref">42</a>]</span> 이는 당시까지 발견된 어떤 유전적 연합관계보다도 강력한 관계였다. 게다가 동일 연구진은 C4A 유전자 양이 시냅스 가지치기 정도를 결정한다는 것 또한 입증하였다. 이 성과에 뒤이어 3년 뒤 또 다른 연구진은 조현병 환자에서 얻어낸 신경세포를 배양한 후 이 세포주의 가지치기 정도가 대조군보다 유의하게 높다는 것을 관찰하였으며, 그 정도가 C4의 변이와 관련됨을 증명하였다.<span class="citation" data-cites="sellgren2019">[<a href="#ref-sellgren2019" role="doc-biblioref">43</a>]</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Images/06-08/img_11.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Psychiatric Genomics Consortium 데이터를 사용하여 광범위 유전체 연합 연구를 했을 때, 조현병과의 연합관계가 가장 큰 유의도를 보인 유전자 (가장 높은 peak)는 C4였다. [@sekar2016]</figcaption><p></p>
+</figure>
+</div>
+<p>Minocycline은 합성된지 50년이 넘는 고전적인 tetracycline 계 항생제인데, 뇌-혈관 장벽을 무난히 통과하는데다가 비특이적인 면역억제, 항염증 효과가 있기 때문에 류마티스 관절염, 염증성 대장 증상 등 자가면역질환에도 사용된다.<span class="citation" data-cites="garridomesa2013">[<a href="#ref-garridomesa2013" role="doc-biblioref">44</a>]</span> 2007년 일본의 정신과 의사들이 우연히 폐렴에 걸린 조현병 환자에게 minocycline을 처방했는데, 조현병 증상이 많이 좋아졌다는 보고를 하였다.<span class="citation" data-cites="miyaoka2007">[<a href="#ref-miyaoka2007" role="doc-biblioref">45</a>]</span> 이후 minocycline이 신경보호 기능을 한다는 것이 알려졌고, 다양한 정신질환에 대한 치료효과가 탐색되었다. 그중 한가지 가능성은 minocycline이 신경교세포의 활성을 억제하며 지나친 가지치기를 막아준다는 것이다.<span class="citation" data-cites="sellgren2019">[<a href="#ref-sellgren2019" role="doc-biblioref">43</a>]</span> Minocycline이 새로운 항정신병 약물로 자리잡을 지는 의문이지만, 현재까지 연구된 바를 종합하면 보조 치료제로 사용되었을 때 유의하게 음성 증상 및 집행 기능을 호전시키는 것으로 나타났다.<span class="citation" data-cites="solmi2017">[<a href="#ref-solmi2017" role="doc-biblioref">46</a>]</span></p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-sainath2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Sainath R, Gallo G. <strong><em>Cytoskeletal and signaling mechanisms of neurite formation</em></strong>. Cell and Tissue Research. 2015;359: 267–278. doi:<a href="https://doi.org/10.1007/s00441-014-1955-0">10.1007/s00441-014-1955-0</a></div>
+</div>
+<div id="ref-kalil2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Kalil K, Li L, Hutchins BI. <strong><em>Signaling mechanisms in cortical axon growth, guidance, and branching</em></strong>. Frontiers in Neuroanatomy. 2011;5. doi:<a href="https://doi.org/10.3389/fnana.2011.00062">10.3389/fnana.2011.00062</a></div>
+</div>
+<div id="ref-lasser2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">Lasser M, Tiber J, Lowery LA. <strong><em>The role of the microtubule cytoskeleton in neurodevelopmental disorders</em></strong>. Frontiers in Cellular Neuroscience. 2018;12: 165. doi:<a href="https://doi.org/10.3389/fncel.2018.00165">10.3389/fncel.2018.00165</a></div>
+</div>
+<div id="ref-dent2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Dent EW, Baas PW. <strong><em>Microtubules in neurons as information carriers</em></strong>. Journal of Neurochemistry. 2014;129: 235–239. doi:<a href="https://doi.org/10.1111/jnc.12621">10.1111/jnc.12621</a></div>
+</div>
+<div id="ref-nakamura2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">Nakamura F, Ohshima T, Goshima Y. <strong><em>Collapsin Response Mediator Proteins: Their Biological Functions and Pathophysiology in Neuronal Development and Regeneration</em></strong>. Frontiers in Cellular Neuroscience. 2020;14: 188. doi:<a href="https://doi.org/10.3389/fncel.2020.00188">10.3389/fncel.2020.00188</a></div>
+</div>
+<div id="ref-cuveillier2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Cuveillier C, Boulan B, Ravanello C, Denarier E, Deloulme J-C, Gory-Fauré S, et al. <strong><em>Beyond Neuronal Microtubule Stabilization: MAP6 and CRMPS, Two Converging Stories</em></strong>. Frontiers in Molecular Neuroscience. 2021;14: 665693. doi:<a href="https://doi.org/10.3389/fnmol.2021.665693">10.3389/fnmol.2021.665693</a></div>
+</div>
+<div id="ref-andrieux2002" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Andrieux A, Salin PA, Vernet M, Kujala P, Baratier J, Gory-Fauré S, et al. <strong><em>The suppression of brain cold-stable microtubules in mice induces synaptic defects associated with neuroleptic-sensitive behavioral disorders</em></strong>. Genes &amp; Development. 2002;16: 2350–2364. doi:<a href="https://doi.org/10.1101/gad.223302">10.1101/gad.223302</a></div>
+</div>
+<div id="ref-brun2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Brun P, Bégou M, Andrieux A, Mouly-Badina L, Clerget M, Schweitzer A, et al. <strong><em>Dopaminergic transmission in STOP null mice</em></strong>. Journal of Neurochemistry. 2005;94: 63–73. doi:<a href="https://doi.org/10.1111/j.1471-4159.2005.03166.x">10.1111/j.1471-4159.2005.03166.x</a></div>
+</div>
+<div id="ref-fradley2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">9. </div><div class="csl-right-inline">Fradley RL, O’Meara GF, Newman RJ, Andrieux A, Job D, Reynolds DS. <strong><em>STOP knockout and NMDA NR1 hypomorphic mice exhibit deficits in sensorimotor gating</em></strong>. Behavioural Brain Research. 2005;163: 257–264. doi:<a href="https://doi.org/10.1016/j.bbr.2005.05.012">10.1016/j.bbr.2005.05.012</a></div>
+</div>
+<div id="ref-powell2007" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">10. </div><div class="csl-right-inline">Powell KJ, Hori SE, Leslie R, Andrieux A, Schellinck H, Thorne M, et al. <strong><em>Cognitive impairments in the STOP null mouse model of schizophrenia</em></strong>. Behavioral Neuroscience. 2007;121: 826–835. doi:<a href="https://doi.org/10.1037/0735-7044.121.5.826">10.1037/0735-7044.121.5.826</a></div>
+</div>
+<div id="ref-bégou2008" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">11. </div><div class="csl-right-inline">Bégou M, Volle J, Bertrand J-B, Brun P, Job D, Schweitzer A, et al. <strong><em>The stop null mice model for schizophrenia displays [corrected] cognitive and social deficits partly alleviated by neuroleptics</em></strong>. Neuroscience. 2008;157: 29–39. doi:<a href="https://doi.org/10.1016/j.neuroscience.2008.07.080">10.1016/j.neuroscience.2008.07.080</a></div>
+</div>
+<div id="ref-jonckheere2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">12. </div><div class="csl-right-inline">Jonckheere J, Deloulme J-C, Dall’Igna G, Chauliac N, Pelluet A, Nguon A-S, et al. <strong><em>Short- and long-term efficacy of electroconvulsive stimulation in animal models of depression: The essential role of neuronal survival</em></strong>. Brain Stimulation. 2018;11: 1336–1347. doi:<a href="https://doi.org/10.1016/j.brs.2018.08.001">10.1016/j.brs.2018.08.001</a></div>
+</div>
+<div id="ref-andrieux2006" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">13. </div><div class="csl-right-inline">Andrieux A, Salin P, Schweitzer A, Bégou M, Pachoud B, Brun P, et al. <strong><em>Microtubule Stabilizer Ameliorates Synaptic Function and Behavior in a Mouse Model for Schizophrenia</em></strong>. Biological Psychiatry. 2006;60: 1224–1230. doi:<a href="https://doi.org/10.1016/j.biopsych.2006.03.048">10.1016/j.biopsych.2006.03.048</a></div>
+</div>
+<div id="ref-merenlenderwagner2010" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">14. </div><div class="csl-right-inline">Merenlender-Wagner A, Pikman R, Giladi E, Andrieux A, Gozes I. <strong><em>NAP (davunetide) enhances cognitive behavior in the STOP heterozygous mouse–a microtubule-deficient model of schizophrenia</em></strong>. Peptides. 2010;31: 1368–1373. doi:<a href="https://doi.org/10.1016/j.peptides.2010.04.011">10.1016/j.peptides.2010.04.011</a></div>
+</div>
+<div id="ref-gozes2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">15. </div><div class="csl-right-inline">Gozes I. <strong><em>Microtubules, schizophrenia and cognitive behavior: preclinical development of davunetide (NAP) as a peptide-drug candidate</em></strong>. Peptides. 2011;32: 428–431. doi:<a href="https://doi.org/10.1016/j.peptides.2010.10.030">10.1016/j.peptides.2010.10.030</a></div>
+</div>
+<div id="ref-clark2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">16. </div><div class="csl-right-inline">Clark JA, Chuckowree JA, Dyer MS, Dickson TC, Blizzard CA. <strong><em>Epothilone D alters normal growth, viability and microtubule dependent intracellular functions of cortical neurons in vitro</em></strong>. Scientific Reports. 2020;10: 918. doi:<a href="https://doi.org/10.1038/s41598-020-57718-z">10.1038/s41598-020-57718-z</a></div>
+</div>
+<div id="ref-javitt2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">17. </div><div class="csl-right-inline">Javitt DC, Buchanan RW, Keefe RSE, Kern R, McMahon RP, Green MF, et al. <strong><em>Effect of the neuroprotective peptide davunetide (AL-108) on cognition and functional capacity in schizophrenia</em></strong>. Schizophrenia Research. 2012;136: 25–31. doi:<a href="https://doi.org/10.1016/j.schres.2011.11.001">10.1016/j.schres.2011.11.001</a></div>
+</div>
+<div id="ref-rohena2014" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">18. </div><div class="csl-right-inline">Rohena CC, Mooberry SL. <strong><em>Recent progress with microtubule stabilizers: new compounds, binding modes and cellular activities</em></strong>. Natural Product Reports. 2014;31: 335–355. doi:<a href="https://doi.org/10.1039/c3np70092e">10.1039/c3np70092e</a></div>
+</div>
+<div id="ref-varidaki2018" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">19. </div><div class="csl-right-inline">Varidaki A, Hong Y, Coffey ET. <strong><em>Repositioning microtubule stabilizing drugs for brain disorders</em></strong>. Frontiers in Cellular Neuroscience. 2018;12: 226. doi:<a href="https://doi.org/10.3389/fncel.2018.00226">10.3389/fncel.2018.00226</a></div>
+</div>
+<div id="ref-quach2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">20. </div><div class="csl-right-inline">Quach TT, Honnorat J, Kolattukudy PE, Khanna R, Duchemin AM. <strong><em>CRMPs: critical molecules for neurite morphogenesis and neuropsychiatric diseases</em></strong>. Molecular Psychiatry. 2015;20: 1037–1045. doi:<a href="https://doi.org/10.1038/mp.2015.77">10.1038/mp.2015.77</a></div>
+</div>
+<div id="ref-bader2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">21. </div><div class="csl-right-inline">Bader V, Tomppo L, Trossbach SV, Bradshaw NJ, Prikulis I, Leliveld SR, et al. <strong><em>Proteomic, genomic and translational approaches identify CRMP1 for a role in schizophrenia and its underlying traits</em></strong>. Human Molecular Genetics. 2012;21: 4406–4418. doi:<a href="https://doi.org/10.1093/hmg/dds273">10.1093/hmg/dds273</a></div>
+</div>
+<div id="ref-yamashita2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">22. </div><div class="csl-right-inline">Yamashita N, Takahashi A, Takao K, Yamamoto T, Kolattukudy P, Miyakawa T, et al. <strong><em>Mice lacking collapsin response mediator protein 1 manifest hyperactivity, impaired learning and memory, and impaired prepulse inhibition</em></strong>. Frontiers in Behavioral Neuroscience. 2013;7: 216. doi:<a href="https://doi.org/10.3389/fnbeh.2013.00216">10.3389/fnbeh.2013.00216</a></div>
+</div>
+<div id="ref-kedrackakrok2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">23. </div><div class="csl-right-inline">Kedracka-Krok S, Swiderska B, Jankowska U, Skupien-Rabian B, Solich J, Buczak K, et al. <strong><em>Clozapine influences cytoskeleton structure and calcium homeostasis in rat cerebral cortex and has a different proteomic profile than risperidone</em></strong>. Journal of Neurochemistry. 2015;132: 657–676. doi:<a href="https://doi.org/10.1111/jnc.13007">10.1111/jnc.13007</a></div>
+</div>
+<div id="ref-morris2003" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">24. </div><div class="csl-right-inline">Morris JA, Kandpal G, Ma L, Austin CP. <strong><em>DISC1 (Disrupted-In-Schizophrenia 1) is a centrosome-associated protein that interacts with MAP1A, MIPT3, ATF4/5 and NUDEL: regulation and loss of interaction with mutation</em></strong>. Human Molecular Genetics. 2003;12: 1591–1608. doi:<a href="https://doi.org/10.1093/hmg/ddg162">10.1093/hmg/ddg162</a></div>
+</div>
+<div id="ref-bradshaw2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">25. </div><div class="csl-right-inline">Bradshaw NJ, Porteous DJ. <strong><em>DISC1-binding proteins in neural development, signalling and schizophrenia</em></strong>. Neuropharmacology. 2012;62: 1230–1241. doi:<a href="https://doi.org/10.1016/j.neuropharm.2010.12.027">10.1016/j.neuropharm.2010.12.027</a></div>
+</div>
+<div id="ref-vaisburd2015" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">26. </div><div class="csl-right-inline">Vaisburd S, Shemer Z, Yeheskel A, Giladi E, Gozes I. <strong><em>Risperidone and NAP protect cognition and normalize gene expression in a schizophrenia mouse model</em></strong>. Scientific Reports. 2015;5: 16300. doi:<a href="https://doi.org/10.1038/srep16300">10.1038/srep16300</a></div>
+</div>
+<div id="ref-brandon2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">27. </div><div class="csl-right-inline">Brandon NJ, Millar JK, Korth C, Sive H, Singh KK, Sawa A. <strong><em>Understanding the Role of DISC1 in Psychiatric Disease and during Normal Development</em></strong>. Journal of Neuroscience. 2009;29: 12768–12775. doi:<a href="https://doi.org/10.1523/JNEUROSCI.3355-09.2009">10.1523/JNEUROSCI.3355-09.2009</a></div>
+</div>
+<div id="ref-scholl2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">28. </div><div class="csl-right-inline">Scholl C, Rule ME, Hennig MH. <strong><em>The information theory of developmental pruning: Optimizing global network architectures using local synaptic rules</em></strong>. Richards BA, editor. PLOS Computational Biology. 2021;17: e1009458. doi:<a href="https://doi.org/10.1371/journal.pcbi.1009458">10.1371/journal.pcbi.1009458</a></div>
+</div>
+<div id="ref-huttenlocher1979" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">29. </div><div class="csl-right-inline">Huttenlocher PR. <strong><em>Synaptic density in human frontal cortex - developmental changes and effects of aging</em></strong>. Brain Research. 1979;163: 195–205. doi:<a href="https://doi.org/10.1016/0006-8993(79)90349-4">10.1016/0006-8993(79)90349-4</a></div>
+</div>
+<div id="ref-petanjek2011" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">30. </div><div class="csl-right-inline">Petanjek Z, Judaš M, Šimic G, Rasin MR, Uylings HBM, Rakic P, et al. <strong><em>Extraordinary neoteny of synaptic spines in the human prefrontal cortex</em></strong>. Proceedings of the National Academy of Sciences of the United States of America. 2011;108: 13281–13286. doi:<a href="https://doi.org/10.1073/pnas.1105108108">10.1073/pnas.1105108108</a></div>
+</div>
+<div id="ref-faust2021" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">31. </div><div class="csl-right-inline">Faust TE, Gunner G, Schafer DP. <strong><em>Mechanisms governing activity-dependent synaptic pruning in the developing mammalian CNS</em></strong>. Nature Reviews Neuroscience. 2021;22: 657–673. doi:<a href="https://doi.org/10.1038/s41583-021-00507-y">10.1038/s41583-021-00507-y</a></div>
+</div>
+<div id="ref-feinberg1982" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">32. </div><div class="csl-right-inline">Feinberg I. <strong><em>Schizophrenia: caused by a fault in programmed synaptic elimination during adolescence?</em></strong> Journal of Psychiatric Research. 1982;17: 319–334. doi:<a href="https://doi.org/10.1016/0022-3956(82)90038-3">10.1016/0022-3956(82)90038-3</a></div>
+</div>
+<div id="ref-glantz2000" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">33. </div><div class="csl-right-inline">Glantz LA, Lewis DA. <strong><em>Decreased dendritic spine density on prefrontal cortical pyramidal neurons in schizophrenia</em></strong>. Archives of General Psychiatry. 2000;57: 65–73. doi:<a href="https://doi.org/10.1001/archpsyc.57.1.65">10.1001/archpsyc.57.1.65</a></div>
+</div>
+<div id="ref-sun2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">34. </div><div class="csl-right-inline">Sun D, Stuart GW, Jenkinson M, Wood SJ, McGorry PD, Velakoulis D, et al. <strong><em>Brain surface contraction mapped in first-episode schizophrenia: a longitudinal magnetic resonance imaging study</em></strong>. Molecular Psychiatry. 2009;14: 976–986. doi:<a href="https://doi.org/10.1038/mp.2008.34">10.1038/mp.2008.34</a></div>
+</div>
+<div id="ref-onwordi2020" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">35. </div><div class="csl-right-inline">Onwordi EC, Halff EF, Whitehurst T, Mansur A, Cotel M-C, Wells L, et al. <strong><em>Synaptic density marker SV2A is reduced in schizophrenia patients and unaffected by antipsychotics in rats</em></strong>. Nature Communications. 2020;11: 246. doi:<a href="https://doi.org/10.1038/s41467-019-14122-0">10.1038/s41467-019-14122-0</a></div>
+</div>
+<div id="ref-knable2001" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">36. </div><div class="csl-right-inline">Knable MB, Torrey EF, Webster MJ, Bartko JJ. <strong><em>Multivariate analysis of prefrontal cortical data from the Stanley Foundation Neuropathology Consortium</em></strong>. Brain Research Bulletin. 2001;55: 651–659. doi:<a href="https://doi.org/10.1016/s0361-9230(01)00521-4">10.1016/s0361-9230(01)00521-4</a></div>
+</div>
+<div id="ref-grayson2005" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">37. </div><div class="csl-right-inline">Grayson DR, Jia X, Chen Y, Sharma RP, Mitchell CP, Guidotti A, et al. <strong><em>Reelin promoter hypermethylation in schizophrenia</em></strong>. Proceedings of the National Academy of Sciences of the United States of America. 2005;102: 9341–9346. doi:<a href="https://doi.org/10.1073/pnas.0503736102">10.1073/pnas.0503736102</a></div>
+</div>
+<div id="ref-chai2009" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">38. </div><div class="csl-right-inline">Chai X, Förster E, Zhao S, Bock HH, Frotscher M. <strong><em>Reelin stabilizes the actin cytoskeleton of neuronal processes by inducing n-cofilin phosphorylation at serine3</em></strong>. The Journal of Neuroscience: The Official Journal of the Society for Neuroscience. 2009;29: 288–299. doi:<a href="https://doi.org/10.1523/JNEUROSCI.2934-08.2009">10.1523/JNEUROSCI.2934-08.2009</a></div>
+</div>
+<div id="ref-hong2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">39. </div><div class="csl-right-inline">Hong S, Dissing-Olesen L, Stevens B. <strong><em>New insights on the role of microglia in synaptic pruning in health and disease</em></strong>. Current Opinion in Neurobiology. 2016;36: 128–134. doi:<a href="https://doi.org/10.1016/j.conb.2015.12.004">10.1016/j.conb.2015.12.004</a></div>
+</div>
+<div id="ref-stevens2007" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">40. </div><div class="csl-right-inline">Stevens B, Allen NJ, Vazquez LE, Howell GR, Christopherson KS, Nouri N, et al. <strong><em>The Classical Complement Cascade Mediates CNS Synapse Elimination</em></strong>. Cell. 2007;131: 1164–1178. doi:<a href="https://doi.org/10.1016/j.cell.2007.10.036">10.1016/j.cell.2007.10.036</a></div>
+</div>
+<div id="ref-schafer2012" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">41. </div><div class="csl-right-inline">Schafer DP, Lehrman EK, Kautzman AG, Koyama R, Mardinly AR, Yamasaki R, et al. <strong><em>Microglia sculpt postnatal neural circuits in an activity and complement-dependent manner</em></strong>. Neuron. 2012;74: 691–705. doi:<a href="https://doi.org/10.1016/j.neuron.2012.03.026">10.1016/j.neuron.2012.03.026</a></div>
+</div>
+<div id="ref-sekar2016" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">42. </div><div class="csl-right-inline">Sekar A, Bialas AR, Rivera H de, Davis A, Hammond TR, Kamitaki N, et al. <strong><em>Schizophrenia risk from complex variation of complement component 4</em></strong>. Nature. 2016;530: 177–183. doi:<a href="https://doi.org/10.1038/nature16549">10.1038/nature16549</a></div>
+</div>
+<div id="ref-sellgren2019" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">43. </div><div class="csl-right-inline">Sellgren CM, Gracias J, Watmuff B, Biag JD, Thanos JM, Whittredge PB, et al. <strong><em>Increased synapse elimination by microglia in schizophrenia patient-derived models of synaptic pruning</em></strong>. Nature Neuroscience. 2019;22: 374–385. doi:<a href="https://doi.org/10.1038/s41593-018-0334-7">10.1038/s41593-018-0334-7</a></div>
+</div>
+<div id="ref-garridomesa2013" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">44. </div><div class="csl-right-inline">Garrido-Mesa N, Zarzuelo A, Gálvez J. <strong><em>Minocycline: far beyond an antibiotic</em></strong>. British Journal of Pharmacology. 2013;169: 337–352. doi:<a href="https://doi.org/10.1111/bph.12139">10.1111/bph.12139</a></div>
+</div>
+<div id="ref-miyaoka2007" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">45. </div><div class="csl-right-inline">Miyaoka T, Yasukawa R, Yasuda H, Hayashida M, Inagaki T, Horiguchi J. <strong><em>Possible antipsychotic effects of minocycline in patients with schizophrenia</em></strong>. Progress in Neuro-Psychopharmacology and Biological Psychiatry. 2007;31: 304–307. doi:<a href="https://doi.org/10.1016/j.pnpbp.2006.08.013">10.1016/j.pnpbp.2006.08.013</a></div>
+</div>
+<div id="ref-solmi2017" class="csl-entry" role="doc-biblioentry">
+<div class="csl-left-margin">46. </div><div class="csl-right-inline">Solmi M, Veronese N, Thapa N, Facchini S, Stubbs B, Fornaro M, et al. <strong><em>Systematic review and meta-analysis of the efficacy and safety of minocycline in schizophrenia</em></strong>. CNS spectrums. 2017;22: 415–426. doi:<a href="https://doi.org/10.1017/S1092852916000638">10.1017/S1092852916000638</a></div>
+</div>
+</div>
+</section>
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-07.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">시냅스의 미세구조</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./06-09.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">자가포식</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

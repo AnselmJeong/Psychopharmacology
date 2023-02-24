@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -839,6 +839,7 @@ div.csl-indent {
           </div>
   </div>
     
+  
     
   </div>
   
@@ -855,7 +856,7 @@ div.csl-indent {
 <p>클로자핀이 어떤 기전으로 다른 약에 비해 우수한 효과를 나타내는지는 알려져 있지 않다. D<sub>2</sub> 수용체를 차단하기는 하나 다른 약물에 비해 훨씬 수용체 차단율이 낮으며, D<sub>2</sub> 보다 오히려 D<sub>4</sub>에 더 강력하게 결합한다. 이외에도 5-HT<sub>2A</sub>를 비롯하여, 5-HT<sub>1A,&nbsp;2C,&nbsp;2B,&nbsp;6,&nbsp;7</sub>에 결합하며, 아세틸콜린과 아드레날린 수용체들에도 강력하게 결합한다.클로자핀의 독특함은 치료저항성 환자에 대한 효과뿐 아니라, 음성/인지 증상에 조금이나마 더 효과적이며, 추체외로 증상이 거의 없고, 기존에 지연성 운동장애 증상을 보이는 환자에게 사용했을 때 운동 증상을 경감시키는 효과가 있다는 것이다. 이런 장점들과, 다양한 신경전달물질 수용체에 미치는 역할을 대응시키는 것은 정신약물학자들의 숙원과제가 되어왔다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="클로자핀의%20수용체%20프로파일"><img src="Images/08-01/img_1.png" class="img-fluid figure-img"></a></p>
+<p><a href="클로자핀의 수용체 프로파일"><img src="Images/08-01/img_1.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <p>From Stahl (p217)</p>
@@ -1480,7 +1481,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   // Switch to dark mode if need be
   if (hasAlternateSentinel()) {
     toggleColorMode(true);
-  } 
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1502,7 +1505,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -1526,24 +1546,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     };
     window.tippy(el, config); 
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

@@ -4,7 +4,7 @@ project:
 book:
   title: "SPR"
   author: "Anselm Jeong"
-  lang: ko
+  language: ko
   repo-url: https://github.com/AnselmJeong/Psychopharmacology
   repo-actions: [edit]
   sharing: [twitter]

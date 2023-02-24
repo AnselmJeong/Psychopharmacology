@@ -1,6 +1,6 @@
 ---
-title: "정신약물학의 태동"
-subtitle: "Birth of psychopharmacology"
+title: "정신약물학 이전 시대의 치료"
+subtitle: "Before the birth of psychopharmacology"
 bibliography: References/04-01.bib
 ---
 

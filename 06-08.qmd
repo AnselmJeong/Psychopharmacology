@@ -16,11 +16,11 @@ bibliography: References/06-08.bib
 
 [^06-08-1]: **Brain-derived neurotrophic factor (BDNF)**: 신경세포에 작용하는 성장 인자 중 가장 중요한 물질이다. 중추신경계와 말초신경계 모두에 작용하며, 기존 신경세포의 생존과 성장은 물론 줄기세포가 신경세포로 분화하는 것을 돕는다. 또한 장기 기억을 유지하는데도 결정적인 역할을 한다. 뇌에서 분비되는 다른 성장 인자는 NT-3, NT-4, nerve growth factor (NGF)가 있다.
 
-![신경돌기(neurite)의 구조: 녹색으로 염색된 부분은 미세소관이며, 붉은색으로 염색된 부분은 actin으로 구성된 filopidia와 lamellipodia이다.[@kalil2011]](Images/06-08/growth_cone.jpg)
+![신경돌기(neurite)의 구조: 녹색으로 염색된 부분은 미세소관이며, 붉은색으로 염색된 부분은 actin으로 구성된 filopidia와 lamellipodia이다.[@kalil2011]](images/06-08/growth_cone.jpg)
 
 미세소관은 α- 그리고 β-tubulin의 이량체(dimer)로 구성되는 직경 23 nm 정도의 미세한 관이다. 미세소관은 필요에 따라 생성과 분해를 반복한다. 단세포 생물에서는 섬모를 만들어 운동성을 제공하지만, 다세포 생물에서는 신경돌기를 만들어 신경망 형성 및 세포 이동에 관여한다. 세포의 이동과 관련된 모든 생체 프로세스, 즉 뉴런의 방향성 결정, 발달과정 중의 뉴런 이동, 축삭의 성장, 시냅스 형성 등은 미세소관을 고려하지 않고는 이해할 수 없다.[@lasser2018]
 
-![미세소관의 구조](Images/06-08/Microtubule-structure.jpg)
+![미세소관의 구조](images/06-08/Microtubule-structure.jpg)
 
 미세소관은 세포의 모양을 지탱하는 주요 구조이지만, 동시에 분자들을 이동시키는 통로이기 때문에, 어떤 물질을 통과시키고 또 어디로 보낼 지를 결정한다. 이런 역할을 통해 정보전달에도 한 몫 한다는 것이 점차 밝혀지고 있다.[@dent2014] 소위 MAP (Microtubule Associated Proteins)이라 불리우는 미세소관 관련 단백질에는 MAP1B, MAP2, Tau 그리고 <s>MAP6</s>[^06-08-2]등의 구조 단백질과, <s>CRMP</s>[^06-08-3]이라고 하는 기능성 단백질이 포함된다. MAP6와 CRMP는 미세소관을 새로 생성할 지, 아니면 제거할 지, 새로 만든다면 어느 방향으로 뻗어나갈 지 등을 결정한다.[@nakamura2020; @cuveillier2021]
 
@@ -48,7 +48,7 @@ CRMP 역시 조현병 발병 과정 중 여러 곳에서 영향을 미칠 수 �
 
 [^06-08-7]: Pericentriolar material-1 (PCM1)
 
-![Centrosome의 구조를 지탱하는 DISC-1 [@brandon2009] DISC1 play a role in anchoring these molecules in association with the dynein motor complex and centrosome, regulating microtubule organization.](Images/06-08/DISC-1.png)
+![Centrosome의 구조를 지탱하는 DISC-1 [@brandon2009] DISC1 play a role in anchoring these molecules in association with the dynein motor complex and centrosome, regulating microtubule organization.](images/06-08/DISC-1.png)
 
 ## 시냅스 가지치기 {#sec-시냅스-가지치기}
 
@@ -58,7 +58,7 @@ CRMP 역시 조현병 발병 과정 중 여러 곳에서 영향을 미칠 수 �
 
 [^06-08-8]: 시카고 대학의 소아신경과 의사였던 Peter Huttenlocher는 갓난 아이로부터 90세 노인에 이르는 사후 뇌조직을 전자현미경으로 관찰하여, 시냅스의 갯수를 일일이 세어 기록하였다. 그는 인간 시냅스의 갯수가 출생 후 2-3세에 최대치에 도달하며, 청소년기에 급격히 감소하여 이후에는 안정된 수를 유지한다는 것을 알아내었으며, 이를 1979년에 발표하였다.
 
-![발생 중인 소뇌에서의 시냅스 가지치기 [@faust2021]](Images/06-08/pruning.png)
+![발생 중인 소뇌에서의 시냅스 가지치기 [@faust2021]](images/06-08/pruning.png)
 
 연구자들은 부적절한 가지치기가 자폐증과 조현병을 일으키는데 부분적으로 기여한다고 믿는다. 재미있는 것은 자폐증은 가지치기기가 제대로 이루어지지 않아 (under-pruned) 불필요한 시냅스가 너무 많이 남아있는 상태이고, 조현병은 지나친 가지치기가 일어나 (over-pruned) 꼭 필요한 시냅스가 결여된 상태라는 것이다. **"조현병이 지나친 가지치기에 의해 일어난다는 가설(over-pruning hypothesis of schizophrenia)"**은 같은 나이의 조현병 환자의 뇌에서 시냅스 혹은 수상돌기의 수가 훨씬 적게 관찰된다는 사실에 기반한다.[@feinberg1982; @glantz2000] 물론 시냅스나 간극의 수가 줄어드는 것을 외부 독성에 의해서 신경세포의 퇴행이 일어나기 때문이라 생각할 수도 있지만, 그렇게 보기에는 동반되는 신경교증(gliosis)의 범위가 너무나 작다. 조현병 환자라 해도 실제로 뉴런의 개수가 줄어드는 것은 아니며, 단지 <s>신경그물</s>[^06-08-9]의 용적이 줄어드는 것 뿐이다.
 
@@ -80,7 +80,7 @@ CRMP 역시 조현병 발병 과정 중 여러 곳에서 영향을 미칠 수 �
 
 C4는 시냅스 가지치기에 적극 관여하는 보체 중 하나인데, 주로 중추신경계에 분포하기 때문에 주목을 받아왔다. 2016년 하버드 대학교 연구진은 C4 유전자 내부 변이인 rs13194504가 조현병과 강력하게 연합관계를 이루며, C4A mRNA의 발현양 역시 조현병 발병 위험과 현저한 비례관계에 있음을 찾아내었다.[@sekar2016] 이는 당시까지 발견된 어떤 유전적 연합관계보다도 강력한 관계였다. 게다가 동일 연구진은 C4A 유전자 양이 시냅스 가지치기 정도를 결정한다는 것 또한 입증하였다. 이 성과에 뒤이어 3년 뒤 또 다른 연구진은 조현병 환자에서 얻어낸 신경세포를 배양한 후 이 세포주의 가지치기 정도가 대조군보다 유의하게 높다는 것을 관찰하였으며, 그 정도가 C4의 변이와 관련됨을 증명하였다.[@sellgren2019]
 
-![Psychiatric Genomics Consortium 데이터를 사용하여 광범위 유전체 연합 연구를 했을 때, 조현병과의 연합관계가 가장 큰 유의도를 보인 유전자 (가장 높은 peak)는 C4였다. \[\@sekar2016\]](Images/06-08/img_11.png)
+![Psychiatric Genomics Consortium 데이터를 사용하여 광범위 유전체 연합 연구를 했을 때, 조현병과의 연합관계가 가장 큰 유의도를 보인 유전자 (가장 높은 peak)는 C4였다. \[\@sekar2016\]](images/06-08/img_11.png)
 
 Minocycline은 합성된지 50년이 넘는 고전적인 tetracycline 계 항생제인데, 뇌-혈관 장벽을 무난히 통과하는데다가 비특이적인 면역억제, 항염증 효과가 있기 때문에 류마티스 관절염, 염증성 대장 증상 등 자가면역질환에도 사용된다.[@garridomesa2013] 2007년 일본의 정신과 의사들이 우연히 폐렴에 걸린 조현병 환자에게 minocycline을 처방했는데, 조현병 증상이 많이 좋아졌다는 보고를 하였다.[@miyaoka2007] 이후 minocycline이 신경보호 기능을 한다는 것이 알려졌고, 다양한 정신질환에 대한 치료효과가 탐색되었다. 그중 한가지 가능성은 minocycline이 신경교세포의 활성을 억제하며 지나친 가지치기를 막아준다는 것이다.[@sellgren2019] Minocycline이 새로운 항정신병 약물로 자리잡을 지는 의문이지만, 현재까지 연구된 바를 종합하면 보조 치료제로 사용되었을 때 유의하게 음성 증상 및 집행 기능을 호전시키는 것으로 나타났다.[@solmi2017]
 

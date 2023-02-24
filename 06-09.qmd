@@ -20,7 +20,7 @@ bibliography: References/06-09.bib
 
 [^06-09-5]: Autosis는 세포자멸사도 괴사도 아닌, 세포가 죽어가는 제 3의 기전이다. 앞의 두 기전과는 세포의 형태학적 생화학적 변화가 다르다. 자가 포식 과정 중, 세포 주변의 영양분 고갈이나 허혈상태, reserpine과 같은 약물 등에 의해 자가포식체의 양이 너무 많아지면 autosis 과정이 시작된다.[@liu2015]
 
-![자가 포식의 개요](Images/06-09/img_12.png){#fig-depiction-autophagy}
+![자가 포식의 개요](images/06-09/img_12.png){#fig-depiction-autophagy}
 
 From [@xie2007]
 
@@ -50,7 +50,7 @@ Ubiquitination은 단백질의 번역 후 변형(post-translational modification
 
 [^06-09-10]: E1은 ubiquitin-activating enzyme, E2는 ubiquitin conjugating enzyme, E3는 ubiquitin-protein ligase라고 한다.
 
-![Ubiquitin-protease system](Images/06-09/img_13.png){#fig-ubuquitin-protease-system}
+![Ubiquitin-protease system](images/06-09/img_13.png){#fig-ubuquitin-protease-system}
 
 Ubiquitin-proteasome system (UPS)가 이렇게 복잡한 이유는 그만큼 세포 건강에 중요하며 세심한 조절을 받고 있다는 증거이다. 동일한 세포 내에서도 위치에 따라 활성이 다르며, 수상돌기 하나하나마다 따로 조절을 받고 있다. 수상돌기 간극이 분해되는 주요한 기전으로 여겨지며, 새로운 기억이 만들어지기도, 지워지기도 하는 과정의 핵심 요소라고 여겨진다.[@hegde2017] 신경세포에서는 단백질 분해 과정 말고도, 뼈대 단백질의 유지, 신호전달을 위한 복합체의 형성 등에 관여한다.[@zajicek2021]
 

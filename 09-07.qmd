@@ -100,7 +100,7 @@ bibliography: References/09-07.bib
 
 [^09-07-12]: **Torsade de Pointes (TdP)**: QTc가 점점 길어지면 재충전 와중에 다음 수축 신호가 떨어지면서 T파 위에 R파가 겹치는 R-on-T 현상이 발생한다. 이 상태가 심해지면 QTS가 뒤틀리게 되는 특징적인 파형의 부정맥이 발생하는데, 이를 Torsade de Pointes (twisting of peaks의 불어표현)라고 한다.
 
-![QTc 구간](Images/09-07/img_12.png)
+![QTc 구간](images/09-07/img_12.png)
 
 다양한 약물이 QTc를 연장시키고, 이중 몇몇 약물은 부정맥 위험때문에 허가가 취소되기도 하였다. 항정신병 약물 중에서도 1990년대 중반에 사용되기 시작한 sertindole이 QTc 연장과 돌연사 위험때문에 허가가 취소되었다. 나머지 약물들도 역시 QTc 연장 효과가 있지만, 위험이 과장되게 포장된 경향이 있으며, 실제로 부정맥을 일으킬 위험은 그리 높지 않다.
 
@@ -112,9 +112,9 @@ bibliography: References/09-07.bib
 
 [^09-07-14]: IC~50~ (half-maximal inhibitory concentration): 어떤 화합물/약물이 목적한 생물학적 기능의 50%를 차단하는 농도
 
-![hREG에 대한 항정신병 약물의 결합도 (IC~50~ 로 표시) [@kongsamut2002]](Images/09-07/img_13.png)
+![hREG에 대한 항정신병 약물의 결합도 (IC~50~ 로 표시) [@kongsamut2002]](images/09-07/img_13.png)
 
-![QT prolongation risk [@beach2013]](Images/09-07/img_14.png)
+![QT prolongation risk [@beach2013]](images/09-07/img_14.png)
 
 비정형 약물 역시 QTc 연장과 돌연사 위험에서 자유롭지 못하다. 그 중에서도 특히 <s>지프라시돈의 QTc 연장 효과</s>[^09-07-15]가 우려를 자아냈는데, 그렇다 하더라도 실제 임상에서 QTc를 일일이 고려할 필요는 없어보인다. 지프라시돈 과다복용으로 응급실에 실려온 56명의 환자 중 QTc가 500msec 이상으로 연장되었던 환자는 단 한명에 지나지 않았다.[@kleinschwartz2007] 지프라시돈 복용 후 TdP를 일으킨 사례보고도 전세계적으로 손꼽을 정도이다. 이런 사실은 QTc가 연장되었다고 해서 곧바로 돌연사 위험으로 연결되는 것이 아님을 시사한다. QTc가 연장되어 있으면서도 부정맥을 비롯한 심장 부작용이 전혀 없을 수도 있고, QTc가 정상인데도 돌연사 할 수 있다. 예를 들어 클로자핀은 QTc 연장 효과가 크지 않음에도 불구하고, 돌연사 위험은 가장 높다.[@modai2000; @warner2002]
 

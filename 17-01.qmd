@@ -26,7 +26,7 @@ bibliography: References/17-01.bib
 
 종합하면 조현병과 우울 증상은 한가지 이론으로 쉽게 설명되지 않는 무척이나 복잡한 관계를 맺고 있으며, 학계도 이를 반영한 듯 우울 전구증상(depressive prodromal state), 신경증적 우울 반응(depressive neurotic response), 정신병 후 우울증(post-psychotic depression), 관해 후 탈진증후군 (post-remission exhaustion syndrome), 무동성 우울증 (akinetic depression), 비전형 무동증 증후군 (atypical akinesia syndrome), 약물로 유발된 우울증 (drug-induced depression), 약물로 유발된 불쾌감(drug-induced dysphoria) 등 다양한 용어들이 사용되어 왔다.[@hausmann2000]
 
-![](Images/17-01/img_0.png)
+![](images/17-01/img_0.png)
 
 A hierarchical model of preformed symptom patterns (dimensionally distributed from mild to severe) caused by neurobiological (and psychological) reactions to stress, various types of brain dysfunctions or degenerative brain disorder (represented by the arrows).[@Häfner2005]
 
@@ -42,7 +42,7 @@ A hierarchical model of preformed symptom patterns (dimensionally distributed fr
 
 ## 질병 단계에 따른 우울 증상
 
-​![조현병의 질병 경과 중 나타나는 우울 증상의 양상](Images/17-01/img_1.png){width="886"}
+​![조현병의 질병 경과 중 나타나는 우울 증상의 양상](images/17-01/img_1.png){width="886"}
 
 From [@mulholland2000]
 

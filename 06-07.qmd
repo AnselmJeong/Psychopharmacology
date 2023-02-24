@@ -14,7 +14,7 @@ bibliography: References/06-07.bib
 
 [^06-07-1]: **Edward George Gray (1924\~1999)**: 영국의 신경과학자로 전자현미경을 이용하여 신경조직의 미세 구조를 밝히는데 공헌하였다.
 
-![시냅스 후 밀집체 (from Wikipedia)](Images/06-07/img_6.png){#fig-postsynaptic-density}
+![시냅스 후 밀집체 (from Wikipedia)](images/06-07/img_6.png){#fig-postsynaptic-density}
 
 해부학적 위치를 고려할 때 PSD는 신경전달물질이 수용체에 결합한 후의 프로세스를 담당하는 구조일 것으로 여겨진다. 실제로 여기에는 400개 이상의 단백질이 밀집되어 있으며, G 단백질과 관련된 효소, 2차 신호전달자를 생성하거나 분해하는 효소, 인산화/탈인산화 효소, 그리고 어댑터(@sec-canonical-경로와-non-canonical-경로)나 뼈대 단백질(@sec-homer-계열-유전자) 등 구조를 지탱하는 단백질들이 포함되어 있다.[@tomasetti2017] 중추신경계에서 대표적으로 흥분성 신호전달을 담당하는 물질이 글루타메이트인 만큼, PSD의 중심부위에는 NMDA 수용체들이 밀집되어 자리잡고 있으며, AMPA, kainate 수용체는 주변부에 위치한다. 도파민, GABA 수용체들 역시 대표적인 구성 요소들이다.
 
@@ -28,7 +28,7 @@ bibliography: References/06-07.bib
 
 [^06-07-3]: Glutamate receptor interacting protein (GRIP)
 
-![시냅스 후 밀집체의 구성 단백질 [@banerjee2016]](Images/06-07/PSD.jpg)
+![시냅스 후 밀집체의 구성 단백질 [@banerjee2016]](images/06-07/PSD.jpg)
 
 PSD는 이렇듯 다양한 분자들이 서로 상호작용할 수 있는 구조적 틀을 마련해주는 기능 말고도, 시냅스 후 뉴런의 세포막을 구획으로 나누어 각각의 구획마다 서로 다른 기능을 할 수 있도록 돕는다. 전자현미경 상 PSD가 원반 모양으로 생겼다고 언급하였는데, 세포막에는 다수의 원반들이 존재하며 이들은 서로 물리적으로 떨어져있다. 각 원반마다 조절되는 양상이 다르기 때문에 서로 다른 신호를 전달한다고 믿어지며, 특정한 신호에 특화되어 있다고 보면 된다. 이를 소위 세포막의 **microdomain**이라고 하는데, 이렇게 구획으로 나눠짐으로써 서로 다른 PSD 사이에 혼선이 생기는 것을 막아준다고 이해되고 있다.[@debartolomeis2004] 예를 들어 초기 유전자의 하나인 HOMER는 PSD를 구성하는 중요한 뼈대 단백질인데, 대사성 글루타메이트 수용체에 결합하여 IP3 신호전달을 촉진함으로써 세포 내로의 Ca^2+^ 유입 정도를 조절한다. Ca^2+^ 가 세포 내로 유입된다 하더라도 세포질의 부위에 따라 농도 차이가 발생하는데, 이는 각 PSD마다 HOMER의 활성 정도가 다르기 때문으로 이해된다.[@worley2007]
 
@@ -50,7 +50,7 @@ De Bartolomeis 등[@debartolomeis2015]은 항정신병 약물의 농도를 서�
 
 ### 신경전달물질의 방출 과정
 
-![신경전달물질의 방출과정 [@augustine1999]](Images/06-07/img_8.png)
+![신경전달물질의 방출과정 [@augustine1999]](images/06-07/img_8.png)
 
 세포체에서 신경전달물질이 만들어지면 지질막에 둘러싸여 일종의 <s>패키지</s>[^06-07-6]로 포장되는데, 이 패키지는 축삭을 타고 시냅스 전 말단까지 이동하여야 한다. <s>이동 과정</s>[^06-07-7] 은 먼저 패키지에 <s>kinesin</s>[^06-07-8]이 달라붙고, kinesin은 미세소관(microtubule)을 따라 기어가면서 부착된 패키지가 함께 운반되는 방식이다.[@yagensky2016] 패키지가 축삭 말단에 도달하면 그 내용물(신경전달물질)이 일단 방출된 후 새롭게 지질막에 싸이면서, 시냅스 소포(synaptic vesicle)로 재포장된다. 만들어진 소포들은 축삭 말단에서 시냅스 소포 군집(synaptic vesicle cluster)을 이루어 언제든지 방출될 준비를 갖춘다.[@reshetniak2021] 많은 연구가 거듭되었지만, 아직도 kinesin이 어떻게 패키지와 결합하며, 어떻게 목적지를 알 수 있는지, 내용물을 방출하는 과정은 어떤 것인지 의문에 싸여 있다.
 
@@ -60,7 +60,7 @@ De Bartolomeis 등[@debartolomeis2015]은 항정신병 약물의 농도를 서�
 
 [^06-07-8]: **Kinesin**: 미세소관은 축삭을 따라 마치 선로처럼 뻗어있다. Kinesin은 ATP를 분해해가면서 끊임없이 3차원 구조를 바꾸는데, 이것이 마치 선로위를 걸어가는 것처럼 미세소관 위를 이동할 수 있게 만든다. 이 때문에 kinesin을 motor protein이라고 부른다.
 
-![Kinesin과 미세소관](Images/06-07/kinesin.jpg)
+![Kinesin과 미세소관](images/06-07/kinesin.jpg)
 
 시냅스 소포군집(synaptic vesicle cluster)에 위치하고 있는 소포들은 active zone에 거의 맞닿아있는데 이를 도킹(docking) 상태라고 한다. 이 상태에서 분비 신호가 감지되면 전압 위존 Ca^2+^ 채널이 열리면서 국소적으로 Ca^2+^이 유입된다. 소포를 구성하는 단백질인 synaptotagmin은 Ca^2+^이 붙을 수 있는 C2 domain이라는 서열을 지니고 있는데, Ca^2+^이 부착된 C2 domain은 갈고리형태를 띠면서 소포를 둘러싼 지질막에 구멍을 낸다. 이렇게 지질막에 틈이 생기면서 소포와 active zone 사이의 지질막이 서로 융합하시 시작하며, 최종적으로는 fusion pore가 만들어진다. 지질막 융합 과정에서 중요한 역할을 하는 분자들을 가리켜 <s>SNARE</s>[^06-07-9] 단백질이라고 한다.
 
@@ -76,7 +76,7 @@ SNARE 단백질은 무려 60개 이상의 단백질을 포함하는 넓은 범�
 
 [^06-07-12]: SNARE 단백질은 보툴리눔 독소(botulinum toxin)와 파상풍균 독소가 공격하는 표적일 정도로, 생명체의 생과 사를 결정하는 중요한 단백질들이다.
 
-![시냅스 소포체의 도킹 과정과 fusion pore [@thoreson2020]](Images/06-07/img_9.png){#fig-fusion-pore}
+![시냅스 소포체의 도킹 과정과 fusion pore [@thoreson2020]](images/06-07/img_9.png){#fig-fusion-pore}
 
 ### 세포막의 함입
 
@@ -86,7 +86,7 @@ Clathrin을 매개로 한 고전적 합입은 시간적 여유가 있을 때 이
 
 [^06-07-13]: Clathrin을 매개하지 않은 함입 과정은 현재까지 네 개의 메커니즘이 알려져 있다: 1) clathrin-independent fast endocytosis, 2) kiss-and-run, 3) bulk endocytosi, 4) ultrafast endocytosis [@milosevic2018]
 
-![Clarthrin을 매개하지 않는 시냅스 소포체 융합 [@gross2016]](Images/06-07/img_10.png)
+![Clarthrin을 매개하지 않는 시냅스 소포체 융합 [@gross2016]](images/06-07/img_10.png)
 
 ### 조현병과의 관련성
 
@@ -102,7 +102,7 @@ Synaptophysin은 그 기능이 완전히 알려져 있지 않지만, synaptobrev
 
 신경세포가 지질막을 재활용할 때는, 재활용하고자하는 지질막을 일단 clathrin으로 덮은 후 세포 내부로 끌어당겨 세포막으로 부터 분리시키는데, 이를 clathrin 매개 세포내함입(clathrin mediated endocytosis, CME)이라고 한다. 이렇게 지질막을 재활용할 때 말고도, 세포 밖 물질을 세포 내부로 흡수하여 원하는 위치로 운반하고자 할 때는 항상 clathrin이 중요한 역할을 한다. Clathrin과 여기에 결합하는 어댑터 단백질(adaptor protein complex 2, AP-2)은 다수의 단백질들을 끌어들여 하나의 복합체를 형성하는데, 이를 CME interactome이라고 칭한다.[@schmid2007] 이 과정은 신경세포의 기능발휘에 매우 중요하기 때문에, 오래 전부터 조현병이나 양극성 장애가 CME의 이상을 동반하지 않는지 연구의 대상이 되어왔다.[@schubert2012]
 
-![Clathrin을 매개로 한 세포내 함입 [@perry1979]](Images/06-07/clathrin.jpg)
+![Clathrin을 매개로 한 세포내 함입 [@perry1979]](images/06-07/clathrin.jpg)
 
 일반적으로 clathrin을 연구할 때는 dynamin을 함께 조사하는 것이 보통이다. 오래전부터 phenothiazine을 기반으로 한 항정신병 약물이 dynamin을 비롯하여 CME 과정 전체를 억제한다는 것이 잘 알려져 있다.[@daniel2015] CME는 과도한 도파민 신호전달에 노출된 D~2~ 수용체가 탈감작(desensitization)하는 과정에도 중요한 역할을 한다. 왜냐하면 필요가 없어진 D~2~ 수용체는 β-arrestin에 이끌려 세포막으로 재흡수되는데, 이 과정에 clathrin이 참여하기 때문이다. (@sec-canonical-경로와-non-canonical-경로) 그런데 대다수의 정형 및 비정형 항정신병 약물은 β-arrestin이 D~2~ 수용체에 결합하는 것을 방해한다.[@masri2008] 조현병 전임상 모델인 SH-SY5Y 세포주(5-4-2절)에 클로자핀을 처리하면, CME에 동참하는 다양한 단백질의 mRNA의 양이 급격히 변화하는데, 그 중에는 β-arrestin 발현의 현저한 감소도 포함되어 있다.[@sharp2013]
 

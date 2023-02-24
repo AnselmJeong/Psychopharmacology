@@ -150,7 +150,7 @@ bibliography: References/09-09.bib
 
 이런 조치로 해결되지 않는다면 약물 교체를 고려해볼 수 있다. 2017년 Citrome[@citrome2017]은 비정형 항정신병 약물에 대해 진정 작용의 정도를 비교하여 순위를 매겼다. 그 결과 올란자핀, 퀘티아핀, 지프라시돈이 가장 졸린 약으로 선정되었고, 브렉스피프라졸, 팔리페리돈, 아리피프라졸이 가장 졸리지 않은 약으로 나타났다.
 
-![Sedation potential of antipsychotics [@citrome2017]](Images/09-09/img_15.png){alt="Sedation potential of antipsychotics [@citrome2017]"}
+![Sedation potential of antipsychotics [@citrome2017]](images/09-09/img_15.png){alt="Sedation potential of antipsychotics [@citrome2017]"}
 
 만약 약물 교체마저 여의치 않다면, 주간 졸리움을 해결하기 위해 추가로 약물을 사용할 수 있다. 대부분의 환자들은 이미 오전에 커피 몇 잔을 마시고 있다.[@thompson2014] 아데노신 수용체 길항제인 카페인이 재발을 앞당긴다는 증거는 없으며, 적당한 카페인 섭취는 활력을 주고 인지기능을 개선하는 등 긍정적인 효과를 가져온다.[@gurpegui2004; @huang2021] 카페인으로 졸리움이 해결이 안 된다면 <s>모다피닐</s>[^09-09-10]을 고려해 볼 수 있다. 한편 메틸페니데이트, 암페타민 등의 각성제 사용은 지양해야 한다. 안정 상태에 있는 만성 환자라면 위험이 덜 하겠지만, 급성기 환자에게는 절대로 사용하면 안 된다.[@janowsky1973; @bramness2012]
 
@@ -192,7 +192,7 @@ bibliography: References/09-09.bib
 
 #### 고체온증
 
-![Regulation of body temperature [@caroff2021]](Images/09-09/img_16.png)
+![Regulation of body temperature [@caroff2021]](images/09-09/img_16.png)
 
 인간을 비롯한 포유류에게 있어 체온을 조절하는 것은 생사를 가르는 중요한 문제이다. 그래서인지 시상 하부의 <s>체온조절 중추</s>[^09-09-14]에는 다양한 신경전달물질이 참여하는 복잡한 조절 기전이 자리잡고 있다.[@benarroch2007; @morrison2011] 체온은 열 생성과 열 손실의 균형에 맞춰 조절된다. 열 생성(thermogenesis)은 주로 갈색 지방의 대사 작용과 횡문근의 떨림(shivering)을 통해 발생하고, 열 손실은 피부와 땀을 통해 일어난다. 항정신병 약물이 긍정적 의미이든 부정적 의미이든 신경전달물질의 균형을 무너뜨리면, 체온의 균형 또한 영향을 받기때문에, 열성 긴장증, 신경이완제 악성 증후군 등 체온 조절이 혼란에 빠지는 상태가 뒤따르기도 한다.
 

@@ -22,7 +22,7 @@ bibliography: References/04-01.bib
 
 [^04-04-3]: **David Eddy (1941\~)**: 미국의 의사이자, 수학자, 건강제도 분석가이다. 질병의 수학적 모델링, 의학에서의 합리적 의사결정, 임상진료지침의 중요성 등에 대해 연구해왔다.
 
-![근거중심의학에서 사용되는 근거의 피라미드](Images/04-04/levels-of-evidence.svg){#fig-evidence-pyramid width="462"}
+![근거중심의학에서 사용되는 근거의 피라미드](images/04-04/levels-of-evidence.svg){#fig-evidence-pyramid width="462"}
 
 ### 무작위 배정 임상시험 {#sec-randomized-trial}
 
@@ -152,7 +152,7 @@ CATIE와 CUtLASS의 연구에 참여했던 Lewis와 Lieberman은 "CATIE와 CUtLA
 
 통제된 임상 연구를 [유효성 연구(efficacy trial)]{.underline}라고 한다면, 좀더 임상 실제를 반영하도록 고안한 방법이 [효과성 연구(effectiveness trial)]{.underline}이다. 효과성 연구는 보다 일반적으로는 [무작위 임상 연구(RCT)]{.underline}와 비교하여 [실용적 임상 연구(pragmatic clinical trial, PCT)]{.underline}라 칭해지며, 다른 말로 [자연적 연구(naturalistic study)]{.underline}라 불린다. 물론 RCT와 PCT는 각각 내적 타당도와 외적 타당도를 잇는 연속선상에서 어느 한쪽에 치중할 뿐 전적으로 다른 범주의 연구는 아니다. PCT의 목적은 임상 실제와 흡사한 조건에서 치료의 효과, 위험, 비용 등을 검증하여 임상 시험에서 제공하지 못하는 의문에 실용적인 해답을 제공하고, 일반화 가능성을 최대화하는 데 있다.([@fig-RCT-PCT])
 
-![무작위 임상 시험과 실용적 임상 시험의 차이](Images/04-04/img_2.png){#fig-RCT-PCT}
+![무작위 임상 시험과 실용적 임상 시험의 차이](images/04-04/img_2.png){#fig-RCT-PCT}
 
 PCT에서는 선정 기준이 매우 넓고 배제 기준은 대개 안전성에서 뚜렷한 문제가 있는 경우로 국한된다. 치료 방식도 대체로 주치의의 임상적 결정에 맡긴다. 또한 일반화 가능성을 높이기 위해 다양한 피험자를 방대한 규모로 모집한다. 전형적인 RCT에서는 흔히 군당 50-100명을 모집하는데 비해 PCT에서는 1,000명 이상의 환자를 모집한다. PCT 연구에서는 이렇게 모집된 연구대상이 조사하고자 하는 집단을 어떻게 폭넓게 대표할 수 있는 지를 기술해야 한다.
 

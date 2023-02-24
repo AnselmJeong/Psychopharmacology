@@ -30,7 +30,7 @@ bibliography: References/05-01.bib
 
 이러한 모델들은 동물(흔히 설치류)이 평상시에 혹은 특정한 자극을 주었을 때 보이는 행동을 조현병의 증상과 대응시킨다.([@fig-animal-model]) 여기에는 쉽게 수긍이 가는 대응도 있지만, 그렇지 못한 것도 있다. 큰 소리를 들려주었을 때 놀라 움찔하는 정도를 측정하는 놀람 반사(startle reflex)는 인간이나 쥐나 다르지 않을 것이다. 반면 사육용 우리(cage) 안에서 처음 만나는 쥐를 보았을 때 선뜻 다가가는 정도를 측정하는 모델은, 이 행동이 정말 조현병의 음성 증상을 반영하는지 의심스럽다.[@powell2006]
 
-### ![조현병의 동물모델에서 주로 다루어지는 표현형 들](Images/05-01/img_0.png){width="600"} {#fig-animal-model}
+### ![조현병의 동물모델에서 주로 다루어지는 표현형 들](images/05-01/img_0.png){width="600"} {#fig-animal-model}
 
 ### 조건회피 반응검사 {#sec-conditioned-avoidance}
 
@@ -84,7 +84,7 @@ bibliography: References/05-01.bib
 
 쥐를 이용한 흔한 인지 검사에는 Morris water test, Y maze/radial arm maze test 등이 있다.(@fig-maze-test)\[@vorhees2014\] 이런 검사들은 주로 공간 기억에 기반을 둔 작업 기억을 측정한다. 비록 학습과 기억에 대한 검사가 가장 손쉽고 연구도 많이 이루어졌지만, 그 밖의 인지 기능에 대한 검사도 개발되었다. 예를 들어 5-choice serial reaction time task (5-CSRTT)는 주의 집중과 충동성을 측정하며[@remmelink2017], fear conditioning test는 감정적 기억을 측정한다.[@fendt1999]
 
-![Y maze와 T maze](Images/05-01/y_maze){#fig-maze-test}
+![Y maze와 T maze](images/05-01/y_maze){#fig-maze-test}
 
 ## 병태생리를 연구하기 위한 모델
 

@@ -40,7 +40,7 @@ bibliography: References/08-07.bib
 
 약물 변경의 일반적인 스케줄은 다음 그림\_\_\_과 같이 세가지로 나눌 수 있다.
 
-![일반적인 약물 변경 스케쥴](Images/08-07/img_10.png)​
+![일반적인 약물 변경 스케쥴](images/08-07/img_10.png)​
 
 [@grande2014]
 

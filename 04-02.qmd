@@ -14,7 +14,7 @@ bibliography: References/04-01.bib
 
 [^04-02-2]: 20세기 초 John Langley와 Paul Ehrlich는 약물 작용기전이 수용체를 통하여 일어난다는 이론을 내놓았다. 그전만해도 향정신성 약물이 신경세포 말단에 작용한다고 여겨졌는데, Langley는 근육세포나 신경세포에 니코틴이 결합하는 수용 물질이 있다고 주장하였다. 비슷한 시기에 Ehrlich는 서로 다른 약물이 독특한 효과를 나타내는 것은 서로 다른 수용체에 결합하기 때문이라고 하였다. 리간드는 수용체 뿐 아니라 다양한 생물학적 활성 물질에 달라붙어 결합체를 이루는 물질을 의미한다. 체내에 약물 수용체가 존재한다는 것은, 애초에 수용체에 결합하는 자연적으로 생성되는 물질(자연적 리간드)이 있음을 의미한다. 이러한 추론을 통해 약리학 이론이었던 수용체-리간드 이론은 신경전달물질, 호르몬을 비롯한 생체의 주요 신호전달체계를 이해하는 가장 중요한 이론이 되었다.[@Rang2006-mh]
 
-![페노티아진 고리의 구조](Images/04-02/Chemical-structure-common-to-all-phenothiazine-antipsychotics.png){#fig-phenothiazine}
+![페노티아진 고리의 구조](images/04-02/Chemical-structure-common-to-all-phenothiazine-antipsychotics.png){#fig-phenothiazine}
 
 ### 클로르프로마진과 Laborit {#sec-laborit}
 

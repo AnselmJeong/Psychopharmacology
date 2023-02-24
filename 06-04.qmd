@@ -14,7 +14,7 @@ bibliography: References/06-04.bib
 
 항정신병 약물의 효과를 설명하는데 주로 사용되는 수사법은, 뇌를 복잡한 배선이 얽히고 설켜 있는 전자회로로 묘사하는 것이다. **"변연계에 위치하는 도파민 배선은 망상과 환각을 낳기 때문에 어떻게든 차단하는 것이 좋다. 반면 전전두엽에 위치한 도파민 배선을 통해 흐르는 전류는 최대한 늘리는 것이 좋다. "**는 식의 수사법이 널리 통용된다. 수용체를 차단한다는 것은 마치 해당되는 회로를 통한 전기신호의 흐름을 차단하는 것처럼 들린다.
 
-![뇌를 전자 회로로 비유하는 삽화](Images/06-04/electronic-circuit-brain.png)
+![뇌를 전자 회로로 비유하는 삽화](images/06-04/electronic-circuit-brain.png)
 
 이러한 수사법은 직관적이고 이해하기 쉽지만 사실을 있는 그대로 묘사하진 못한다. 항정신병 약물의 효과가 투여 직후에 나타나는 것도 아니고, 약물 효과가 그저 그날그날의 증상을 막아주는 것에 그치는 것도 아니다. 꾸준한 약물 복용은 신경망의 기능 뿐만 아니라 구조의 변화까지도 가져온다. 다시 말하여 약물의 효과는 당장의 전기 흐름을 통제하는 것에 그치지 않으며, 전자회로 자체를 뜯어고치는 것까지 확장된다. 1970년대 중반 이후, 기억과 학습에 대한 우리의 편견을 근본부터 뒤집어 엎은 **신경가소성(neural plasticity)**이란 개념은, **"기능과 구조가 사실은 하나이며, 치료의 궁극적 목표는 구조의 변화가 되어야 한다"**는 사실을 가르쳐주었다. 이러한 개념의 확장을 따라가기 위해선 세포 내 신호전달과 뒤따르는 유전자 발현까지를 모두 이해해야만 한다.
 
@@ -52,7 +52,7 @@ bibliography: References/06-04.bib
 
 [^06-04-7]: Inositol triphosphate/diacylglycerol
 
-![세포 내 신호전달계의 모식도 [@schatzberg2017]](Images/06-04/img_10.png)
+![세포 내 신호전달계의 모식도 [@schatzberg2017]](images/06-04/img_10.png)
 
 ### G 단백질 결합 수용체를 통한 전달 {#sec-g-단백질-결합-수용체를-통한-전달}
 
@@ -64,7 +64,7 @@ Protein kinase A, G, C는 가장 대표적인 단백질 인산화효소이다. P
 
 **G 단백질 결합 수용체(GPCR)**라는 이름이 의미하듯, 이들은 모두 G 단백질과 결합할 수 있다. GPCR는 1) 세포 외부에 존재하는 N 말단 (N-terminus), 2) 세포막을 일곱번에 걸쳐 가로지르는 세포막 횡단 영역(transmembrane domain), 그리고 3) 세포 내부에 존재하는 C 말단(C-terminus)으로 이루어진다. 세포막 횡단 영역의 특별한 구조 때문에 seven-transmembrane domain receptor (7TM)라고도 부른다.[@pierce2002]
 
-![세포막을 일곱번 가로지르는 G 단백질 결합 수용체 [@li2002]](Images/06-04/img_11.png)
+![세포막을 일곱번 가로지르는 G 단백질 결합 수용체 [@li2002]](images/06-04/img_11.png)
 
 한편 **G 단밸질**이란 guanosine triphosphate (GTP)와 결합할 수 있는 단백질이란 의미이며, α, β, γ의 세가지 아단위로 구성된다. 평상시에 G 단백질은 GPCR에 연결되어 있으며, α 아단위에는 guanosine diphosphate (GDP)가 붙어있다. 만약 약물이 GPCR에 결합하여 신호가 전달되면, α 아단위에서 GDP가 떨어져 나가고 대신 GTP가 결합한다. 이는 에너지가 높기 때문에, 활성화된 α 아단위와 β, γ 복합체가 GPCR로부터 분리되어 세포막을 떠다니게 되며, 만나는 주변 단백질을 활성화시킨다.
 
@@ -100,7 +100,7 @@ Receptor tyrosine kinase (RTK)는 세포막에 위치한 수용체로서 그 자
 
 [^06-04-12]: Growth factor receptor-bound protein 2 (Grb2)
 
-![Ras-Raf-MEK 경로 \[\@kennedy2012\]](Images/06-04/img_12.png){#fig-ras-raf-MEK}
+![Ras-Raf-MEK 경로 \[\@kennedy2012\]](images/06-04/img_12.png){#fig-ras-raf-MEK}
 
 두번째 경로는 Akt를 통한 것이다. RTK의 도킹 부위에 PI3K (phosphatidylinositol 3-kinase)가 결합하여 활성화되면, PIP2 (phosphatidylinositol 4,5-bisphosphate)를 PIP3 (phosphatidylinositol 3,4,5 trisphosphate)로 전환시킨다.[^06-04-13] PIP3는 Akt1과 함께 <s>PDK1</s>[^06-04-14]와 <s>mTOR</s>[^06-04-15]을 세포막으로 끌어들여 복합체를 만든다. 이 복합체 내에서 이번에는 PDK1과 mTOR에 의해 Akt1이 인산화되고, 인산화된 Akt는 GSK-3 활성을 억제한다.[^06-04-16] Akt1/GSK-3경로에 대해서도 역시 아래에서 논의된다.(@sec-akt1gsk-3-경로)
 
@@ -112,7 +112,7 @@ Receptor tyrosine kinase (RTK)는 세포막에 위치한 수용체로서 그 자
 
 [^06-04-16]: 이는 β-arrestin/Akt1/PP2A 복합체와는 정반대이다.
 
-![PIP3-Akt-mTOR 경로](Images/06-04/img_13.png)​
+![PIP3-Akt-mTOR 경로](images/06-04/img_13.png)​
 
 PIP3-Akt-mTOR 경로 (AR: androgen receptor 는 지울 것) [@phin2013]
 
@@ -156,7 +156,7 @@ Canonical 경로가 좀더 단기적이고 역동적인 반응이라면, non-can
 
 ### Akt1/GSK-3 경로 {#sec-akt1gsk-3-경로}
 
-![Akt](Images/06-04/img_14.png)​
+![Akt](images/06-04/img_14.png)​
 
 **A)** Phosphorylated Akt inactivates GSK-3 through phosphorylation. **B)** Binding of DA to the D2 receptor leads to recruitment of β-arrestin 2, a scaffolding protein, along with Akt and the phosphatase PP2A. PP2A dephosphorylates and inactivates Akt, resulting in increased GSK-3 activity.[@freyberg2010]
 
@@ -180,7 +180,7 @@ D~2~ 수용체를 통한 Akt1 조절도 중요하지만, 애초에 Akt1를 자�
 
 그러나 mTOR의 활성을 조절하는 기전은 워낙 복잡하게 얽혀있어, 얽힌 실타래를 풀어내기가 무척 어렵다. 도파민만 해도 D~2~와 D~1~을 통한 영향이 정반대이다. D~2~를 통한 자극은 β-arrestin/Akt1/PP2A 복합체를 통해 Akt를 억제하여 mTOR 활성도 줄이지만, D~1~을 통한 자극은 오히려 mTOR 활성을 높이면서 자가 포식을 방해한다.[@wang2018]
 
-![mTOR pathway (왼쪽 Ras signal은 지울것) [@foster2010]](Images/06-04/img_15.jpg)
+![mTOR pathway (왼쪽 Ras signal은 지울것) [@foster2010]](images/06-04/img_15.jpg)
 
 The mTOR pathway is complicated and has many inputs. The PI3K input involves the generation of PIP3 from PIP2, which recruits and activates PDK1, which then phosphorylates Akt at Thr308. Akt can then phosphorylate and suppress the GAP activity of TSC1/2. Suppression of TSC1/2 results in elevated activation of the GTPase Rheb, which then leads to a complex activation of mTORC1 via the activation of PLD1 and suppression of FKBP38 whereby elevated PLD activity generates the phosphatidic acid necessary for the formation of mTORC1 complex and FKBP38 dissociates from mTORC1.
 
@@ -190,7 +190,7 @@ Wnt 계열에 속하는 리간드들은 일종의 성장 촉진 인자들로서 
 
 [^06-04-24]: Transcription factor 4 (TCF4): immunoglobulin transcription factor 2 (ITF-2)라고도 불리운다. β-catenin과 복합체를 형성한다.
 
-![Canonical Wnt/β-catenin and divergent signaling pathways [@bem2019]](Images/06-04/img_16.png)
+![Canonical Wnt/β-catenin and divergent signaling pathways [@bem2019]](images/06-04/img_16.png)
 
 Canonical Wnt/β-catenin and divergent signaling pathways. The binding of a Wnt ligand to a Frizzled receptor and LRP5/6 co-receptor, followed by the recruitment of DVL to the receptor complex, leads to translocation and inhibition of the destruction complex, which consists of the kinase GSK3α/β, Adenomatous Polyposis Coli (APC) and Axin. The phosphorylation of β-catenin by GSK3α/β in the active destruction complex primes this protein for proteasomal degradation (not shown). Upon inhibition of the complex, β-catenin accumulates in the cytoplasm and translocates into the nucleus where it activates gene transcription as a co-activator of LEF1/TCFs. This canonical pathway can branch downstream (a) GSK3α/β inhibition (e.g., to slow protein degradation during mitosis, activate the mTOR pathway, or stabilize the cytoskeleton), (b) β-catenin stabilization (e.g., to stabilize cell adhesion with cadherins or facilitate the assembly of PDZ domain-containing proteins), and (c) β-catenin nuclear translocation (to activate gene transcription by interacting with nuclear receptors, FOXO and other transcription factors).
 
@@ -208,11 +208,11 @@ Wnt 리간드들은 Frizzled (Fzd)라고 불리우는 수용체에 결합하여 
 
 이러한 논의들은 세포 내 신호전달계가 얼마나 서로 복잡하게 얽혀있고 얼마나 많은 상호연락(crosstalk)이 일어나고 있는지를 여실히 보여준다. 통제된 실험실에서는 다른 변수들을 고정시킨 상태에서, 상위 단계(upstream)의 물질 A가 하위 단계(downstream)에 있는 물질 B의 활성을 높이느냐 낮추느냐를 측정하지만, 실제 생체에서 A와 B 사이에 어떤 현상이 벌어지고 있는지를 파악하기가 쉽지 않다. 그럼에도 불구하고, 약물의 작용을 이해하기 위해, 조현병 뿐 아니라 많은 정신질환들의 발생과정을 추적하기 위해, 지금도 학자들은 부단한 노력을 기울여 이들 시스템을 연구하고 있다.[@freyberg2010; @okerlund2011; @bae2018; @bem2019]
 
-![분해](Images/06-04/img_17.png)​
+![분해](images/06-04/img_17.png)​
 
 그림 설명: Wnt 신호가 들어오지 않는 비활성화 상태에서는 β-catenin destruction complex 내에서 GSK3가 β-catenin을 인산화시키며, 인산화 표지가 붙은 β-catenin는 β TrCP에 의해 유비퀴틴화(*ubiquitination*)되어 궁극적으로는 proteasome에 의해 분해된다. 이 때문에 일정 농도 이상의 β-catenin은 자동으로 분해된다.
 
-![유도](Images/06-04/img_18.png)
+![유도](images/06-04/img_18.png)
 
 ​
 
@@ -228,7 +228,7 @@ Wnt 리간드들은 Frizzled (Fzd)라고 불리우는 수용체에 결합하여 
 
 MAPK/ERK 경로는 다른 말로 Ras-Raf-MEK-ERK 경로라고도 하며, 세포 분열을 촉진하는 mitogen의 작용을 매개하는 대표적인 경로이다. 모든 세포들의 세포 주기는 철저히 관리되고 있다. 완전히 분화된 세포는 G~0~ 상태에 머물러 있으면서 더 이상 성장/분열하지 않지만, 그렇지 않은 세포들은 G1(성장), S(DNA 복제), G2(성장), M(분열)의 단계를 순환한다.
 
-![세포 주기](Images/06-04/img_19.png)
+![세포 주기](images/06-04/img_19.png)
 
 From wikipedia
 
@@ -252,7 +252,7 @@ ERK는 extracellular signal-regulated kinase의 약자이며, 상위 범주인 m
 
 이렇게만 보면 암을 일으키는 경로가 조현병과 무슨 상관이 있을까 싶은데, 1990년대부터 2000년대 초에 걸쳐 수많은 연구자들이 항정신병 약물 및 전기경련 치료가 MAPK/ERK 경로에 미치는 영향을 조사해왔다.[@kang1994; @pozzi2003; @browning2005; @pereira2012; @kim2008; @ahmed2008] 예를 들어 할로페리돌을 1회 투여하면, ERK 1/2의 인산화가 증가하는데 비해, 클로자핀을 1회 투여하면 오히려 감소한다.[@pozzi2003] 이와는 반대로, 반복적으로 투여할 경우 할로페리돌은 ERK 1/2 활성에 미미한 영향만을 주지만, 클로자핀은 전전두엽에서 ERK 1 /2 활성을 증가시킨다.[@ahmed2008] 이러한 차이점들은 정형 약물과 비정형 약물의 작용 기전을 구분하는데 중요한 의미를 가지며, 특히 클로자핀의 독특한 치료 효과를 설명하는데도 간과할 수 없는 단서가 된다.[@pereira2012]
 
-![FADD](Images/06-04/img_20.png)
+![FADD](images/06-04/img_20.png)
 
 From "FADD and its Phosphorylation Mediate Mitogenic Signaling in Mutant Kras
 

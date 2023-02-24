@@ -14,7 +14,7 @@ bibliography: References/06-11.bib
 
 [^-2]: 적혈구는 미토콘드리아가 없기 때문에, 산소를 운반하면서도 산소를 쓰지 않고, 혐기성 발효를 통해 에너지를 생성한다.
 
-![미토콘드리아의 fission과 fusion [@misgeld2017]](Images/06-11/img_14.png)
+![미토콘드리아의 fission과 fusion [@misgeld2017]](images/06-11/img_14.png)
 
 Fission은 진핵세포에서 세포내 함입(endocytosis)을 담당하는 <s>dynamin 계열인 GTP 분해효소</s>[^-3]에 의해 일어난다. Fission은 미토콘드리아의 수를 늘리고, 분열하는 숙주 세포에 균등하게 나눠주기 위해서 필수적인 과정이다. 신경세포와 같이 분열하지 않는 세포에서 왜 fission이 필요한지 궁금할 수 있지만, 하나의 신경세포에 백만 개 이상의 미토콘드리아가 포함되어 있으며, 하나의 시냅스마다 수십에서 수백개 정도의 미토콘드리아가 배치된다는 점을 고려하면 활발한 분열이 꼭 필요할 것이다. 이렇게 미토콘드리아의 수를 역동적으로 유지하고, 필요한 곳에 배치하는 과정을 neuronal mitostasis라고 한다.[@misgeld2017] 세포체에서 미토콘드리아는 따로 떨어져 존재하는 것이 아니라, 수백, 수천개의 미토콘드리아가 소포체(endoplasmic reticulum)에 결합한 덩어리 형태로 존재한다. 이들 중 일부의 미토콘드리아를 새로 생겨난 시냅스로 배치하기 위해선, 소포체나 미토콘드리아 덩어리로부터 분리하여 축삭을 따라 이동시켜야 하는데, 이때 fission과정이 필요해진다.[@misgeld2017]
 
@@ -62,7 +62,7 @@ Microstasis의 결함도 종종 보고된다. 미토콘드리아의 분포나 �
 
 뇌의 에너지 소모량이 시간적으로 또 공간적으로 시시각각 변화된다는 것은, 원활한 에너지 공급을 위해 정교한 조절 기전이 마련되어 있어야 함을 시사한다. 학자들은 neurovascular coupling과 neurometabolic coupling 현상을 통해 이를 설명하고자 한다.[@watts2018] Neurovascular coupling이란 특정 뇌조직이 흥분하여 에너지 필요량이 높아지면 그 부위 혈관을 확장시켜 충분한 혈액을 공급하는 기전이다.[@phillips2016] 여기에는 신경세포의 NO 신호전달, 그리고 성상세포의 Ca^2+^ 농도 조절이 큰 역할을 한다.[@archer1994; @takano2006] 한편 neurometabolic coupling 혹은 bioienergetic coupling이란 효율적인 에너지 공급을 위해 신경세포와 성상세포가 역할분담을 하는 현상을 가리킨다. 에너지 필요량이 갑자기 늘어나면, 신경세포는 산화적 인산화에만 집중하고, 대신 당 분해과정은 주위 성상세포에게 위탁한다.[@kasischke2004]
 
-![Neurometabolic coupling [@falkowska2015]](Images/06-11/img_15.png)
+![Neurometabolic coupling [@falkowska2015]](images/06-11/img_15.png)
 
 Metabolic profile of astrocytes \[[16](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4661798/#B16-ijms-16-25939)\]. Glucose is transported to astrocytes through GLUT1 transporter and then metabolized to lactate. Lactate is transported outside astrocytes and taken up by neurons by monocarboxylate transporters (MCTs). Intracellular lactate in neurons is oxidized to pyruvate and metabolized along the oxygen pathway. GLUT1: glucose transporter-1; MCT: monocarboxylate transporter; TCA: Krebs cycle; Pyr: pyruvate; Lac: lactate
 

@@ -74,7 +74,7 @@ LPS가 세균 감염을 재현한 것이라면, <s>poly I:C</s>[^4]는 바이러
 
 [^13]: Glutamate Decarboxylase 1 (GAD1): GAD67이라고도 불린다.
 
-![Overview of [CRISPR/Cas9 system](https://www.cambridge.org/core/journals/mrs-bulletin/news/crispr-implications-for-materials-science)](Images/05-01/img_1.png)
+![Overview of [CRISPR/Cas9 system](https://www.cambridge.org/core/journals/mrs-bulletin/news/crispr-implications-for-materials-science)](images/05-01/img_1.png)
 
 CRISPR-Cas9 is a method of genome editing that exploits a natural DNA-snipping enzyme in bacteria, called Cas9 (CRISPR-associated protein 9) to target and edit particular genes. CRISPR stands for Clustered regularly interspaced short palindromic repeats, which are segments of DNA of a particular structure found widely in bacteria and archaea (prokaryotes). In the wild, the CRISPR-Cas9 system is part of the prokaryotic immune system, which can snip out of the genome DNA acquired from foreign sources such as phages (bacterial viruses). The same molecular machinery is now being used to enable genetic material to be cut from and pasted into the genomes of other organisms, including eukaryotes such as humans.
 
@@ -120,7 +120,7 @@ Disrupted-in-Schizophrenia (DISC)는 다수의 조현병 환자가 포함된 <s>
 
 [^22]: **헌팅턴 무도병 (Huntington's chorea)**: Huntingtin 단백질을 발현하는 유전자(HTT)에 CAG 염기가 지나치게 반복되면 생성된 단백질에 지나치게 글루타메이트가 많아지면서 기능을 못하게 된다. 정상인은 6\~35 번 반복되는 데 비해, 36번이 넘으면 발병 위험이 급격히 높아진다.
 
-![유전자 복제수 변이 (copy number variation)의 개념. 그림에서 C라고 표시된 유전자의 개수는 결실(왼쪽)에 의해 줄어들기도 하고, 중복(오른쪽)에 의해 늘어나기도 한다.](Images/05-02/CNV-2.jpeg){width="352"}
+![유전자 복제수 변이 (copy number variation)의 개념. 그림에서 C라고 표시된 유전자의 개수는 결실(왼쪽)에 의해 줄어들기도 하고, 중복(오른쪽)에 의해 늘어나기도 한다.](images/05-02/CNV-2.jpeg){width="352"}
 
 조현병의 위험을 변화시킨다고 알려진 CNV 부위는 22q11.2, 15q13.3, 1q21, NRXN1, 3q29, 7q11.23 그리고 16p11.2이 있으며, 이중 한 두개를 제외하고는 모두 동물 모델이 만들어졌다.[@forsingdal2019] 22q11.2의 일부 염기서열이 결실되어 복제수가 적어지는 <s>DiGeorge 증후군</s>[^23]은 가장 많이 알려진 변이로, 이 변이를 갖는 환자는 조현병 발병 위험이 25\~30배 높아진다.[@schneider2014] 2p16.3 부위에 <s>미세결실</s>[^24]이 있으면 시냅스 접착(synapse adhesion) 단백질인 Neurexin-1α와 -1β를 발현하는 NRXN1 유전자의 서열이 바뀌는데, 이 변이를 지닌 환자 역시 조현병 발병 위험이 9배 정도 증가한다.[@rujescu2009] 또 다른 예는 15q13.3의 미세결실인데, 이 부위에는 니코틴성 아세틸콜린 수용체가 있으며, 미세결실을 지닌 쥐는 좀더 공격적 반응을 보인다.[@lewis2018]
 
@@ -168,7 +168,7 @@ Reeler 마우스 모델은 매우 다양하다. 고전적인 동형접합체 모
 
 쥐에게 장기간 항정신병 약물을 투여하면 목적없이 입을 세로로 벌리고 간혹 혀를 내미는 현상을 보이는데, 이를 **vacuous chewing movement (VCM)**라고 부른다. VCM은 정상적으로는 나타나지 않으며, 유독 정형 약물 투여 후 많이 발생하고, 약을 끊은 후에도 잘 없어지지 않기 때문에 흔히 지연운동 장애(tardive dyskinesia, TD)의 동물모델로 사용된다.[@guzen2019] 물론 약물 투여 후 3-4주가 지나지 않아 나타나기 시작하고, 항콜린제에 반응하는 등 추체외로 증후군과 구분이 석연치 않은 면이 있지만, 현재로서는 이보다 더 나은 모델이 나오지 않았다.
 
-![Vacuous chewing movement](Images/05-02/img_2.png){width="458"}​
+![Vacuous chewing movement](images/05-02/img_2.png){width="458"}​
 
 Vacuous chewing movement [@guzen2019]
 
